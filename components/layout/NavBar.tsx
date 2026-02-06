@@ -12,7 +12,7 @@ const Navbar = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [isVisible, setIsVisible] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
-	
+
 	// Initialize loading state based on pathname and sessionStorage
 	const [isLoading, setIsLoading] = useState(() => {
 		if (typeof window === "undefined") return false;

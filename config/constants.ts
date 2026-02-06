@@ -166,3 +166,94 @@ export const NavLinks = [
 	{ name: "Blog", link: "/blog" },
 	{ name: "News & Events", link: "/news-events" },
 ];
+
+export interface Service {
+	id: number;
+	name: string;
+	isActive: boolean;
+	image: string;
+	description: string;
+}
+
+export const services: Service[] = [
+	{
+		id: 1,
+		name: "Adoption",
+		isActive: true,
+		image: "/images/adoption.png",
+		description:
+			"Bringing pet parents and ethical adoption partners together to ensure every pet is welcomed into a prepared, loving home. From Discovery to Consultant on Call, the platform ensures parents are prepared for the beautiful experiences ahead!",
+	},
+	{
+		id: 2,
+		name: "Veterinary",
+		isActive: true,
+		image: "/images/vet.png",
+		description:
+			"Connecting pet parents with trusted veterinarians through a transparent, compassionate care ecosystem. From Availability to convenient doorstep healthcare management, the platform ensures parents and providers take advantage of always being able to address health queries.",
+	},
+	{
+		id: 3,
+		name: "Grooming",
+		isActive: true,
+		image: "/images/grooming.png",
+		description:
+			"Uniting gentle groomers and caring families around stress‑free hygiene and wellbeing‑first practices. From Subscribing to regular grooming as a means of wellbeing to impromptu wellness treatments, the platform supports doorstep and at center services seamlessly.",
+	},
+	{
+		id: 4,
+		name: "Training",
+		isActive: false,
+		image: "/images/training.png",
+		description:
+			"Aligning pet parents and humane trainers to build confidence, communication, and trust. From finding the right trainers to engaging follow ups, the platform ensures a personal bond with the pet that lasts long!",
+	},
+	{
+		id: 5,
+		name: "Behaviour",
+		isActive: true,
+		image: "/images/behaviourist.png",
+		description:
+			"From early assessments to ongoing behavioural support, the platform connects pet parents and specialists to work together patiently and thoughtfully, ensuring pets are supported emotionally and understood while families feel guided.",
+	},
+	{
+		id: 6,
+		name: "Boarding",
+		isActive: false,
+		image: "/images/boarding.png",
+		description:
+			"Connecting families and care providers through safe, routine‑driven environments when being apart is unavoidable. From short stays to extended care, the platform ensures transparency, familiarity, hygienic environment and trust — so pets feel secure and parents feel reassured.",
+	},
+	{
+		id: 7,
+		name: "Nutrition",
+		isActive: false,
+		image: "/images/food.png",
+		description:
+			"Bringing together expert guidance and informed pet parents to make pet nutrition simple, safe, and health‑led. From daily diet planning to health‑led nutritional support, the platform helps pet parents move from dilemma to confidence with advice that evolves as their pet grows.",
+	},
+	{
+		id: 8,
+		name: "Resorts & Restaurants",
+		isActive: true,
+		image: "/images/cafe.png",
+		description:
+			"Enabling truly pet‑inclusive experiences by connecting families with pet-friendly places designed to welcome pets. From weekend getaways, special occasions to everyday outings, the platform helps parents include their companions in creating life's moments.",
+	},
+	{
+		id: 9,
+		name: "Products & Commerce",
+		isActive: false,
+		image: "/images/product.png",
+		description:
+			"Curating responsible products from ethical brands that follow sustainable practices into one trusted marketplace for everyday pet needs. From everyday essentials to thoughtful discoveries, the platform simplifies choices by bringing quality, safety, and purpose‑driven commerce together in one place.",
+	},
+	{
+		id: 10,
+		name: "Sunset Services",
+		isActive: true,
+		image: "/images/sunset.png",
+		description:
+			"Supporting families and care professionals with dignity, clarity, and compassion during life's most difficult moments. From guidance to gentle aftercare, the platform ensures no family navigates goodbye alone, and every life is honoured with respect.",
+	},
+];
