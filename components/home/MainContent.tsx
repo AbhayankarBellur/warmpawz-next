@@ -58,7 +58,9 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 			{/* Fixed Background Layers - Covers Entire Viewport */}
 			{/* Gradient Layer */}
 			<div 
-				className="fixed inset-0 z-0"
+				className={`fixed inset-0 z-0 transition-opacity duration-1000 ${
+					isVisible ? "opacity-100" : "opacity-0"
+				}`}
 				style={{
 					background: "linear-gradient(180deg, #FF7A33 0%, #FFBB99 60%, #FFE8D1 100%)",
 				}}
@@ -66,7 +68,9 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 			
 			{/* Image Layer on top of gradient */}
 			<div 
-				className="fixed inset-0 z-10 opacity-40"
+				className={`fixed inset-0 z-10 transition-opacity duration-1000 ${
+					isVisible ? "opacity-40" : "opacity-0"
+				}`}
 				style={{
 					backgroundImage: "url('/images/blog-3.png')",
 					backgroundSize: "cover",
