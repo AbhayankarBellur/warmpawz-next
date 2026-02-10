@@ -54,42 +54,36 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 	});
 
 	return (
-		<>
-			{/* Fixed Background Layers - Only render after loading completes */}
+		<div className="relative min-h-screen overflow-hidden">
+			{/* Background Layers - Only render after loading completes */}
 			{isVisible && (
 				<>
 					{/* Gradient Layer */}
 					<div 
-					className="fixed left-0 right-0 top-[-10vh] bottom-[-10vh] z-0"
-					style={{
-						background: "linear-gradient(180deg, #FF7A33 0%, #FFBB99 60%, #FFE8D1 100%)",
-						transform: "translateZ(0)",
-						backfaceVisibility: "hidden",
-						WebkitBackfaceVisibility: "hidden",
-					}}
-				/>
-				
-				{/* Image Layer on top of gradient */}
-				<div 
-					className="fixed left-0 right-0 top-[-10vh] bottom-[-10vh] z-10 opacity-40"
-					style={{
-					backgroundImage: "url('/images/shakira.jpeg')",
-					backgroundSize: "cover",
-					backgroundPosition: "top center",
-					backgroundRepeat: "no-repeat",
-					transform: "translateZ(0)",
-					backfaceVisibility: "hidden",
-					WebkitBackfaceVisibility: "hidden",
-				}}
-			/>
-			</>
-		)}
+						className="absolute inset-0 z-0"
+						style={{
+							background: "linear-gradient(180deg, #FF7A33 0%, #FFBB99 60%, #FFE8D1 100%)",
+						}}
+					/>
+					
+					{/* Image Layer on top of gradient */}
+					<div 
+						className="absolute inset-0 z-10 opacity-40"
+						style={{
+							backgroundImage: "url('/images/shakira.jpeg')",
+							backgroundSize: "cover",
+							backgroundPosition: "top center",
+							backgroundRepeat: "no-repeat",
+						}}
+					/>
+				</>
+			)}
 
-		<div
-			className={`min-h-screen font-body transition-all duration-1000 ease-out overflow-x-hidden relative z-20 ${
-				isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-			}`}
-		>
+			<div
+				className={`min-h-screen font-body transition-all duration-1000 ease-out overflow-x-hidden relative z-20 ${
+					isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+				}`}
+			>
 			{/* Hero Section - Below Navbar, Above Main Content */}
 			<HeroSection />
 
@@ -162,8 +156,8 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 
 			{/* Testimonials Section */}
 			<Testimonials />
+			</div>
 		</div>
-		</>
 	);
 };
 

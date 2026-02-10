@@ -34,10 +34,10 @@ const BlogPage = () => {
 	}));
 
 	return (
-		<>
-			{/* Fixed Background Layer - Gradient Only */}
+		<div className="relative min-h-screen overflow-hidden">
+			{/* Background Layer - Gradient Only */}
 			<div 
-				className="fixed left-0 right-0 top-[-10vh] bottom-[-10vh] z-0"
+				className="absolute inset-0 z-0"
 				style={{
 					background: "linear-gradient(180deg, #F69052 0%, #FAD3B5 60%, #FFF2E6 100%)",
 				}}
@@ -64,7 +64,7 @@ const BlogPage = () => {
 				</div>
 			</div>
 		</div>
-		</>
+		</div>
 	);
 };
 
