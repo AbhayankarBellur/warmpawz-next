@@ -17,7 +17,6 @@ const BlogArticle12 = () => {
 				style={{
 					backgroundImage:
 						"linear-gradient(180deg, #F69052 0%, #FAD3B5 60%, #FFF2E6 100%)",
-					backgroundAttachment: "fixed",
 				}}
 			>
 				<article className="max-w-4xl mx-auto bg-white rounded-3xl shadow-lg p-8 sm:p-12 border-2 border-[#F5A855]">

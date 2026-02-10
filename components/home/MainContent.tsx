@@ -77,7 +77,6 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 					backgroundSize: "cover",
 					backgroundPosition: "top center",
 					backgroundRepeat: "no-repeat",
-					backgroundAttachment: "fixed",
 					transform: "translateZ(0)",
 					backfaceVisibility: "hidden",
 					WebkitBackfaceVisibility: "hidden",

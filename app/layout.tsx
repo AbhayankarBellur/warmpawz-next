@@ -27,7 +27,6 @@ export default function RootLayout({
 				className={baloo2.className}
 				style={{
 					background: GRADIENTS.warm,
-					backgroundAttachment: "fixed",
 					backgroundSize: "100% 100vh",
 					minHeight: "100vh",
 				}}
