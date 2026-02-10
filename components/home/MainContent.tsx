@@ -55,29 +55,29 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 
 	return (
 		<>
-			{/* Fixed Background Layers - Covers Entire Viewport */}
-			{/* Gradient Layer */}
-			<div 
-				className={`fixed inset-0 z-0 transition-opacity duration-1000 ${
-					isVisible ? "opacity-100" : "opacity-0"
-				}`}
-				style={{
-					background: "linear-gradient(180deg, #FF7A33 0%, #FFBB99 60%, #FFE8D1 100%)",
-				}}
-			/>
-			
-			{/* Image Layer on top of gradient */}
-			<div 
-				className={`fixed inset-0 z-10 transition-opacity duration-1000 ${
-					isVisible ? "opacity-40" : "opacity-0"
-				}`}
-				style={{
-					backgroundImage: "url('/images/blog-3.png')",
-					backgroundSize: "cover",
-					backgroundPosition: "top",
-					backgroundRepeat: "no-repeat",
-				}}
-			/>
+			{/* Fixed Background Layers - Only render after loading completes */}
+			{isVisible && (
+				<>
+					{/* Gradient Layer */}
+					<div 
+						className="fixed inset-0 z-0 animate-in fade-in duration-1000"
+						style={{
+							background: "linear-gradient(180deg, #FF7A33 0%, #FFBB99 60%, #FFE8D1 100%)",
+						}}
+					/>
+					
+					{/* Image Layer on top of gradient */}
+					<div 
+						className="fixed inset-0 z-10 opacity-40 animate-in fade-in duration-1000"
+						style={{
+							backgroundImage: "url('/images/blog-3.png')",
+							backgroundSize: "cover",
+							backgroundPosition: "top",
+							backgroundRepeat: "no-repeat",
+						}}
+					/>
+				</>
+			)}
 
 			<div
 				className={`min-h-screen font-body transition-all duration-1000 ease-out overflow-x-hidden relative z-20 ${
