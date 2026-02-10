@@ -13,7 +13,7 @@ const UserWalkthroughPage = () => {
 			<div 
 				className="fixed inset-0 z-10 opacity-40"
 				style={{
-					backgroundImage: "url('/images/blog-14.png')",
+					backgroundImage: "url('/images/shakira.jpeg')",
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					backgroundRepeat: "no-repeat",

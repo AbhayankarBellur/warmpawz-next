@@ -60,37 +60,44 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 				<>
 					{/* Gradient Layer */}
 					<div 
-						className="fixed inset-0 z-0 animate-in fade-in duration-1000"
-						style={{
-							background: "linear-gradient(180deg, #FF7A33 0%, #FFBB99 60%, #FFE8D1 100%)",
-						}}
-					/>
-					
-					{/* Image Layer on top of gradient */}
-					<div 
-						className="fixed inset-0 z-10 opacity-40 animate-in fade-in duration-1000"
-						style={{
-							backgroundImage: "url('/images/blog-3.png')",
-							backgroundSize: "cover",
-							backgroundPosition: "top",
-							backgroundRepeat: "no-repeat",
-						}}
-					/>
-				</>
-			)}
+					className="fixed inset-0 z-0"
+					style={{
+						background: "linear-gradient(180deg, #FF7A33 0%, #FFBB99 60%, #FFE8D1 100%)",
+						transform: "translateZ(0)",
+						backfaceVisibility: "hidden",
+						WebkitBackfaceVisibility: "hidden",
+					}}
+				/>
+				
+				{/* Image Layer on top of gradient */}
+				<div 
+					className="fixed inset-0 z-10 opacity-40"
+					style={{
+					backgroundImage: "url('/images/shakira.jpeg')",
+					backgroundSize: "cover",
+					backgroundPosition: "top center",
+					backgroundRepeat: "no-repeat",
+					backgroundAttachment: "fixed",
+					transform: "translateZ(0)",
+					backfaceVisibility: "hidden",
+					WebkitBackfaceVisibility: "hidden",
+				}}
+			/>
+			</>
+		)}
 
-			<div
-				className={`min-h-screen font-body transition-all duration-1000 ease-out overflow-x-hidden relative z-20 ${
-					isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-				}`}
-			>
-				{/* Hero Section - Below Navbar, Above Main Content */}
-				<HeroSection />
+		<div
+			className={`min-h-screen font-body transition-all duration-1000 ease-out overflow-x-hidden relative z-20 ${
+				isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+			}`}
+		>
+			{/* Hero Section - Below Navbar, Above Main Content */}
+			<HeroSection />
 
-			{/* Mobile Layout (Vertical Stack) - Hidden on lg+ */}
-			<div className="flex flex-col items-center justify-center min-h-screen lg:hidden relative px-4 sm:px-6 py-8 pt-12">
-				{/* Pet Parent Section - Top */}
-				<MobileSection
+		{/* Mobile Layout (Vertical Stack) - Hidden on lg+ */}
+		<div className="flex flex-col items-center justify-center min-h-screen lg:hidden relative px-4 sm:px-6 py-8 pt-12">
+			{/* Pet Parent Section - Top */}
+			<MobileSection
 					title="Pet Parent"
 					image={petTrainingImage}
 					navigateTo="/user-walkthrough"
