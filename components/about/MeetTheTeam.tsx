@@ -189,7 +189,7 @@ const MeetTheTeam = () => {
 										{teamMembers.map((member, index) => (
 											<div
 												key={index}
-												ref={(el) => (mockupRefs.current[index] = el)}
+											ref={(el) => { mockupRefs.current[index] = el; }}
 												data-index={index}
 												className="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-8"
 												style={{

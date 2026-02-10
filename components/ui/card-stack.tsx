@@ -27,7 +27,9 @@ export const CardStack = ({
 	useEffect(() => {
 		startFlipping();
 
-		return () => clearInterval(interval);
+		return () => {
+			if (interval) clearInterval(interval);
+		};
 	}, []);
 	const startFlipping = () => {
 		interval = setInterval(() => {

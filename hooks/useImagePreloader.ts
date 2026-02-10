@@ -90,7 +90,6 @@ export const useImagePreloader = (enabled: boolean = true) => {
     };
 
     if ('requestIdleCallback' in window) {
-      // @ts-expect-error
       window.requestIdleCallback(() => preloadImagesSequentially());
     } else {
       preloadImagesSequentially();

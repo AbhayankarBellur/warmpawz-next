@@ -82,7 +82,6 @@ export const useVideoPreloader = (enabled: boolean = true) => {
     };
 
     if ('requestIdleCallback' in window) {
-       // @ts-expect-error
        window.requestIdleCallback(() => preloadVideosSequentially());
     } else {
        preloadVideosSequentially();
