@@ -54,13 +54,13 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 	});
 
 	return (
-		<div className="relative min-h-screen overflow-hidden">
+		<>
 			{/* Background Layers - Only render after loading completes */}
 			{isVisible && (
 				<>
 					{/* Gradient Layer */}
 					<div 
-						className="absolute inset-0 z-0"
+						className="fixed inset-0 z-0"
 						style={{
 							background: "linear-gradient(180deg, #FF7A33 0%, #FFBB99 60%, #FFE8D1 100%)",
 						}}
@@ -68,7 +68,7 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 					
 					{/* Image Layer on top of gradient */}
 					<div 
-						className="absolute inset-0 z-10 opacity-40"
+						className="fixed inset-0 z-10 opacity-40"
 						style={{
 							backgroundImage: "url('/images/shakira.jpeg')",
 							backgroundSize: "cover",
@@ -156,8 +156,8 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 
 			{/* Testimonials Section */}
 			<Testimonials />
-			</div>
 		</div>
+		</>
 	);
 };
 
