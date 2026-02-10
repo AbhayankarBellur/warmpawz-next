@@ -41,7 +41,7 @@ const HomePageClient = () => {
 			{isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
 			{/* Render main content only when needed */}
 			{!isLoading && (
-				<main className="min-h-screen bg-white relative overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+				<main className="min-h-screen bg-white relative overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden z-20">
 					<MainContent isVisible={showContent} />
 				</main>
 			)}

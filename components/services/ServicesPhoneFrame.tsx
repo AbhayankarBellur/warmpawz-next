@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
 import { Service, services } from "@/config/constants";
 
 const ServicesPhoneFrame = () => {
@@ -66,12 +67,16 @@ const ServicesPhoneFrame = () => {
                           shadow-[0_6px_20px_rgba(0,0,0,0.08)]
                         "
 											>
-												<img
+											<div className="relative w-16 h-16">
+												<Image
 													src={service.image}
 													alt={service.name}
-													loading="eager"
-													className="w-16 h-16 object-contain"
+													fill
+													sizes="64px"
+													className="object-contain"
+													priority
 												/>
+											</div>
 												<span className="text-sm font-semibold text-[#1F2937]">
 													{service.name}
 												</span>
@@ -86,30 +91,65 @@ const ServicesPhoneFrame = () => {
 									<button
 										onClick={handleBack}
 										className="absolute top-2 left-1 z-10 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-[0_6px_20px_rgba(0,0,0,0.08)] hover:bg-white transition-colors cursor-pointer"
+										aria-label="Go back to services"
 									>
 										<ArrowLeft className="w-5 h-5 text-[#1F2937]" />
 									</button>
 
-									{/* Service Icon at Top */}
-									<div className="flex justify-center items-start pt-0">
-										<img
+									{/* Service Icon at Top Center */}
+									<div className="flex justify-center items-start pt-0 mb-2">
+									<div className="relative w-20 h-20">
+										<Image
 											src={selectedService.image}
 											alt={selectedService.name}
-											className="w-24 h-24 object-contain"
-											loading="eager"
+											fill
+											sizes="80px"
+											className="object-contain"
+											priority
 										/>
 									</div>
+								</div>
 
-									{/* Service Content Box Centered */}
-									<div className="flex-1 flex items-center justify-center px-2">
-										<div className="bg-white rounded-2xl p-6 shadow-[0_6px_20px_rgba(0,0,0,0.08)] w-full">
-											<h3 className="text-xl font-bold text-[#1F2937] mb-3 text-center">
-												{selectedService.name}
-											</h3>
-											<p className="text-[#1F2937] text-center text-sm leading-relaxed">
-												{selectedService.description}
-											</p>
-										</div>
+								{/* Service Name Below Image */}
+								<h3 className="text-xl font-bold text-[#1F2937] text-center mb-4">
+									{selectedService.name}
+								</h3>
+
+									{/* Two Content Boxes or Single Box based on data */}
+									<div className="flex-1 flex flex-col justify-center px-4 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden gap-2.5">
+										{selectedService.forParents && selectedService.forProviders ? (
+											<>
+												{/* For Pet Parents Box */}
+												<article className="bg-white rounded-2xl p-6 shadow-[0_6px_20px_rgba(0,0,0,0.08)]">
+													<h4 className="text-lg font-bold text-[#1F2937] mb-3 text-center">
+														For Pet Parents
+													</h4>
+													<p className="text-[#1F2937] text-center text-base leading-relaxed">
+														{selectedService.forParents}
+													</p>
+												</article>
+
+												{/* For Providers Box */}
+												<article className="bg-white rounded-2xl p-6 shadow-[0_6px_20px_rgba(0,0,0,0.08)]">
+													<h4 className="text-lg font-bold text-[#1F2937] mb-3 text-center">
+														{selectedService.providerLabel || "For Service Providers"}
+													</h4>
+													<p className="text-[#1F2937] text-center text-base leading-relaxed">
+														{selectedService.forProviders}
+													</p>
+												</article>
+											</>
+										) : (
+											// Fallback to original single box layout
+											<div className="bg-white rounded-2xl p-6 shadow-[0_6px_20px_rgba(0,0,0,0.08)]">
+												<h3 className="text-xl font-bold text-[#1F2937] mb-3 text-center">
+													{selectedService.name}
+												</h3>
+												<p className="text-[#1F2937] text-center text-sm leading-relaxed">
+													{selectedService.description}
+												</p>
+											</div>
+										)}
 									</div>
 								</div>
 							)}

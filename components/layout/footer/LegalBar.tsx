@@ -2,7 +2,7 @@ import { AppLink } from "@/components/shared/AppLink";
 
 const LegalBar = () => {
 	return (
-		<div className="w-full bg-[#f69052] py-4 pb-6">
+		<div className="w-full bg-[#f69052] py-4 pb-6 relative z-20">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
 					<p className="text-sm text-white">

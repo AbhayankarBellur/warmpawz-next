@@ -10,8 +10,8 @@ interface LandingSectionProps {
 	onNavigate: (path: string) => void;
 	onMouseEnter?: () => void;
 	onMouseLeave?: () => void;
-	imageRef?: React.RefObject<HTMLDivElement>;
-	buttonRef?: React.RefObject<HTMLButtonElement>;
+	imageRef?: React.RefObject<HTMLDivElement | null>;
+	buttonRef?: React.RefObject<HTMLButtonElement | null>;
 	sectionRef?: React.RefObject<HTMLDivElement>;
 }
 
@@ -48,6 +48,7 @@ const LandingSection = forwardRef<HTMLDivElement, LandingSectionProps>(
 						loading="eager"
 						className="object-contain object-bottom"
 						fill
+						sizes="(max-width: 768px) 160px, (max-width: 1280px) 256px, 240px"
 						aria-hidden="true"
 						style={{ willChange: "transform" }}
 					/>

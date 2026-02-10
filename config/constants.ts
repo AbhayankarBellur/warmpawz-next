@@ -173,6 +173,9 @@ export interface Service {
 	isActive: boolean;
 	image: string;
 	description: string;
+	forParents?: string;
+	forProviders?: string;
+	providerLabel?: string;
 }
 
 export const services: Service[] = [
@@ -183,6 +186,11 @@ export const services: Service[] = [
 		image: "/images/adoption.png",
 		description:
 			"Bringing pet parents and ethical adoption partners together to ensure every pet is welcomed into a prepared, loving home. From Discovery to Consultant on Call, the platform ensures parents are prepared for the beautiful experiences ahead!",
+		forParents:
+			"Find adoptable pets and ethical breeders near you, with verified guidance to start pet parenthood responsibly and confidently.",
+		forProviders:
+			"Connect with informed pet parents through a trusted adoption platform that supports ethical practices and the right matches.",
+		providerLabel: "For Adoption Centres & Ethical Breeders",
 	},
 	{
 		id: 2,
@@ -191,6 +199,11 @@ export const services: Service[] = [
 		image: "/images/vet.png",
 		description:
 			"Connecting pet parents with trusted veterinarians through a transparent, compassionate care ecosystem. From Availability to convenient doorstep healthcare management, the platform ensures parents and providers take advantage of always being able to address health queries.",
+		forParents:
+			"Discover trusted veterinary services near you — from vaccinations and routine care to online vet consultations, Emergency Video Consults and home visits, making pet healthcare calmer and more convenient.",
+		forProviders:
+			"Stay Engaged with pet parents through a central platform, set reminders, push notifications regarding new outbreaks proactively, delivering medicines same day making care giving a convenient and connected service.",
+		providerLabel: "For Veterinarians & Clinics",
 	},
 	{
 		id: 3,
@@ -199,6 +212,11 @@ export const services: Service[] = [
 		image: "/images/grooming.png",
 		description:
 			"Uniting gentle groomers and caring families around stress‑free hygiene and wellbeing‑first practices. From Subscribing to regular grooming as a means of wellbeing to impromptu wellness treatments, the platform supports doorstep and at center services seamlessly.",
+		forParents:
+			"Discover trusted dog and cat grooming services near you, including home grooming and salon care, for hygienic, stress-free routines.",
+		forProviders:
+			"Reach pet parents through a Platform, that makes schedule management, creation of custom grooming packages, membership and Loyalty programs a click of the button convenience.",
+		providerLabel: "For Groomers & Salons",
 	},
 	{
 		id: 4,
@@ -207,6 +225,11 @@ export const services: Service[] = [
 		image: "/images/training.png",
 		description:
 			"Aligning pet parents and humane trainers to build confidence, communication, and trust. From finding the right trainers to engaging follow ups, the platform ensures a personal bond with the pet that lasts long!",
+		forParents:
+			"Discover Experienced trainers near you for obedience, socialisation, and skill-building that fits your pet's age, breed, and routine",
+		forProviders:
+			"Connect with pet parents through the Platform, offering teleconsultations, follow ups and tracking of progress a simple convenient mechanism to build credibility.",
+		providerLabel: "For Trainers",
 	},
 	{
 		id: 5,
@@ -215,6 +238,11 @@ export const services: Service[] = [
 		image: "/images/behaviourist.png",
 		description:
 			"From early assessments to ongoing behavioural support, the platform connects pet parents and specialists to work together patiently and thoughtfully, ensuring pets are supported emotionally and understood while families feel guided.",
+		forParents:
+			"Discover Referenced behaviorists near you for expert support with anxiety, aggression, reactivity, and behavioural challenges.",
+		forProviders:
+			"Connect with pet parents through the Platform, offering teleconsultations, follow ups and tracking of progress a simple convenient mechanism to build credibility.",
+		providerLabel: "For Behaviorists",
 	},
 	{
 		id: 6,
@@ -223,6 +251,11 @@ export const services: Service[] = [
 		image: "/images/boarding.png",
 		description:
 			"Connecting families and care providers through safe, routine‑driven environments when being apart is unavoidable. From short stays to extended care, the platform ensures transparency, familiarity, hygienic environment and trust — so pets feel secure and parents feel reassured.",
+		forParents:
+			"Discover trusted and Referred pet boarding centres and foster homes near you, offering safe, supervised care when you're away — without disrupting your pet's comfort or routine.",
+		forProviders:
+			"Connect with pet parents through a platform, helping you focus on services while the platform ensures building your trust and credibility.",
+		providerLabel: "For Boarding Centres",
 	},
 	{
 		id: 7,
@@ -231,6 +264,11 @@ export const services: Service[] = [
 		image: "/images/food.png",
 		description:
 			"Bringing together expert guidance and informed pet parents to make pet nutrition simple, safe, and health‑led. From daily diet planning to health‑led nutritional support, the platform helps pet parents move from dilemma to confidence with advice that evolves as their pet grows.",
+		forParents:
+			"Access pet nutritionists and customised diet plans near you, tailored to your pet's age, breed, health conditions, and lifestyle.",
+		forProviders:
+			"Connect with pet parents through a Platform, enabling personalised tele consultations, subscription plans, progress tracking and long-term care outcomes.",
+		providerLabel: "For Pet Nutritionists",
 	},
 	{
 		id: 8,
@@ -239,6 +277,11 @@ export const services: Service[] = [
 		image: "/images/cafe.png",
 		description:
 			"Enabling truly pet‑inclusive experiences by connecting families with pet-friendly places designed to welcome pets. From weekend getaways, special occasions to everyday outings, the platform helps parents include their companions in creating life's moments.",
+		forParents:
+			"Discover pet-friendly resorts and restaurants near you, where your pet is welcome, comfortable, and part of every outing or getaway.",
+		forProviders:
+			"Connect with pet parents through a platform, helping you showcase your space, policies, and hospitality with clarity.",
+		providerLabel: "For Resorts & Restaurants",
 	},
 	{
 		id: 9,
@@ -247,6 +290,11 @@ export const services: Service[] = [
 		image: "/images/product.png",
 		description:
 			"Curating responsible products from ethical brands that follow sustainable practices into one trusted marketplace for everyday pet needs. From everyday essentials to thoughtful discoveries, the platform simplifies choices by bringing quality, safety, and purpose‑driven commerce together in one place.",
+		forParents:
+			"Discover & Shop trusted pet products online — from food, treats, and accessories to clothing — with a curated, in-store-like buying experience from home.",
+		forProviders:
+			"Reach pet parents through a platform, showcasing quality products and building new innovative products that are localized for community needs.",
+		providerLabel: "For Pet Brands & Sellers",
 	},
 	{
 		id: 10,
@@ -255,5 +303,10 @@ export const services: Service[] = [
 		image: "/images/sunset.png",
 		description:
 			"Supporting families and care professionals with dignity, clarity, and compassion during life's most difficult moments. From guidance to gentle aftercare, the platform ensures no family navigates goodbye alone, and every life is honoured with respect.",
+		forParents:
+			"Access respectful pet farewell and memorial services near you, offering compassionate support during goodbye moments with dignity and care.",
+		forProviders:
+			"Connect with Parents and offer thoughtful services at a time of need and grief and spread the word about the noble services rendered by you.",
+		providerLabel: "For Service Providers",
 	},
 ];

@@ -3,11 +3,11 @@ import gsap from "gsap";
 
 interface UseDesktopHoverAnimationsProps {
 	hoveredSection: number | null;
-	petParentImageRef: RefObject<HTMLDivElement>;
-	serviceProviderImageRef: RefObject<HTMLDivElement>;
-	petParentButtonRef: RefObject<HTMLButtonElement>;
-	serviceProviderButtonRef: RefObject<HTMLButtonElement>;
-	centerPhoneRef: RefObject<HTMLDivElement>;
+	petParentImageRef: RefObject<HTMLDivElement | null>;
+	serviceProviderImageRef: RefObject<HTMLDivElement | null>;
+	petParentButtonRef: RefObject<HTMLButtonElement | null>;
+	serviceProviderButtonRef: RefObject<HTMLButtonElement | null>;
+	centerPhoneRef: RefObject<HTMLDivElement | null>;
 }
 
 export const useDesktopHoverAnimations = ({

@@ -2,7 +2,7 @@
 
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SCROLL } from "@/config/constants";
 import { useRouter } from "next/navigation";
 
@@ -13,60 +13,95 @@ interface BackButtonProps {
 const BackButton = ({ className }: BackButtonProps) => {
 	const router = useRouter();
 	const [isVisible, setIsVisible] = useState(true);
-	const [lastScrollY, setLastScrollY] = useState(0);
+	const lastScrollY = useRef(0);
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
 	const handleBackToHome = () => {
 		router.push("/");
 	};
 
-	// Handle scroll to show/hide back button
+	// Handle scroll to show/hide back button - synced with navbar
 	useEffect(() => {
+		// Initialize scroll position
+		lastScrollY.current = window.scrollY;
+		let timeoutId: NodeJS.Timeout;
+		let ticking = false;
+
 		const handleScroll = () => {
 			const currentScrollY = window.scrollY;
 
+			// Prevent multiple rapid updates
+			if (Math.abs(currentScrollY - lastScrollY.current) < 5) {
+				return;
+			}
+
+			// Clear existing timeout
+			clearTimeout(timeoutId);
+
 			if (currentScrollY < SCROLL.navbarShowThreshold) {
-				// Always show at top with larger threshold
+				// Always show at top
 				setIsVisible(true);
 			} else if (
-				currentScrollY > lastScrollY &&
+				currentScrollY > lastScrollY.current &&
 				currentScrollY > SCROLL.navbarHideThreshold
 			) {
 				// Scrolling down - hide button
 				setIsVisible(false);
-			} else if (currentScrollY < lastScrollY) {
+			} else if (currentScrollY < lastScrollY.current) {
 				// Scrolling up - show button
 				setIsVisible(true);
 			}
 
-			setLastScrollY(currentScrollY);
-		};
+			lastScrollY.current = currentScrollY;
 
-		// Debounce scroll events for smoother performance
-		let ticking = false;
-		const debouncedHandleScroll = () => {
-			if (!ticking) {
-				window.requestAnimationFrame(() => {
-					handleScroll();
-					ticking = false;
-				});
-				ticking = true;
-			}
-		};
+		// Small delay to prevent rapid state changes
+		timeoutId = setTimeout(() => {
+			// Cleanup flag
+		}, 150);
+	};
+
+	const debouncedHandleScroll = () => {
+		if (!ticking) {
+			window.requestAnimationFrame(() => {
+				handleScroll();
+				ticking = false;
+			});
+			ticking = true;
+		}
+	};
 
 		window.addEventListener("scroll", debouncedHandleScroll, { passive: true });
 
 		return () => {
 			window.removeEventListener("scroll", debouncedHandleScroll);
+			clearTimeout(timeoutId);
 		};
-	}, [lastScrollY]);
+	}, []);
+
+	// Listen for mobile menu toggle events
+	useEffect(() => {
+		const handleMobileMenuToggle = (event: CustomEvent) => {
+			setIsMobileMenuOpen(event.detail.isOpen);
+		};
+
+		window.addEventListener('mobileMenuToggle', handleMobileMenuToggle as EventListener);
+
+		return () => {
+			window.removeEventListener('mobileMenuToggle', handleMobileMenuToggle as EventListener);
+		};
+	}, []);
 
 	return (
 		<motion.button
-			initial={{ opacity: 0 }}
-			animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -20 }}
-			transition={{ duration: 0.3 }}
+			initial={{ opacity: 1 }}
+			animate={{ 
+				opacity: (isVisible && !isMobileMenuOpen) ? 1 : 0, 
+				y: (isVisible && !isMobileMenuOpen) ? 0 : -24,
+				pointerEvents: (isVisible && !isMobileMenuOpen) ? "auto" : "none"
+			}}
+			transition={{ duration: 0.3, ease: "easeInOut" }}
 			onClick={handleBackToHome}
-			className={`fixed top-24 cursor-pointer left-6 z-50 p-3 backdrop-blur-sm rounded-full shadow-lg transition-colors border ${className || "bg-background/80 border-border hover:bg-background text-foreground"}`}
+			className={`fixed top-24 cursor-pointer left-6 z-50 p-3 backdrop-blur-sm rounded-full shadow-lg transition-colors border will-change-transform ${className || "bg-background/80 border-border hover:bg-background text-foreground"}`}
 			aria-label="Go back to home"
 		>
 			<ArrowLeft className="w-5 h-5" />

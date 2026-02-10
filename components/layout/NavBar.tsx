@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import warmpawzLogo from "@/public/images/warmpawz-logo.svg";
-import { SCROLL, STORAGE_KEYS } from "@/config/constants";
+import { SCROLL } from "@/config/constants";
 import { AppLink } from "../shared/AppLink";
 import Image from "next/image";
 
@@ -11,73 +11,67 @@ const Navbar = () => {
 	const pathname = usePathname();
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [isVisible, setIsVisible] = useState(true);
-	const [lastScrollY, setLastScrollY] = useState(0);
-
-	// Initialize loading state based on pathname and sessionStorage
-	const [isLoading, setIsLoading] = useState(() => {
-		if (typeof window === "undefined") return false;
-		if (pathname === "/") {
-			const hasShownLoading = sessionStorage.getItem(
-				STORAGE_KEYS.hasShownLoading,
-			);
-			return hasShownLoading !== "true";
-		}
-		return false;
-	});
+	const lastScrollY = useRef(0);
 
 	const isActive = (path: string) => {
 		return pathname === path;
 	};
 
 	const toggleMobileMenu = () => {
-		setIsMobileMenuOpen((prev) => !prev);
+		setIsMobileMenuOpen((prev) => {
+			const newState = !prev;
+			// Dispatch event for BackButton to listen
+			window.dispatchEvent(new CustomEvent('mobileMenuToggle', { detail: { isOpen: newState } }));
+			return newState;
+		});
 	};
 
 	const closeMobileMenu = () => {
 		setIsMobileMenuOpen(false);
+		// Dispatch event for BackButton to listen
+		window.dispatchEvent(new CustomEvent('mobileMenuToggle', { detail: { isOpen: false } }));
 	};
-
-	// Check if loading animation is active (only on home page)
-	useEffect(() => {
-		if (pathname === "/" && isLoading) {
-			// Check periodically if loading is done
-			const interval = setInterval(() => {
-				const updatedValue = sessionStorage.getItem(
-					STORAGE_KEYS.hasShownLoading,
-				);
-				if (updatedValue === "true") {
-					setIsLoading(false);
-					clearInterval(interval);
-				}
-			}, 100);
-			return () => clearInterval(interval);
-		}
-	}, [pathname, isLoading]);
 
 	// Handle scroll to show/hide navbar
 	useEffect(() => {
+		// Initialize scroll position
+		lastScrollY.current = window.scrollY;
+		let timeoutId: NodeJS.Timeout;
+		let ticking = false;
+
 		const handleScroll = () => {
 			const currentScrollY = window.scrollY;
 
+			// Prevent multiple rapid updates
+			if (Math.abs(currentScrollY - lastScrollY.current) < 5) {
+				return;
+			}
+
+			// Clear existing timeout
+			clearTimeout(timeoutId);
+
 			if (currentScrollY < SCROLL.navbarShowThreshold) {
-				// Always show at top with larger threshold
+				// Always show at top
 				setIsVisible(true);
 			} else if (
-				currentScrollY > lastScrollY &&
+				currentScrollY > lastScrollY.current &&
 				currentScrollY > SCROLL.navbarHideThreshold
 			) {
-				// Scrolling down - hide navbar (only after scrolling past threshold)
+				// Scrolling down - hide navbar
 				setIsVisible(false);
-			} else if (currentScrollY < lastScrollY) {
+			} else if (currentScrollY < lastScrollY.current) {
 				// Scrolling up - show navbar
 				setIsVisible(true);
 			}
 
-			setLastScrollY(currentScrollY);
+			lastScrollY.current = currentScrollY;
+
+			// Small delay to prevent rapid state changes
+			timeoutId = setTimeout(() => {
+				// Cleanup flag
+			}, 150);
 		};
 
-		// Debounce scroll events for smoother performance
-		let ticking = false;
 		const debouncedHandleScroll = () => {
 			if (!ticking) {
 				window.requestAnimationFrame(() => {
@@ -92,8 +86,9 @@ const Navbar = () => {
 
 		return () => {
 			window.removeEventListener("scroll", debouncedHandleScroll);
+			clearTimeout(timeoutId);
 		};
-	}, [lastScrollY]);
+	}, []);
 
 	// Handle body scroll when menu opens/closes
 	useEffect(() => {
@@ -109,16 +104,11 @@ const Navbar = () => {
 		};
 	}, [isMobileMenuOpen]);
 
-	// Don't render navbar during loading animation
-	if (isLoading) {
-		return null;
-	}
-
 	return (
 		<>
 			<nav
-				className={`fixed top-4 left-4 right-4 md:left-1/2 md:right-auto md:-translate-x-1/2 z-40 bg-white rounded-full shadow-lg border border-gray-100 transition-all duration-300 ease-in-out ${
-					isVisible ? "translate-y-0 opacity-100" : "-translate-y-24 opacity-0"
+				className={`fixed top-4 left-4 right-4 md:left-1/2 md:right-auto md:-translate-x-1/2 z-40 bg-white rounded-full shadow-lg border border-gray-100 transition-all duration-300 ease-in-out will-change-transform ${
+					isVisible ? "translate-y-0 opacity-100" : "-translate-y-24 opacity-0 pointer-events-none"
 				}`}
 			>
 				<div className="px-6">
@@ -210,16 +200,6 @@ const Navbar = () => {
 
 			{/* Fixed Overlay Drawer - Always rendered, never unmounted */}
 			<div className="md:hidden">
-				{/* Backdrop */}
-				<div
-					className="fixed inset-0 bg-black bg-opacity-40 z-50 transition-opacity duration-200 ease-out"
-					style={{
-						opacity: isMobileMenuOpen ? 1 : 0,
-						pointerEvents: isMobileMenuOpen ? "auto" : "none",
-					}}
-					onClick={closeMobileMenu}
-				/>
-
 				{/* Drawer Panel */}
 				<div
 					className="fixed top-0 right-0 h-screen bg-white shadow-xl z-50"
@@ -263,6 +243,7 @@ const Navbar = () => {
 					<div className="px-6 py-4 space-y-4">
 						<AppLink
 							href="/services"
+							onClick={closeMobileMenu}
 							className={`block w-full text-left px-4 py-4 rounded-lg text-lg font-semibold transition-colors ${
 								isActive("/services")
 									? "text-[#f69052] bg-[#F5A855]/10"
@@ -273,6 +254,7 @@ const Navbar = () => {
 						</AppLink>
 						<AppLink
 							href="/blog"
+							onClick={closeMobileMenu}
 							className={`block w-full text-left px-4 py-4 rounded-lg text-lg font-semibold transition-colors ${
 								isActive("/blog")
 									? "text-[#f69052] bg-[#F5A855]/10"
@@ -283,6 +265,7 @@ const Navbar = () => {
 						</AppLink>
 						<AppLink
 							href="/news-events"
+							onClick={closeMobileMenu}
 							className={`block w-full text-left px-4 py-4 rounded-lg text-lg font-semibold transition-colors ${
 								isActive("/news-events")
 									? "text-[#f69052] bg-[#F5A855]/10"

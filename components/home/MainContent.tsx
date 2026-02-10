@@ -6,6 +6,8 @@ import serviceProviderImage from "@/public/images/service_provider.png";
 import PhoneMockupCenter from "./PhoneMockupCenter";
 import LandingSection from "./LandingSection";
 import MobileSection from "./MobileSection";
+import HeroSection from "./HeroSection";
+import Testimonials from "./Testimonials";
 import { useDesktopHoverAnimations } from "@/hooks/useDesktopHoverAnimations";
 import { useMobileScrollAnimations } from "@/hooks/useMobileScrollAnimations";
 import { useRouter } from "next/navigation";
@@ -52,20 +54,37 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 	});
 
 	return (
-		<div
-			className={`min-h-screen font-body transition-all duration-1000 ease-out overflow-x-hidden ${
-				isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-			}`}
-			style={{
-				background:
-					"linear-gradient(180deg, #F69052 0%, #FAD3B5 60%, #FFF2E6 100%)",
-				backgroundRepeat: "no-repeat",
-				backgroundAttachment: "fixed",
-				transition: "background 0.3s ease-in-out",
-			}}
-		>
+		<>
+			{/* Fixed Background Layers - Covers Entire Viewport */}
+			{/* Gradient Layer */}
+			<div 
+				className="fixed inset-0 z-0"
+				style={{
+					background: "linear-gradient(180deg, #FF7A33 0%, #FFBB99 60%, #FFE8D1 100%)",
+				}}
+			/>
+			
+			{/* Image Layer on top of gradient */}
+			<div 
+				className="fixed inset-0 z-10 opacity-40"
+				style={{
+					backgroundImage: "url('/images/blog-3.png')",
+					backgroundSize: "cover",
+					backgroundPosition: "top",
+					backgroundRepeat: "no-repeat",
+				}}
+			/>
+
+			<div
+				className={`min-h-screen font-body transition-all duration-1000 ease-out overflow-x-hidden relative z-20 ${
+					isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+				}`}
+			>
+				{/* Hero Section - Below Navbar, Above Main Content */}
+				<HeroSection />
+
 			{/* Mobile Layout (Vertical Stack) - Hidden on lg+ */}
-			<div className="flex flex-col items-center justify-center min-h-screen lg:hidden relative px-4 sm:px-6 py-12 pt-32">
+			<div className="flex flex-col items-center justify-center min-h-screen lg:hidden relative px-4 sm:px-6 py-8 pt-12">
 				{/* Pet Parent Section - Top */}
 				<MobileSection
 					title="Pet Parent"
@@ -130,7 +149,11 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 					buttonRef={serviceProviderButtonRef}
 				/>
 			</div>
+
+			{/* Testimonials Section */}
+			<Testimonials />
 		</div>
+		</>
 	);
 };
 

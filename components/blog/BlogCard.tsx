@@ -1,4 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { AppLink } from "../shared/AppLink";
 
 interface BlogCardProps {
@@ -22,13 +27,46 @@ const BlogCard = ({
 	onClick,
 	imagePosition = "30%",
 }: BlogCardProps) => {
+	const cardRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		const mm = gsap.matchMedia();
+
+		// Only apply scroll animation on mobile/tablet (below lg breakpoint)
+		mm.add("(max-width: 1023px)", () => {
+			if (cardRef.current) {
+				gsap.fromTo(
+					cardRef.current,
+					{ scale: 0.95, opacity: 0.8 },
+					{
+						scale: 1.15,
+						opacity: 1,
+						scrollTrigger: {
+							trigger: cardRef.current,
+							start: "top 80%",
+							end: "center center",
+							scrub: 1,
+						},
+					}
+				);
+			}
+		});
+
+		return () => {
+			mm.revert();
+		};
+	}, []);
+
 	return (
-		<AppLink
-			href={`/blog/${id}`}
-			className="group bg-white rounded-2xl border-2 border-[#F5A855] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-		>
-			{/* Image */}
-			<div className="relative shrink-0 w-full h-48 sm:h-56 bg-linear-to-br from-[#F69052]/20 to-[#FAD3B5]/40 flex items-center justify-center overflow-hidden">
+		<div ref={cardRef}>
+			<AppLink
+				href={`/blog/${id}`}
+				className="group bg-white rounded-2xl border-2 border-[#F5A855] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.15] cursor-pointer block"
+			>
+				{/* Image */}
+				<div className="relative shrink-0 w-full h-48 sm:h-56 bg-linear-to-br from-[#F69052]/20 to-[#FAD3B5]/40 flex items-center justify-center overflow-hidden">
 				{imageUrl ? (
 					<>
 						<Image
@@ -37,6 +75,8 @@ const BlogCard = ({
 							fill
 							className="object-cover"
 							style={{ objectPosition: `center ${imagePosition}` }}
+							sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+							priority={id === 1}
 						/>
 						<div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
 					</>
@@ -70,6 +110,7 @@ const BlogCard = ({
 				</div>
 			</div>
 		</AppLink>
+		</div>
 	);
 };
 

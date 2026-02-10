@@ -8,13 +8,32 @@ import {
 
 const AboutUsPage = () => {
 	return (
-		<div className="mt-28">
-			<FoundersStory />
-			<Mission />
-			<Vision />
-			<Values />
-			<MeetTheTeam />
-		</div>
+		<>
+			{/* Fixed Background Layers */}
+			<div 
+				className="fixed inset-0 z-0"
+				style={{
+					background: "linear-gradient(180deg, #FF7A33 0%, #FFBB99 60%, #FFE8D1 100%)",
+				}}
+			/>
+			<div 
+				className="fixed inset-0 z-10 opacity-40"
+				style={{
+					backgroundImage: "url('/images/blog-5.png')",
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+					backgroundRepeat: "no-repeat",
+				}}
+			/>
+
+			<div className="mt-28 relative z-20">
+				<FoundersStory />
+				<Mission />
+				<Vision />
+				<Values />
+				<MeetTheTeam />
+			</div>
+		</>
 	);
 };
 

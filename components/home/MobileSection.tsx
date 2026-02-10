@@ -6,8 +6,8 @@ interface MobileSectionProps {
 	image: StaticImageData | string;
 	navigateTo: string;
 	onNavigate: (path: string) => void;
-	imageRef?: React.RefObject<HTMLDivElement>;
-	buttonRef?: React.RefObject<HTMLButtonElement>;
+	imageRef?: React.RefObject<HTMLDivElement | null>;
+	buttonRef?: React.RefObject<HTMLButtonElement | null>;
 	className?: string;
 }
 

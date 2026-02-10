@@ -46,6 +46,7 @@ const BlogArticle1 = () => {
 						fill
 						className="object-cover"
 						style={{ objectPosition: "center 30%" }}
+						sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 896px"
 					/>
 				</div>
 

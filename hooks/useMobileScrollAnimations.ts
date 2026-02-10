@@ -3,10 +3,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface UseMobileScrollAnimationsProps {
-	mobileParentImageRef: RefObject<HTMLDivElement>;
-	mobileParentButtonRef: RefObject<HTMLButtonElement>;
-	mobileProviderImageRef: RefObject<HTMLDivElement>;
-	mobilePhoneRef: RefObject<HTMLDivElement>;
+	mobileParentImageRef: RefObject<HTMLDivElement | null>;
+	mobileParentButtonRef: RefObject<HTMLButtonElement | null>;
+	mobileProviderImageRef: RefObject<HTMLDivElement | null>;
+	mobilePhoneRef: RefObject<HTMLDivElement | null>;
 }
 
 export const useMobileScrollAnimations = ({

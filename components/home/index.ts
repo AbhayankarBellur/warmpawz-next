@@ -4,3 +4,5 @@ export { default as PhoneMockupCenter } from "./PhoneMockupCenter";
 export { default as LandingSection } from "./LandingSection";
 export { default as MobileSection } from "./MobileSection";
 export { default as HomePageClient } from "./HomePageClient";
+export { default as HeroSection } from "./HeroSection";
+export { default as Testimonials } from "./Testimonials";

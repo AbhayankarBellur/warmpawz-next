@@ -34,8 +34,17 @@ const BlogPage = () => {
 	}));
 
 	return (
-		<div className="px-4 sm:px-6 lg:px-8 mt-32">
-			<BackButton className="bg-secondary border-border hover:bg-muted text-foreground" />
+		<>
+			{/* Fixed Background Layer - Gradient Only */}
+			<div 
+				className="fixed inset-0 z-0"
+				style={{
+					background: "linear-gradient(180deg, #F69052 0%, #FAD3B5 60%, #FFF2E6 100%)",
+				}}
+			/>
+
+			<div className="px-4 sm:px-6 lg:px-8 mt-32 relative z-20">
+				<BackButton className="bg-secondary border-border hover:bg-muted text-foreground" />
 			<div className="max-w-7xl mx-auto py-16 sm:py-24">
 				{/* Header */}
 				<div className="text-center mb-12 sm:mb-16">
@@ -55,6 +64,7 @@ const BlogPage = () => {
 				</div>
 			</div>
 		</div>
+		</>
 	);
 };
 

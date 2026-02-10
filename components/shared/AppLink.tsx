@@ -10,6 +10,7 @@ interface AppLinkProps extends LinkProps {
 	className?: string;
 	style?: React.CSSProperties;
 	target?: string;
+	onClick?: () => void;
 }
 
 export function AppLink({
@@ -18,6 +19,7 @@ export function AppLink({
 	className = "",
 	style,
 	target,
+	onClick,
 	...props
 }: AppLinkProps) {
 	const [loading, setLoading] = useState(false);
@@ -33,6 +35,10 @@ export function AppLink({
 		// Don't show loader if clicking the same page
 		if (hrefString !== pathname) {
 			setLoading(true);
+		}
+		// Call the passed onClick if provided
+		if (onClick) {
+			onClick();
 		}
 	};
 

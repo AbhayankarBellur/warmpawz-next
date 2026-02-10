@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import NavBar from "@/components/layout/NavBar";
-import Footer from "@/components/layout/Footer";
+import ClientLayout from "@/components/layout/ClientLayout";
 import { GRADIENTS } from "@/config/constants";
 import { Baloo_2 } from "next/font/google";
 
@@ -33,9 +32,7 @@ export default function RootLayout({
 					minHeight: "100vh",
 				}}
 			>
-				<NavBar />
-				{children}
-				<Footer />
+				<ClientLayout>{children}</ClientLayout>
 			</body>
 		</html>
 	);

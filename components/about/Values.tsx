@@ -54,6 +54,7 @@ const Values = () => {
 						fill
 						className="object-cover"
 						loading="eager"
+						sizes="(max-width: 768px) 160px, (max-width: 1024px) 144px, 224px"
 					/>
 				</div>
 				<h3 className="text-3xl md:text-2xl lg:text-2xl font-bold text-gray-900 mb-3 lg:mb-3">
