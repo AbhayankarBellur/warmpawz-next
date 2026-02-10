@@ -5,13 +5,13 @@ const CareersPage = () => {
 		<>
 			{/* Fixed Background Layers */}
 			<div 
-				className="fixed inset-0 z-0"
+				className="fixed left-0 right-0 top-[-10vh] bottom-[-10vh] z-0"
 				style={{
 					background: "linear-gradient(180deg, #FF7A33 0%, #FFBB99 60%, #FFE8D1 100%)",
 				}}
 			/>
 			<div 
-				className="fixed inset-0 z-10 opacity-40"
+				className="fixed left-0 right-0 top-[-10vh] bottom-[-10vh] z-10 opacity-40"
 				style={{
 					backgroundImage: "url('/images/shakira.jpeg')",
 					backgroundSize: "cover",

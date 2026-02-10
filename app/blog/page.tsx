@@ -37,7 +37,7 @@ const BlogPage = () => {
 		<>
 			{/* Fixed Background Layer - Gradient Only */}
 			<div 
-				className="fixed inset-0 z-0"
+				className="fixed left-0 right-0 top-[-10vh] bottom-[-10vh] z-0"
 				style={{
 					background: "linear-gradient(180deg, #F69052 0%, #FAD3B5 60%, #FFF2E6 100%)",
 				}}
