@@ -4,7 +4,7 @@ import { useState } from "react";
 
 interface FAQItem {
 	question: string;
-	answer: string;
+	answer: string | React.ReactNode;
 }
 
 const faqData: FAQItem[] = [
@@ -16,7 +16,7 @@ const faqData: FAQItem[] = [
 	{
 		question: "Can I find pet services near me on Warmpawz?",
 		answer:
-			"Yes. Warmpawz helps pet parents discover local pet care services — including veterinary care, grooming, boarding, walking, and training — based on their location and their pet's specific needs. Warmpawz endeavors to be Hyperlocal in all its services.",
+			"Yes. Warmpawz helps pet parents discover local pet care services — including veterinary care, nutritionists, grooming, boarding, walking, and training — based on their location and their pet's specific needs. Warmpawz endeavors to be Hyperlocal in all its services.",
 	},
 	{
 		question: "How does Warmpawz ensure pet care services are trustworthy?",
@@ -30,8 +30,18 @@ const faqData: FAQItem[] = [
 	},
 	{
 		question: "Can pet parents contribute to the Warmpawz community?",
-		answer:
-			"Yes. Pet parents are encouraged to share experiences, insights, and feedback that help strengthen the pet care ecosystem. Warmpawz values participation and collective learning as essential to better care. Pet Parents can write to a dedicated operations team to recommend providers, make suggestions for service improvements and contribute with their experience.",
+		answer: (
+			<>
+				Yes. Pet parents are encouraged to share experiences, insights, and feedback that help strengthen the pet care ecosystem. Warmpawz values participation and collective learning as essential to better care. Pet Parents can write to{" "}
+				<a 
+					href="mailto:contact@warmpawz.com" 
+					className="text-primary hover:underline font-medium"
+				>
+					contact@warmpawz.com
+				</a>{" "}
+				to recommend providers, make suggestions for service improvements and contribute with their experience.
+			</>
+		),
 	},
 ];
 
@@ -71,7 +81,7 @@ const FAQSection = () => {
 								<h3 className="text-lg sm:text-xl font-semibold text-foreground pr-4">
 									{faq.question}
 								</h3>
-								<div className="flex-shrink-0">
+							<div className="shrink-0">
 									<svg
 										className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${
 											openIndex === index ? "rotate-180" : ""

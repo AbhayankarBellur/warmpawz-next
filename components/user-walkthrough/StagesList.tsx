@@ -11,9 +11,9 @@ interface Stage {
 const stages: Stage[] = [
   {
     stage: 1,
-    title: "Adoption Services",
+    title: "Find your Companion",
     description:
-      "Warmpawz helps aspiring pet parents discover adoptable companions that truly fit their home and lifestyle, supported by verified experts who guide health checks, adoption readiness, and early parenting care. From first meetings to the first week at home, you're never navigating the beginning alone.",
+      "Warmpawz helps aspiring pet parents discover companions that truly fit their home and lifestyle, supported by verified experts who guide health checks, readiness, and early parenting care. From first meetings to the first week at home, you're never navigating the beginning alone.",
     videoSrc: "/videos/adoption-v2.mp4",
     isLeft: true,
   },
@@ -27,26 +27,26 @@ const stages: Stage[] = [
   },
   {
     stage: 3,
-    title: "Walking, Training and Behaviourist Services",
-    description:
-      "Warmpawz connects pet parents with trusted dog walking, training, and behaviourist services near them, supporting daily exercise, obedience, and emotional wellbeing. From reliable walks to expert guidance for anxiety or behavioural challenges, we help build confident pets and stronger family bonds.",
-    videoSrc: "/videos/pet-training.mp4",
-    isLeft: true,
-  },
-  {
-    stage: 4,
-    title: "Pet Boarding, Cafe's and Holiday Services",
-    description:
-      "Warmpawz helps pet parents find trusted pet boarding, pet cafés, and pet-friendly holiday stays near them, making it easier to plan outings or travel without leaving your pet behind. From safe boarding and daycare to welcoming cafés and pet-friendly hotels, your pet stays included, comfortable, and cared for.",
-    videoSrc: "/videos/pet-boarding-new.mp4",
-    isLeft: false,
-  },
-  {
-    stage: 5,
     title: "Pet Products and Nutrition Services",
     description:
       "Warmpawz offers trusted pet products and nutrition services — from curated food, treats, accessories, and clothing to expert-guided nutrition plans and meal subscriptions, delivering a shop-like buying experience from the comfort of your home, tailored to your pet's health needs.",
     videoSrc: "/videos/pawsome-mart.mp4",
+    isLeft: true,
+  },
+  {
+    stage: 4,
+    title: "Walking, Training and Behaviourist Services",
+    description:
+      "Warmpawz connects pet parents with trusted dog walking, training, and behaviourist services near them, supporting daily exercise, obedience, and emotional wellbeing. From reliable walks to expert guidance for anxiety or behavioural challenges, we help build confident pets and stronger family bonds.",
+    videoSrc: "/videos/pet-training.mp4",
+    isLeft: false,
+  },
+  {
+    stage: 5,
+    title: "Pet Boarding, Cafe's and Holiday Services",
+    description:
+      "Warmpawz helps pet parents find trusted pet boarding, pet cafés, and pet-friendly holiday stays near them, making it easier to plan outings or travel without leaving your pet behind. From safe boarding and daycare to welcoming cafés and pet-friendly hotels, your pet stays included, comfortable, and cared for.",
+    videoSrc: "/videos/pet-boarding-new.mp4",
     isLeft: true,
   },
   {
