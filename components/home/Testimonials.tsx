@@ -13,44 +13,72 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
 	{
 		id: 1,
-		name: "Sarah Johnson",
+		name: "Priya Malhotra",
 		role: "Pet Parent",
-		content: "Warmpawz made finding a trusted dog walker so easy! The verification process gave me peace of mind.",
+		content: "If I could book my dog's groomer in one click, I'd be set. This will save me so many phone calls!",
 		rating: 5,
 	},
 	{
 		id: 2,
-		name: "Mike Chen",
-		role: "Service Provider",
-		content: "As a pet groomer, Warmpawz helped me connect with more clients and grow my business significantly.",
-		rating: 5,
+		name: "Arjun Rao",
+		role: "Pet Parent",
+		content: "With this, I'll finally get a trusted trainer without endless recommendations. Can't come soon enough!",
+		rating: 4.5,
 	},
 	{
 		id: 3,
-		name: "Emily Rodriguez",
+		name: "Kavita Iyer",
 		role: "Pet Parent",
-		content: "The platform is incredibly user-friendly. I found the perfect vet for my cat within minutes!",
+		content: "I'll finally stop stressing about last-minute boarding—just a tap, and done!",
 		rating: 5,
 	},
 	{
 		id: 4,
-		name: "David Park",
-		role: "Service Provider",
-		content: "Warmpawz streamlined my booking process and helped me reach pet parents who truly need my services.",
+		name: "Nikhil Sharma",
+		role: "Pet Parent",
+		content: "If I can find a vet near me instantly, I'm signing up day one!",
 		rating: 5,
 	},
 	{
 		id: 5,
-		name: "Jessica Williams",
+		name: "Rhea Menon",
 		role: "Pet Parent",
-		content: "From adoption guidance to everyday care, Warmpawz has been my go-to platform. Highly recommend!",
-		rating: 5,
+		content: "Adoption to sunset care—everything in one place? That's a dream for pet parents!",
+		rating: 4.5,
 	},
 	{
 		id: 6,
-		name: "Alex Thompson",
+		name: "Suresh Verma",
+		role: "Pet Parent",
+		content: "This will help me schedule home visits for my pup without chasing calls. Perfect!",
+		rating: 5,
+	},
+	{
+		id: 7,
+		name: "Ananya Joshi",
 		role: "Service Provider",
-		content: "The transparency and trust built into the platform makes it easy to showcase my expertise and credentials.",
+		content: "I'll finally get clients who need tele-consults—no more missed opportunities!",
+		rating: 5,
+	},
+	{
+		id: 8,
+		name: "Rahul Deshmukh",
+		role: "Service Provider",
+		content: "It'll put my grooming services on the map—easy for pet parents to book me!",
+		rating: 4.5,
+	},
+	{
+		id: 9,
+		name: "Meera Kapoor",
+		role: "Service Provider",
+		content: "I'll have my entire training schedule online—no more back-and-forth with clients!",
+		rating: 5,
+	},
+	{
+		id: 10,
+		name: "Varun Gupta",
+		role: "Service Provider",
+		content: "A single place to offer my adoption services? This will connect me to the right families!",
 		rating: 5,
 	},
 ];
@@ -80,15 +108,46 @@ const Testimonials = () => {
 					>
 						{/* Rating Stars */}
 						<div className="flex gap-1 mb-4">
-							{[...Array(testimonial.rating)].map((_, i) => (
-								<svg
-									key={i}
-									className="w-5 h-5 fill-[#F69052]"
-									viewBox="0 0 20 20"
-								>
-									<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-								</svg>
-							))}
+							{[...Array(5)].map((_, i) => {
+								const isFullStar = i < Math.floor(testimonial.rating);
+								const isHalfStar = i === Math.floor(testimonial.rating) && testimonial.rating % 1 !== 0;
+								
+								return (
+									<div key={i} className="relative w-5 h-5">
+										{isFullStar ? (
+											<svg
+												className="w-5 h-5 fill-[#F69052]"
+												viewBox="0 0 20 20"
+											>
+												<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+											</svg>
+										) : isHalfStar ? (
+											<>
+												<svg
+													className="w-5 h-5 fill-gray-300 absolute"
+													viewBox="0 0 20 20"
+												>
+													<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+												</svg>
+												<svg
+													className="w-5 h-5 fill-[#F69052] absolute"
+													viewBox="0 0 20 20"
+													style={{ clipPath: 'inset(0 50% 0 0)' }}
+												>
+													<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+												</svg>
+											</>
+										) : (
+											<svg
+												className="w-5 h-5 fill-gray-300"
+												viewBox="0 0 20 20"
+											>
+												<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+											</svg>
+										)}
+									</div>
+								);
+							})}
 						</div>
 
 						{/* Content */}
