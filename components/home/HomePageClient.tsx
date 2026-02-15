@@ -5,24 +5,23 @@ import { LoadingScreen, MainContent } from "@/components/home";
 import { STORAGE_KEYS } from "@/config/constants";
 
 const HomePageClient = () => {
-	const [isLoading, setIsLoading] = useState(false);
-	const [showContent, setShowContent] = useState(false);
+	// Use lazy initialization to avoid synchronous setState in effect
+	const [isLoading, setIsLoading] = useState(() => {
+		if (typeof window === 'undefined') return false;
+		const hasShownLoading = sessionStorage.getItem(STORAGE_KEYS.hasShownLoading);
+		return hasShownLoading !== "true";
+	});
+	
+	const [showContent, setShowContent] = useState(() => {
+		if (typeof window === 'undefined') return false;
+		const hasShownLoading = sessionStorage.getItem(STORAGE_KEYS.hasShownLoading);
+		return hasShownLoading === "true";
+	});
 
 	useEffect(() => {
-		// Check if loading animation has already been shown this session
-		const hasShownLoading = sessionStorage.getItem(
-			STORAGE_KEYS.hasShownLoading,
-		);
-
-		if (hasShownLoading === "true") {
-			// Animation already shown - skip it
-			setIsLoading(false);
-			setShowContent(true);
-		} else {
-			// First visit this session - show loading animation
-			setIsLoading(true);
-			setShowContent(false);
-			// Mark that we've shown the loading animation
+		// Mark that we've shown the loading animation (only for first visit)
+		const hasShownLoading = sessionStorage.getItem(STORAGE_KEYS.hasShownLoading);
+		if (hasShownLoading !== "true") {
 			sessionStorage.setItem(STORAGE_KEYS.hasShownLoading, "true");
 		}
 	}, []);

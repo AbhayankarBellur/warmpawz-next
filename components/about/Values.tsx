@@ -76,7 +76,7 @@ const Values = () => {
 			<div className="max-w-6xl mx-auto">
 				{/* Header outside the card stack */}
 				<div className="text-center mb-12">
-					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+					<h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
 						Our Values
 					</h2>
 					<div className="w-24 h-1 bg-[#F5A855] mx-auto rounded-full"></div>

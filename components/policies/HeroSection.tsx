@@ -4,7 +4,7 @@ const HeroSection = () => {
 			<div className="max-w-4xl mx-auto">
 				{/* Header - Outside the box */}
 				<div className="text-center mb-8">
-					<h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+					<h1 className="text-4xl md:text-5xl font-bold text-white">
 						Data Privacy & Protection Policy
 					</h1>
 				</div>

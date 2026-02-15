@@ -68,7 +68,7 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 					
 					{/* Image Layer on top of gradient */}
 					<div 
-						className="fixed inset-0 z-10 opacity-40"
+						className="fixed inset-0 z-10 opacity-60"
 						style={{
 							backgroundImage: "url('/images/shakira.jpeg')",
 							backgroundSize: "cover",

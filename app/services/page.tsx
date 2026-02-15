@@ -12,9 +12,9 @@ const ServicesPage = () => {
 			/>
 			
 			<div 
-				className="fixed inset-0 z-10 opacity-40"
+				className="fixed inset-0 z-10 opacity-60"
 				style={{
-					backgroundImage: "url('/images/shakira.jpeg')",
+					backgroundImage: "url('/images/scruffy1.jpeg')",
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					backgroundRepeat: "no-repeat",
@@ -23,10 +23,10 @@ const ServicesPage = () => {
 
 			<div className="px-4 sm:px-6 lg:px-8 mt-32 relative min-h-screen z-20">
 				<div className="max-w-6xl mx-auto relative">
-					<h1 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-4">
+					<h1 className="text-4xl md:text-5xl font-bold text-white text-center mb-4">
 						Our Services
 					</h1>
-					<p className="text-center text-gray-900 mb-8 text-lg w-[80%] lg:w-1/2 mx-auto font-semibold">
+					<p className="text-center text-white mb-8 text-lg w-[80%] lg:w-1/2 mx-auto font-semibold">
 						Warmpawz brings every stage of pet care into one trusted, connected,
 						compassionate ecosystem — for those who love pets and those who care
 						and are concerned for them.

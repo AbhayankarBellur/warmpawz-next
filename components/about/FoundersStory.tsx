@@ -13,7 +13,7 @@ const FoundersStory = () => {
 		>
 			<div className="max-w-4xl mx-auto">
 				<div className="text-center mb-16">
-					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+					<h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
 						Our Story
 					</h2>
 					<div className="w-24 h-1 bg-[#F5A855] mx-auto rounded-full"></div>

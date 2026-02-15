@@ -129,11 +129,11 @@ const MeetTheTeam = () => {
 		<section id="team" className="py-16 px-4 sm:px-6 lg:px-8">
 			<div className="max-w-6xl mx-auto">
 				<div className="text-center mb-16">
-					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+					<h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
 						Meet Our Team
 					</h2>
-					<div className="w-24 h-1 bg-[#F5A855] mx-auto rounded-full mb-6"></div>
-					<p className="text-xl text-gray-600 max-w-3xl mx-auto">
+					<div className="w-24 h-1 bg-[#F69052] mx-auto rounded-full mb-6"></div>
+					<p className="text-xl text-white max-w-3xl mx-auto">
 						Together, they're building Warmpawz the way a pack should — with
 						trust, warmth, and a whole lot of heart!
 					</p>
