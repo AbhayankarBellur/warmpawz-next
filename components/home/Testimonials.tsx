@@ -85,12 +85,12 @@ const testimonials: Testimonial[] = [
 
 const Testimonials = () => {
 	return (
-		<section className="w-full bg-white/30 backdrop-blur-sm py-16 sm:py-20 lg:py-24">
+		<section className="w-full bg-[#C8D5C8] py-16 sm:py-20 lg:py-24">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-				<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-gray-800 mb-3">
+				<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-[#3A2A26] mb-3">
 					What Our Community Says
 				</h2>
-				<p className="text-center text-gray-600 text-base sm:text-lg">
+				<p className="text-center text-[#6F6663] text-base sm:text-lg">
 					Join thousands of happy pet parents and service providers
 				</p>
 			</div>
@@ -104,7 +104,7 @@ const Testimonials = () => {
 				{testimonials.map((testimonial) => (
 					<div
 						key={testimonial.id}
-						className="mx-4 bg-white rounded-2xl p-6 shadow-lg border-2 border-[#F5A855] w-80 sm:w-96 shrink-0"
+						className="mx-4 bg-[#F9F6F3] rounded-2xl p-6 shadow-lg border-2 border-[#6F8A73] w-80 sm:w-96 shrink-0"
 					>
 						{/* Rating Stars */}
 						<div className="flex gap-1 mb-4">
@@ -151,16 +151,16 @@ const Testimonials = () => {
 						</div>
 
 						{/* Content */}
-						<p className="text-gray-700 text-sm sm:text-base mb-6 leading-relaxed font-medium">
+						<p className="text-[#6F6663] text-sm sm:text-base mb-6 leading-relaxed font-medium">
 							&ldquo;{testimonial.content}&rdquo;
 						</p>
 
 						{/* Author */}
-						<div className="border-t border-gray-200 pt-4">
-							<h4 className="font-bold text-gray-800 text-base">
+						<div className="border-t border-[#6F8A73]/30 pt-4">
+							<h4 className="font-bold text-[#3A2A26] text-base">
 								{testimonial.name}
 							</h4>
-							<p className="text-sm text-gray-500">{testimonial.role}</p>
+							<p className="text-sm text-[#6F6663]">{testimonial.role}</p>
 						</div>
 					</div>
 				))}

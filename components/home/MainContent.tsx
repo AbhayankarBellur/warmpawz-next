@@ -8,6 +8,8 @@ import LandingSection from "./LandingSection";
 import MobileSection from "./MobileSection";
 import HeroSection from "./HeroSection";
 import Testimonials from "./Testimonials";
+import FeatureSection from "./FeatureSection";
+import MetricsSection from "./MetricsSection";
 import { useDesktopHoverAnimations } from "@/hooks/useDesktopHoverAnimations";
 import { useMobileScrollAnimations } from "@/hooks/useMobileScrollAnimations";
 import { useRouter } from "next/navigation";
@@ -55,110 +57,128 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 
 	return (
 		<>
-			{/* Background Layers - Only render after loading completes */}
-			{isVisible && (
-				<>
-					{/* Gradient Layer */}
-					<div 
-						className="fixed inset-0 z-0"
-						style={{
-							background: "linear-gradient(180deg, #FF7A33 0%, #FFBB99 60%, #FFE8D1 100%)",
-						}}
-					/>
-					
-					{/* Image Layer on top of gradient */}
-					<div 
-						className="fixed inset-0 z-10 opacity-60"
-						style={{
-							backgroundImage: "url('/images/shakira.jpeg')",
-							backgroundSize: "cover",
-							backgroundPosition: "top center",
-							backgroundRepeat: "no-repeat",
-						}}
-					/>
-				</>
-			)}
-
 			<div
-				className={`min-h-screen font-body transition-all duration-1000 ease-out overflow-x-hidden relative z-20 ${
+				className={`min-h-screen font-body transition-all duration-1000 ease-out overflow-x-hidden bg-[#E7A3A6] relative ${
 					isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
 				}`}
 			>
-			{/* Hero Section - Below Navbar, Above Main Content */}
-			<HeroSection />
+				{/* Mobile Layout (Vertical Stack) - Hidden on lg+ */}
+				<div className="flex flex-col items-center justify-center min-h-screen lg:hidden relative px-4 sm:px-6 py-8 pt-24">
+					{/* Pet Parent Section - Top */}
+					<MobileSection
+						title="Pet Parent"
+						image={petTrainingImage}
+						navigateTo="/user-walkthrough"
+						onNavigate={handleNavigation}
+						imageRef={mobileParentImageRef}
+						buttonRef={mobileParentButtonRef}
+						className="mb-16 sm:mb-20"
+					/>
 
-		{/* Mobile Layout (Vertical Stack) - Hidden on lg+ */}
-		<div className="flex flex-col items-center justify-center min-h-screen lg:hidden relative px-4 sm:px-6 py-8 pt-12">
-			{/* Pet Parent Section - Top */}
-			<MobileSection
-					title="Pet Parent"
-					image={petTrainingImage}
-					navigateTo="/user-walkthrough"
-					onNavigate={handleNavigation}
-					imageRef={mobileParentImageRef}
-					buttonRef={mobileParentButtonRef}
-					className="mb-16 sm:mb-20"
-				/>
+					{/* Center Mobile Frame with Warmpawz Heading */}
+					<div className="flex flex-col items-center mb-8 sm:mb-10">
+						<PhoneMockupCenter ref={mobilePhoneRef} variant="mobile" />
+					</div>
 
-				{/* Center Mobile Frame with Warmpawz Heading */}
-				<div className="flex flex-col items-center mb-8 sm:mb-10">
-					<PhoneMockupCenter ref={mobilePhoneRef} variant="mobile" />
+					{/* Service Provider Section - Bottom */}
+					<MobileSection
+						title="Service Provider"
+						image={serviceProviderImage}
+						navigateTo="/vendor-onboarding"
+						onNavigate={handleNavigation}
+						imageRef={mobileProviderImageRef}
+						className="-mt-20 sm:-mt-24 pt-10 md:-mt-28"
+					/>
 				</div>
 
-				{/* Service Provider Section - Bottom */}
-				<MobileSection
-					title="Service Provider"
-					image={serviceProviderImage}
-					navigateTo="/vendor-onboarding"
-					onNavigate={handleNavigation}
-					imageRef={mobileProviderImageRef}
-					className="-mt-20 sm:-mt-24 pt-10 md:-mt-28"
-				/>
-			</div>
+				{/* Desktop/Laptop Layout (Horizontal Split Screen) - Hidden below lg */}
+				<div className="hidden lg:flex h-screen w-full relative">
+					{/* Pet Parent Section - Left Side (Full Height) */}
+					<LandingSection
+						ref={petParentRef}
+						title="Pet Parent"
+						image={petTrainingImage}
+						navigateTo="/user-walkthrough"
+						onNavigate={handleNavigation}
+						onMouseEnter={() => setHoveredSection(0)}
+						onMouseLeave={() => setHoveredSection(null)}
+						imageRef={petParentImageRef}
+						buttonRef={petParentButtonRef}
+					/>
 
-			{/* Desktop/Laptop Layout (Horizontal Split Screen) - Hidden below lg */}
-			<div className="hidden lg:flex h-screen w-full relative">
-				{/* Pet Parent Section - Left Side (Full Height) */}
-				<LandingSection
-					ref={petParentRef}
-					title="Pet Parent"
-					image={petTrainingImage}
-					navigateTo="/user-walkthrough"
-					onNavigate={handleNavigation}
-					onMouseEnter={() => setHoveredSection(0)}
-					onMouseLeave={() => setHoveredSection(null)}
-					imageRef={petParentImageRef}
-					buttonRef={petParentButtonRef}
-				/>
+					{/* Center Mobile Frame with Warmpawz Heading - Floating */}
+					<div
+						className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-auto"
+						onMouseEnter={() => setHoveredSection(2)}
+						onMouseLeave={() => setHoveredSection(null)}
+					>
+						<PhoneMockupCenter ref={centerPhoneRef} variant="desktop" />
+					</div>
 
-				{/* Center Mobile Frame with Warmpawz Heading - Floating */}
-				<div
-					className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-auto"
-					onMouseEnter={() => setHoveredSection(2)}
-					onMouseLeave={() => setHoveredSection(null)}
-				>
-					<PhoneMockupCenter ref={centerPhoneRef} variant="desktop" />
+					{/* Service Provider Section - Right Side (Full Height) */}
+					<LandingSection
+						ref={serviceProviderRef}
+						title="Service Provider"
+						image={serviceProviderImage}
+						navigateTo="/vendor-onboarding"
+						onNavigate={handleNavigation}
+						onMouseEnter={() => setHoveredSection(1)}
+						onMouseLeave={() => setHoveredSection(null)}
+						imageRef={serviceProviderImageRef}
+						buttonRef={serviceProviderButtonRef}
+					/>
 				</div>
 
-				{/* Service Provider Section - Right Side (Full Height) */}
-				<LandingSection
-					ref={serviceProviderRef}
-					title="Service Provider"
-					image={serviceProviderImage}
-					navigateTo="/vendor-onboarding"
-					onNavigate={handleNavigation}
-					onMouseEnter={() => setHoveredSection(1)}
-					onMouseLeave={() => setHoveredSection(null)}
-					imageRef={serviceProviderImageRef}
-					buttonRef={serviceProviderButtonRef}
+				{/* Additional Feature Sections */}
+				<FeatureSection
+					title="Connect with Pet Parents"
+					description="Join a community of caring pet parents. Share experiences, get advice, and discover the best care options for your furry family members."
+					imageSrc="/images/scruffy.jpeg"
+					buttonText="Pet Parent Journey"
+					onButtonClick={() => handleNavigation("/user-walkthrough")}
+					reverse={false}
 				/>
-			</div>
 
-			{/* Testimonials Section */}
-			<Testimonials />
-		</div>
+				<FeatureSection
+					title="Expert Pet Care Providers"
+					description="Verified professionals ready to care for your pets. Our network includes experienced veterinarians, groomers, trainers, and more."
+					imageSrc="/images/scruffy1.jpeg"
+					buttonText="Join as Provider"
+					onButtonClick={() => handleNavigation("/vendor-onboarding")}
+					reverse={true}
+				/>
+
+				<FeatureSection
+					title="Trusted by Thousands"
+					description="Thousands of pet parents trust Warmpawz for their pet care needs. Join our growing community and give your pet the care they deserve."
+					imageSrc="/images/gsd.jpeg"
+					buttonText="About Us"
+					onButtonClick={() => handleNavigation("/about")}
+					reverse={false}
+				/>
+
+				{/* Feature Section with shakira.jpeg - moved before testimonials */}
+				<FeatureSection
+					title="Discover Premium Pet Care Services"
+					description="Connect with trusted pet care providers in your area. From veterinary care to grooming, training to boarding - find everything your pet needs in one place."
+					imageSrc="/images/shakira.jpeg"
+					buttonText="Explore Services"
+					onButtonClick={() => handleNavigation("/services")}
+					reverse={true}
+				/>
+
+				{/* Metrics Section */}
+				<MetricsSection />
+
+				{/* Hero Section - moved before testimonials */}
+				<HeroSection />
+
+				{/* Testimonials Section */}
+				<Testimonials />
+			</div>
 		</>
 	);
 };
 
 export default MainContent;
+

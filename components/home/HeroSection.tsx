@@ -2,39 +2,37 @@
 
 const HeroSection = () => {
 	return (
-		<section className="w-full px-4 sm:px-6 lg:px-8 pt-40 pb-20 lg:pt-48 lg:pb-24">
-			<div className="max-w-6xl mx-auto">
-				<article className="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg border-2 border-[#F5A855]">
-					<div className="space-y-6 text-base sm:text-lg text-gray-800 text-justify leading-relaxed font-medium">
-						<p>
-							Warmpawz is aspiring to become more than a Trusted Pet Care Platform by
-							reimagining how Pet Parents discover and consume services at the
-							same time enabling Service Providers to create and deliver services
-							quickly and efficiently.
-						</p>
+		<section className="w-full px-6 sm:px-8 lg:px-16 pt-40 pb-20 lg:pt-48 lg:pb-24 bg-[#E7A3A6]">
+			<div className="max-w-4xl mx-auto text-center">
+				{/* Main Headline */}
+				<h1 className="text-[28px] sm:text-[40px] lg:text-[48px] font-bold leading-tight mb-5 sm:mb-6 text-[#3A2A26]">
+					<span className="font-light block">Trusted Pet Care</span>
+					<span className="font-bold block">That Actually Works</span>
+					<span className="font-medium block">For Modern Families</span>
+				</h1>
 
-						<p>
-							Warmpawz connects pet parents with verified pet care professionals
-							— and helps service providers grow with trust, transparency, and
-							community.
-						</p>
+				{/* Subheading */}
+				<p className="text-[16px] sm:text-[20px] lg:text-[22px] font-normal text-[#3A2A26] mb-7 sm:mb-9 leading-relaxed max-w-2xl mx-auto">
+					Connect with verified pet care professionals. Book services instantly. Join a caring community.
+				</p>
 
-						<p>
-							For families, it simplifies the pet parenting journey — from
-							adoption guidance and everyday care to moments that need reassurance
-							and clarity— by enabling access to verified pet services near you.
-							For service providers, it offers a structured, transparent space to
-							showcase expertise, reach the right pet parents, and grow with
-							credibility.
-						</p>
-
-						<p>
-							More than a marketplace, Warmpawz is a connected pet care ecosystem
-							— built on trust, care, and shared responsibility for better lives
-							for pets.
-						</p>
+				{/* Pill Blocks - Benefits */}
+				<div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-10">
+					<div className="bg-[#F9F6F3] px-6 py-3 rounded-full shadow-md border border-[#6F8A73]/20">
+						<span className="text-[14px] sm:text-[16px] font-semibold text-[#3A2A26]">✓ Verified Experts</span>
 					</div>
-				</article>
+					<div className="bg-[#F9F6F3] px-6 py-3 rounded-full shadow-md border border-[#6F8A73]/20">
+						<span className="text-[14px] sm:text-[16px] font-semibold text-[#3A2A26]">✓ Instant Booking</span>
+					</div>
+					<div className="bg-[#F9F6F3] px-6 py-3 rounded-full shadow-md border border-[#6F8A73]/20">
+						<span className="text-[14px] sm:text-[16px] font-semibold text-[#3A2A26]">✓ Trusted Community</span>
+					</div>
+				</div>
+
+				{/* Supporting Text */}
+				<p className="text-[14px] sm:text-[16px] lg:text-[18px] font-normal text-[#3A2A26]/80 leading-relaxed max-w-3xl mx-auto">
+					More than a marketplace — a connected ecosystem built on <span className="font-semibold">trust, transparency,</span> and <span className="font-semibold">shared responsibility</span> for better lives for pets.
+				</p>
 			</div>
 		</section>
 	);

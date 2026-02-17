@@ -46,7 +46,7 @@ const MobileSection = forwardRef<HTMLDivElement, MobileSectionProps>(
 				<button
 					ref={buttonRef}
 					onClick={() => onNavigate(navigateTo)}
-					className="px-10 py-5 sm:px-12 sm:py-6 md:px-14 md:py-7 bg-[#f69052] text-black rounded-full text-lg sm:text-xl md:text-2xl font-bold font-display shadow-lg whitespace-nowrap hover:bg-[#E09642] transition-colors"
+					className="px-10 py-5 sm:px-12 sm:py-6 md:px-14 md:py-7 bg-[#F69052] hover:bg-[#E09642] text-[#F9F6F3] rounded-full text-lg sm:text-xl md:text-2xl font-bold font-display shadow-lg whitespace-nowrap transition-colors"
 				>
 					{title}
 				</button>
