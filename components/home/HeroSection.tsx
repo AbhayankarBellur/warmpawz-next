@@ -2,7 +2,7 @@
 
 const HeroSection = () => {
 	return (
-		<section className="w-full px-6 sm:px-8 lg:px-16 pt-40 pb-20 lg:pt-48 lg:pb-24 bg-[#E7A3A6]">
+		<section className="w-full px-6 sm:px-8 lg:px-16 pt-40 pb-20 lg:pt-48 lg:pb-24 bg-[#EDE3D8]">
 			<div className="max-w-4xl mx-auto text-center">
 				{/* Main Headline */}
 				<h1 className="text-[28px] sm:text-[40px] lg:text-[48px] font-bold leading-tight mb-5 sm:mb-6 text-[#3A2A26]">

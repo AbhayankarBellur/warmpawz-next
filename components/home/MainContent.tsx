@@ -58,7 +58,7 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 	return (
 		<>
 			<div
-				className={`min-h-screen font-body transition-all duration-1000 ease-out overflow-x-hidden bg-[#E7A3A6] relative ${
+				className={`min-h-screen font-body transition-all duration-1000 ease-out overflow-x-hidden bg-[#EDE3D8] relative ${
 					isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
 				}`}
 			>
