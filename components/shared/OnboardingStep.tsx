@@ -1,6 +1,10 @@
 "use client";
 
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface OnboardingStepProps {
 	stepNumber: number;
@@ -17,25 +21,35 @@ const OnboardingStep: FC<OnboardingStepProps> = ({
 	videoSrc,
 	isReversed = false,
 }) => {
-	const [isVisible, setIsVisible] = useState(false);
 	const stepRef = useRef<HTMLDivElement>(null);
 	const videoRef = useRef<HTMLVideoElement>(null);
 
+	// GSAP scroll-driven scale animation (matches pet parent StageSection)
 	useEffect(() => {
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (entry.isIntersecting) {
-					setIsVisible(true);
-				}
-			},
-			{ threshold: 0.1, rootMargin: "150px" },
-		);
+		if (!stepRef.current) return;
 
-		if (stepRef.current) {
-			observer.observe(stepRef.current);
-		}
+		const mm = gsap.matchMedia();
 
-		return () => observer.disconnect();
+		mm.add("(max-width: 1023px)", () => {
+			if (stepRef.current) {
+				gsap.fromTo(
+					stepRef.current,
+					{ scale: 0.95 },
+					{
+						scale: 1.05,
+						ease: "power2.out",
+						scrollTrigger: {
+							trigger: stepRef.current,
+							start: "top 80%",
+							end: "center center",
+							scrub: 1,
+						},
+					}
+				);
+			}
+		});
+
+		return () => mm.revert();
 	}, []);
 
 	// Ensure video plays and loops continuously
@@ -105,10 +119,7 @@ const OnboardingStep: FC<OnboardingStepProps> = ({
 	// Video content with enhanced controls disabled
 	const videoContent = (
 		<div
-			className={`flex items-center justify-center transition-all duration-700 bg-transparent ${
-				isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-			}`}
-			style={{ transitionDelay: "0.1s" }}
+			className="flex items-center justify-center bg-transparent"
 		>
 			{videoSrc && (
 				<div
@@ -140,13 +151,9 @@ const OnboardingStep: FC<OnboardingStepProps> = ({
 	return (
 		<div ref={stepRef} className="flex flex-col items-center gap-6">
 			{/* Step number and title at the top */}
-			<div
-				className={`text-center transition-all duration-700 ${
-					isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-				}`}
-			>
-				<span className="text-black font-bold text-lg">Step {stepNumber}</span>
-				<h3 className="text-2xl md:text-3xl font-bold text-black mt-2">
+			<div className="text-center">
+				<span className="text-[#F69052] font-bold text-lg sm:text-xl">Step {stepNumber}</span>
+				<h3 className="text-[28px] sm:text-[32px] md:text-[38px] font-bold text-[#3A2A26] mt-2">
 					{title}
 				</h3>
 			</div>
@@ -155,14 +162,9 @@ const OnboardingStep: FC<OnboardingStepProps> = ({
 			{videoContent}
 
 			{/* Description below video */}
-			<div
-				className={`w-full max-w-2xl transition-all duration-700 ${
-					isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-				}`}
-				style={{ transitionDelay: "0.3s" }}
-			>
-				<div className="border-2 border-[#F5A855] rounded-2xl p-4 sm:p-6 bg-white shadow-sm">
-					<p className="text-lg leading-relaxed text-foreground/80 text-center">
+			<div className="w-full max-w-2xl">
+				<div className="rounded-2xl p-5 sm:p-7 bg-white shadow-lg" style={{ boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
+					<p className="text-[18px] sm:text-[20px] leading-[1.65] text-[#6F6663] text-center">
 						{description}
 					</p>
 				</div>

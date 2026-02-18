@@ -44,14 +44,14 @@ const VendorFAQSection = () => {
 	};
 
 	return (
-		<section className="py-16 sm:py-20 px-4 sm:px-6 md:px-12 bg-white">
+		<section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#C8D5C8]">
 			<div className="max-w-4xl mx-auto">
 				{/* Section Header */}
 				<div className="text-center mb-12 sm:mb-16">
-					<h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-[#3A2A26] mb-4">
 						Frequently Asked Questions
 					</h2>
-					<p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+					<p className="text-lg sm:text-xl text-[#6F6663] max-w-2xl mx-auto">
 						Everything you need to know about joining Warmpawz as a service
 						provider
 					</p>
@@ -62,19 +62,22 @@ const VendorFAQSection = () => {
 					{faqData.map((faq, index) => (
 						<div
 							key={index}
-							className="border border-border rounded-lg overflow-hidden bg-card shadow-sm"
+							className="rounded-xl overflow-hidden bg-white shadow-lg"
+							style={{
+								boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
+							}}
 						>
 							{/* Question Button */}
 							<button
 								onClick={() => toggleFAQ(index)}
-								className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-muted/50 transition-colors duration-200"
+								className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-[#F9F6F3] transition-colors duration-200"
 							>
-								<h3 className="text-lg sm:text-xl font-semibold text-foreground pr-4">
+								<h3 className="text-[19px] sm:text-[21px] font-semibold text-[#3A2A26] pr-4">
 									{faq.question}
 								</h3>
-								<div className="flex-shrink-0">
+								<div className="shrink-0">
 									<svg
-										className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${
+										className={`w-5 h-5 text-[#6F6663] transition-transform duration-200 ${
 											openIndex === index ? "rotate-180" : ""
 										}`}
 										fill="none"
@@ -100,7 +103,7 @@ const VendorFAQSection = () => {
 								}`}
 							>
 								<div className="px-6 pb-5 pt-2">
-									<p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
+									<p className="text-[17px] sm:text-[18px] text-[#6F6663] leading-[1.65]">
 										{faq.answer}
 									</p>
 								</div>

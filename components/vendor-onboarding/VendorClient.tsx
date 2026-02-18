@@ -1,16 +1,22 @@
 "use client";
 
 import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-	HeaderSection,
 	ContentSection,
 	OnboardingSteps,
 	VendorFAQSection,
 } from "@/components/vendor-onboarding";
 import { BackButton } from "@/components/shared";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const VendorOnboardingClient = () => {
 	useEffect(() => {
+		// Refresh ScrollTrigger on mount
+		ScrollTrigger.refresh();
+
 		// Force all videos on the page to play
 		const playAllVideos = () => {
 			const videos = document.querySelectorAll("video");

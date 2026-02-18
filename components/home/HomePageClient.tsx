@@ -5,7 +5,8 @@ import { LoadingScreen, MainContent } from "@/components/home";
 import { STORAGE_KEYS } from "@/config/constants";
 
 const HomePageClient = () => {
-	const [isLoading, setIsLoading] = useState(true);
+	// null = haven't checked yet, true = show loading, false = skip loading
+	const [isLoading, setIsLoading] = useState<boolean | null>(null);
 	const [showContent, setShowContent] = useState(false);
 	const checkedRef = React.useRef(false);
 
@@ -15,8 +16,8 @@ const HomePageClient = () => {
 
 		const hasShownLoading = sessionStorage.getItem(STORAGE_KEYS.hasShownLoading);
 		if (hasShownLoading === "true") {
-			// Already shown loading before — skip it
-			// Use flushSync-free approach via callback
+			// Already shown loading before — go straight to content
+			// Use queueMicrotask to avoid synchronous setState in effect
 			queueMicrotask(() => {
 				setIsLoading(false);
 				setShowContent(true);
@@ -24,6 +25,9 @@ const HomePageClient = () => {
 		} else {
 			// First visit — show loading screen
 			sessionStorage.setItem(STORAGE_KEYS.hasShownLoading, "true");
+			queueMicrotask(() => {
+				setIsLoading(true);
+			});
 		}
 	}, []);
 
@@ -34,6 +38,12 @@ const HomePageClient = () => {
 			setShowContent(true);
 		}, 50);
 	};
+
+	// Don't render anything visible until we've checked sessionStorage,
+	// but fill the viewport so the footer doesn't jump to the top
+	if (isLoading === null) {
+		return <div className="min-h-screen bg-white" />;
+	}
 
 	return (
 		<>

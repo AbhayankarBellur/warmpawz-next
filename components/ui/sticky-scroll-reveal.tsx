@@ -56,7 +56,18 @@ export const StickyScroll = ({
 						transition={{ duration: 0.1 }}
 					>
 						<h2 className="text-[32px] sm:text-[38px] lg:text-[42px] font-semibold text-[#3A2A26]">
-							{content[activeCard].title}
+							{(() => {
+								const stepMatch = content[activeCard].title.match(/^(Step \d+:\s*)(.*)/);
+								if (stepMatch) {
+									return (
+										<>
+											<span className="block text-[#F69052] text-[20px] sm:text-[22px] lg:text-[24px] font-bold mb-2">{stepMatch[1].trim()}</span>
+											{stepMatch[2]}
+										</>
+									);
+								}
+								return content[activeCard].title;
+							})()}
 						</h2>
 						<p className="text-[18px] sm:text-[19px] lg:text-[20px] leading-[1.7] mt-6 max-w-lg text-[#6F6663]">
 							{content[activeCard].description}
