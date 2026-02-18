@@ -1,4 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface FeatureSectionProps {
 	title: string;
@@ -7,6 +12,7 @@ interface FeatureSectionProps {
 	reverse?: boolean;
 	buttonText?: string;
 	onButtonClick?: () => void;
+	animationType?: "scale" | "slideLeft" | "slideRight";
 }
 
 const FeatureSection = ({
@@ -16,7 +22,130 @@ const FeatureSection = ({
 	reverse = false,
 	buttonText,
 	onButtonClick,
+	animationType = "scale",
 }: FeatureSectionProps) => {
+	const sectionRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		const mm = gsap.matchMedia();
+
+		// Apply scroll animation on mobile/tablet (below lg breakpoint)
+		mm.add("(max-width: 1023px)", () => {
+			if (sectionRef.current) {
+				if (animationType === "slideLeft") {
+					// Slide in from left - full visibility
+					gsap.fromTo(
+						sectionRef.current,
+						{ x: -100 },
+						{
+							x: 0,
+							ease: "power2.out",
+							scrollTrigger: {
+								trigger: sectionRef.current,
+								start: "top 80%",
+								end: "top 50%",
+								scrub: 0.5,
+							},
+						}
+					);
+				} else if (animationType === "slideRight") {
+					// Slide in from right - full visibility
+					gsap.fromTo(
+						sectionRef.current,
+						{ x: 100 },
+						{
+							x: 0,
+							ease: "power2.out",
+							scrollTrigger: {
+								trigger: sectionRef.current,
+								start: "top 80%",
+								end: "top 50%",
+								scrub: 0.5,
+							},
+						}
+					);
+				} else {
+					// Default scale animation
+					gsap.fromTo(
+						sectionRef.current,
+						{ scale: 0.95 },
+						{
+							scale: 1.05,
+							ease: "power2.out",
+							scrollTrigger: {
+								trigger: sectionRef.current,
+								start: "top 80%",
+								end: "center center",
+								scrub: 1,
+							},
+						}
+					);
+				}
+			}
+		});
+
+		// Apply scroll animation on desktop (lg breakpoint and above)
+		mm.add("(min-width: 1024px)", () => {
+			if (sectionRef.current) {
+				if (animationType === "slideLeft") {
+					// Slide in from left - full visibility
+					gsap.fromTo(
+						sectionRef.current,
+						{ x: -150 },
+						{
+							x: 0,
+							ease: "power2.out",
+							scrollTrigger: {
+								trigger: sectionRef.current,
+								start: "top 75%",
+								end: "top 40%",
+								scrub: 0.3,
+							},
+						}
+					);
+				} else if (animationType === "slideRight") {
+					// Slide in from right - full visibility
+					gsap.fromTo(
+						sectionRef.current,
+						{ x: 150 },
+						{
+							x: 0,
+							ease: "power2.out",
+							scrollTrigger: {
+								trigger: sectionRef.current,
+								start: "top 75%",
+								end: "top 40%",
+								scrub: 0.3,
+							},
+						}
+					);
+				} else {
+					// Default scale animation
+					gsap.fromTo(
+						sectionRef.current,
+						{ scale: 0.95 },
+						{
+							scale: 1.05,
+							ease: "power2.out",
+							scrollTrigger: {
+								trigger: sectionRef.current,
+								start: "top 80%",
+								end: "center center",
+								scrub: 1,
+							},
+						}
+					);
+				}
+			}
+		});
+
+		return () => {
+			mm.revert();
+		};
+	}, [animationType]);
+
 	// Alternate background colors
 	const bgColor = reverse ? "bg-[#C8D5C8]" : "bg-[#F9F6F3]";
 	
@@ -24,9 +153,10 @@ const FeatureSection = ({
 		<section className={`py-16 px-4 sm:px-6 lg:px-8 ${bgColor}`}>
 			<div className="max-w-7xl mx-auto">
 				<div
+					ref={sectionRef}
 					className={`flex flex-col ${
 						reverse ? "lg:flex-row-reverse" : "lg:flex-row"
-					} items-center gap-8 lg:gap-12`}
+					} items-center gap-8 lg:gap-12 transition-all duration-500 ease-out lg:hover:scale-[1.05] lg:hover:-translate-y-2`}
 				>
 					{/* Image */}
 					<div className="w-full lg:w-1/2">

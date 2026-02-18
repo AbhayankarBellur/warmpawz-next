@@ -1,14 +1,11 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+import PhoneMockup from "@/components/user/PhoneMockup";
 import StageSection from "@/components/user/StageSection";
 
-interface Stage {
-  stage: number;
-  title: string;
-  description: string;
-  videoSrc: string;
-  isLeft: boolean;
-}
-
-const stages: Stage[] = [
+const stagesData = [
   {
     stage: 1,
     title: "Find your Companion",
@@ -59,10 +56,36 @@ const stages: Stage[] = [
   },
 ];
 
+// For StickyScroll (desktop)
+const stagesForSticky = stagesData.map((stage) => ({
+  title: stage.title,
+  description: stage.description,
+  content: <PhoneMockup videoSrc={stage.videoSrc} />,
+}));
+
 const StagesList = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  // Desktop: Show StickyScroll
+  if (isDesktop) {
+    return <StickyScroll content={stagesForSticky} />;
+  }
+
+  // Mobile: Show original StageSection components
   return (
     <>
-      {stages.map((stage, index) => (
+      {stagesData.map((stage, index) => (
         <StageSection
           key={stage.stage}
           stage={stage.stage}
@@ -70,7 +93,7 @@ const StagesList = () => {
           description={stage.description}
           videoSrc={stage.videoSrc}
           isLeft={stage.isLeft}
-          showArrow={index < stages.length - 1}
+          showArrow={index < stagesData.length - 1}
         />
       ))}
     </>

@@ -17,6 +17,13 @@ interface StageSectionProps {
 	showArrow: boolean;
 }
 
+// Background colors alternate: Beige, Sage, White
+const backgrounds = [
+	"#EDE3D8", // Warm Beige
+	"#C8D5C8", // Soft Sage
+	"#F9F6F3", // Warm White
+];
+
 const StageSection: FC<StageSectionProps> = ({
 	stage,
 	title,
@@ -26,106 +33,86 @@ const StageSection: FC<StageSectionProps> = ({
 	showArrow,
 }) => {
 	const sectionRef = useRef<HTMLElement>(null);
-	const titleRef = useRef<HTMLHeadingElement>(null);
-	const descRef = useRef<HTMLParagraphElement>(null);
+	const contentRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		if (!sectionRef.current || !titleRef.current || !descRef.current) return;
+		if (!sectionRef.current || !contentRef.current) return;
 
-		const ctx = gsap.context(() => {
-			// Title animation
-			gsap.fromTo(
-				titleRef.current,
-				{
-					y: 60,
-					opacity: 0,
-					skewY: 3,
-				},
-				{
-					y: 0,
-					opacity: 1,
-					skewY: 0,
-					duration: 0.8,
-					ease: "power3.out",
-					scrollTrigger: {
-						trigger: sectionRef.current,
-						start: "top 70%",
-						end: "top 40%",
-						toggleActions: "play none none reverse",
-					},
-				},
-			);
+		const mm = gsap.matchMedia();
 
-			// Description animation
-			gsap.fromTo(
-				descRef.current,
-				{
-					y: 40,
-					opacity: 0,
-				},
-				{
-					y: 0,
-					opacity: 1,
-					duration: 0.8,
-					delay: 0.2,
-					ease: "power3.out",
-					scrollTrigger: {
-						trigger: sectionRef.current,
-						start: "top 70%",
-						end: "top 40%",
-						toggleActions: "play none none reverse",
-					},
-				},
-			);
+		// Mobile scroll animation
+		mm.add("(max-width: 1023px)", () => {
+			if (contentRef.current) {
+				gsap.fromTo(
+					contentRef.current,
+					{ scale: 0.95 },
+					{
+						scale: 1.05,
+						ease: "power2.out",
+						scrollTrigger: {
+							trigger: contentRef.current,
+							start: "top 80%",
+							end: "center center",
+							scrub: 1,
+						},
+					}
+				);
+			}
 		});
 
-		return () => ctx.revert();
+		return () => mm.revert();
 	}, []);
 
-	const stageColorClass = `text-stage-${stage}`;
+	// Cycle through backgrounds
+	const bgColor = backgrounds[(stage - 1) % backgrounds.length];
 
 	return (
-		<section ref={sectionRef} className="relative min-h-screen">
+		<section
+			ref={sectionRef}
+			className="relative w-full py-20 lg:py-28 px-4 sm:px-6 lg:px-12"
+			style={{ backgroundColor: bgColor }}
+		>
 			<div
-				className={`min-h-screen flex flex-col ${
+				ref={contentRef}
+				className={`max-w-[1400px] mx-auto flex flex-col ${
 					isLeft ? "lg:flex-row" : "lg:flex-row-reverse"
-				} items-center justify-center gap-8 lg:gap-16 xl:gap-20 py-16 sm:py-20 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24`}
+				} items-center justify-center gap-8 lg:gap-12 transition-all duration-500 ease-out lg:hover:scale-[1.02] lg:hover:-translate-y-1`}
 			>
-				{/* Phone Mockup */}
-				<div className="flex-shrink-0">
+				{/* Phone Mockup with Shadow */}
+				<div
+					className="shrink-0"
+					style={{
+						filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.08))",
+					}}
+				>
 					<PhoneMockup videoSrc={videoSrc} isLeft={isLeft} />
 				</div>
 
-				{/* Text Content */}
-				<div
-					className={`max-w-md lg:max-w-lg xl:max-w-xl text-center ${
-						isLeft ? "lg:text-left" : "lg:text-right"
-					}`}
-				>
-					<h2
-						ref={titleRef}
-						className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold ${stageColorClass} mb-4 sm:mb-6`}
+				{/* Text Content in White Card */}
+				<div className="w-full lg:flex-1 max-w-xl lg:max-w-2xl">
+					{/* White Card */}
+					<div
+						className="bg-white rounded-2xl p-7 sm:p-9 lg:p-10 shadow-lg"
+						style={{
+							boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
+						}}
 					>
-						{title}
-					</h2>
+						<h2 className="text-[32px] sm:text-[38px] lg:text-[42px] font-semibold leading-tight mb-5 lg:mb-6 text-[#3A2A26]">
+							{title}
+						</h2>
 
-					{/* Description with Orange Border */}
-					<div className="border-2 border-[#F5A855] rounded-2xl p-4 sm:p-6 bg-white shadow-sm">
-						<p
-							ref={descRef}
-							className="text-lg sm:text-xl md:text-2xl text-foreground/80 font-body leading-relaxed"
-						>
+						<p className="text-[18px] sm:text-[19px] lg:text-[20px] leading-[1.7] text-[#6F6663]">
 							{description}
 						</p>
 					</div>
 				</div>
 			</div>
 
-			{/* Curved Arrow - centered on mobile, alternating on tablet/desktop */}
+			{/* Curved Arrow - centered on mobile, alternating on desktop */}
 			{showArrow && (
 				<div
-					className={`absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 ${
-						isLeft ? "md:right-24 lg:right-1/3" : "md:left-24 lg:left-1/3"
+					className={`absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 ${
+						isLeft ? "lg:right-24 xl:right-1/3" : "lg:left-24 xl:left-1/3"
 					} transform translate-y-1/2 z-10`}
 				>
 					<CurvedArrow direction={isLeft ? "right" : "left"} />

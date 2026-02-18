@@ -1,6 +1,9 @@
 "use client";
 
 import Marquee from "react-fast-marquee";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface Testimonial {
 	id: number;
@@ -84,8 +87,40 @@ const testimonials: Testimonial[] = [
 ];
 
 const Testimonials = () => {
+	const sectionRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		const mm = gsap.matchMedia();
+
+		// Only apply scroll animation on mobile/tablet (below lg breakpoint)
+		mm.add("(max-width: 1023px)", () => {
+			if (sectionRef.current) {
+				gsap.fromTo(
+					sectionRef.current,
+					{ scale: 0.95 },
+					{
+						scale: 1.05,
+						ease: "power2.out",
+						scrollTrigger: {
+							trigger: sectionRef.current,
+							start: "top 80%",
+							end: "center center",
+							scrub: 1,
+						},
+					}
+				);
+			}
+		});
+
+		return () => {
+			mm.revert();
+		};
+	}, []);
+
 	return (
-		<section className="w-full bg-[#C8D5C8] py-16 sm:py-20 lg:py-24">
+		<section ref={sectionRef} className="w-full bg-[#C8D5C8] py-16 sm:py-20 lg:py-24 transition-all duration-500 ease-out lg:hover:scale-[1.02]">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
 				<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-[#3A2A26] mb-3">
 					What Our Community Says

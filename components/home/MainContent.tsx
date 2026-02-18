@@ -137,6 +137,7 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 					buttonText="Pet Parent Journey"
 					onButtonClick={() => handleNavigation("/user-walkthrough")}
 					reverse={false}
+					animationType="slideLeft"
 				/>
 
 				<FeatureSection
@@ -146,6 +147,7 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 					buttonText="Join as Provider"
 					onButtonClick={() => handleNavigation("/vendor-onboarding")}
 					reverse={true}
+					animationType="scale"
 				/>
 
 				<FeatureSection
@@ -155,6 +157,7 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 					buttonText="About Us"
 					onButtonClick={() => handleNavigation("/about")}
 					reverse={false}
+					animationType="slideRight"
 				/>
 
 				{/* Feature Section with shakira.jpeg - moved before testimonials */}
@@ -165,6 +168,7 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 					buttonText="Explore Services"
 					onButtonClick={() => handleNavigation("/services")}
 					reverse={true}
+					animationType="scale"
 				/>
 
 				{/* Metrics Section */}
