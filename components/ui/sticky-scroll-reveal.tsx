@@ -47,7 +47,7 @@ export const StickyScroll = ({
 		>
 			{/* Scroll area: cards transition in first 70%, last 30% keeps Ageing locked */}
 			<div className="relative" style={{ height: `${content.length * 60}vh` }}>
-				<div className="sticky top-1/2 -translate-y-1/2 flex items-center justify-center space-x-10 px-10">
+				<div className="sticky top-0 h-screen flex items-center justify-center space-x-10 px-10">
 				<div className="max-w-2xl">
 					<motion.div
 						key={activeCard}

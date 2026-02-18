@@ -1,27 +1,28 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { LoadingScreen, MainContent } from "@/components/home";
 import { STORAGE_KEYS } from "@/config/constants";
 
 const HomePageClient = () => {
-	// Use lazy initialization to avoid synchronous setState in effect
-	const [isLoading, setIsLoading] = useState(() => {
-		if (typeof window === 'undefined') return false;
-		const hasShownLoading = sessionStorage.getItem(STORAGE_KEYS.hasShownLoading);
-		return hasShownLoading !== "true";
-	});
-	
-	const [showContent, setShowContent] = useState(() => {
-		if (typeof window === 'undefined') return false;
-		const hasShownLoading = sessionStorage.getItem(STORAGE_KEYS.hasShownLoading);
-		return hasShownLoading === "true";
-	});
+	const [isLoading, setIsLoading] = useState(true);
+	const [showContent, setShowContent] = useState(false);
+	const checkedRef = React.useRef(false);
 
 	useEffect(() => {
-		// Mark that we've shown the loading animation (only for first visit)
+		if (checkedRef.current) return;
+		checkedRef.current = true;
+
 		const hasShownLoading = sessionStorage.getItem(STORAGE_KEYS.hasShownLoading);
-		if (hasShownLoading !== "true") {
+		if (hasShownLoading === "true") {
+			// Already shown loading before — skip it
+			// Use flushSync-free approach via callback
+			queueMicrotask(() => {
+				setIsLoading(false);
+				setShowContent(true);
+			});
+		} else {
+			// First visit — show loading screen
 			sessionStorage.setItem(STORAGE_KEYS.hasShownLoading, "true");
 		}
 	}, []);

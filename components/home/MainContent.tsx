@@ -62,6 +62,9 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 					isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
 				}`}
 			>
+				{/* Hero Section - above landing sections */}
+				<HeroSection />
+
 				{/* Mobile Layout (Vertical Stack) - Hidden on lg+ */}
 				<div className="flex flex-col items-center justify-center min-h-screen lg:hidden relative px-4 sm:px-6 py-8 pt-24">
 					{/* Pet Parent Section - Top */}
@@ -173,9 +176,6 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 
 				{/* Metrics Section */}
 				<MetricsSection />
-
-				{/* Hero Section - moved before testimonials */}
-				<HeroSection />
 
 				{/* Testimonials Section */}
 				<Testimonials />
