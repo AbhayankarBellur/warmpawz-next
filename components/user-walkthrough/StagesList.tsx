@@ -60,7 +60,7 @@ const stagesData = [
 const stagesForSticky = stagesData.map((stage) => ({
   title: stage.title,
   description: stage.description,
-  content: <PhoneMockup videoSrc={stage.videoSrc} />,
+  content: <PhoneMockup videoSrc={stage.videoSrc} isLeft={stage.isLeft} />,
 }));
 
 const StagesList = () => {
