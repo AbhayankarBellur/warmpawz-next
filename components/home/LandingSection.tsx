@@ -41,7 +41,6 @@ const LandingSection = forwardRef<HTMLDivElement, LandingSectionProps>(
 				<div
 					ref={imageRef}
 					className="relative shrink-0 z-0 w-40 h-40 xl:w-64 xl:h-64 2xl:w-60 2xl:h-60 flex items-end justify-center mb-6"
-					style={{ filter: "drop-shadow(0 18px 36px rgba(0,0,0,0.28))" }}
 				>
 					<Image
 						src={image}
@@ -52,18 +51,6 @@ const LandingSection = forwardRef<HTMLDivElement, LandingSectionProps>(
 						sizes="(max-width: 768px) 160px, (max-width: 1280px) 256px, 240px"
 						aria-hidden="true"
 						style={{ willChange: "transform" }}
-					/>
-					{/* Ground shadow oval */}
-					<div
-						className="absolute left-1/2 -translate-x-1/2 rounded-full"
-						style={{
-							bottom: "-22px",
-							width: "80%",
-							height: "48px",
-							background: "rgba(0,0,0,0.35)",
-							filter: "blur(34px)",
-							zIndex: -1,
-						}}
 					/>
 				</div>
 				{/* Button */}

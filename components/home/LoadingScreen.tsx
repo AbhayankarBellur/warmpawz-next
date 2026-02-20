@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import petTrainingImage from "@/public/images/pet-training.png";
+import petTrainingImage from "@/public/images/kling2.png";
 import { BREAKPOINTS, ANIMATIONS, VIDEOS } from "@/config/constants";
 
 interface LoadingScreenProps {
@@ -68,7 +68,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 		const preloadImages = () => {
 			const imagesToPreload = [
 				petTrainingImage, // Pet Parent image
-				"/images/service_provider.png", // Service Provider image
+				"/images/kling_20251208_Text_to_Image_I_need_to__2933_0.png", // Service Provider image
 			];
 
 			imagesToPreload.forEach((src) => {

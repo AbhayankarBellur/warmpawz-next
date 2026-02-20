@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
-import petTrainingImage from "@/public/images/pet-training.png";
-import serviceProviderImage from "@/public/images/service_provider.png";
+import petTrainingImage from "@/public/images/kling2.png";
+import serviceProviderImage from "@/public/images/kling_20251208_Text_to_Image_I_need_to__2933_0.png";
 import PhoneMockupCenter from "./PhoneMockupCenter";
 import LandingSection from "./LandingSection";
 import MobileSection from "./MobileSection";

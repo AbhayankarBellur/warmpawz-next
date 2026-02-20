@@ -29,7 +29,7 @@ const IMAGE_URLS = [
   '/images/Warmth.png',
   
   // Vendor onboarding
-  '/images/service_provider.png',
+  '/images/kling_20251208_Text_to_Image_I_need_to__2933_0.png',
   
   // Careers page
   '/images/role1.png',

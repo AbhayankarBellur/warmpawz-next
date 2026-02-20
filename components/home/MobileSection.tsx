@@ -33,7 +33,6 @@ const MobileSection = forwardRef<HTMLDivElement, MobileSectionProps>(
 				<div
 					ref={imageRef}
 					className="relative shrink-0 z-0 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 flex items-end justify-center mb-4"
-					style={{ filter: "drop-shadow(0 18px 36px rgba(0,0,0,0.28))" }}
 				>
 					<Image
 						src={image}
@@ -41,18 +40,6 @@ const MobileSection = forwardRef<HTMLDivElement, MobileSectionProps>(
 						className="w-full h-full object-contain object-bottom"
 						aria-hidden="true"
 						loading="eager"
-					/>
-					{/* Ground shadow oval */}
-					<div
-						className="absolute left-1/2 -translate-x-1/2 rounded-full"
-						style={{
-							bottom: "-20px",
-							width: "75%",
-							height: "42px",
-							background: "rgba(0,0,0,0.32)",
-							filter: "blur(32px)",
-							zIndex: -1,
-						}}
 					/>
 				</div>
 				{/* Button */}
