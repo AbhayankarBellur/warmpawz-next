@@ -147,7 +147,7 @@ const FeatureSection = ({
 	}, [animationType]);
 
 	// Alternate background colors
-	const bgColor = reverse ? "bg-[#C8D5C8]" : "bg-[#F9F6F3]";
+	const bgColor = reverse ? "bg-[#EDE3D8]" : "bg-[#F9F6F3]";
 	
 	return (
 		<section className={`py-16 px-4 sm:px-6 lg:px-8 ${bgColor}`}>

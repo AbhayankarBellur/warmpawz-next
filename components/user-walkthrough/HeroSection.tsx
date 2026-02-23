@@ -35,9 +35,9 @@ const HeroSection = () => {
 	}));
 
 	return (
-		<section className="relative bg-[#C8D5C8] flex flex-col items-center justify-start px-4 sm:px-6 md:px-12 pt-24 sm:pt-28 lg:pt-36 pb-16 sm:pb-20 text-center overflow-hidden">
+		<section className="relative bg-[#F69052] flex flex-col items-center justify-start px-4 sm:px-6 md:px-12 pt-24 sm:pt-28 lg:pt-36 pb-16 sm:pb-20 text-center overflow-hidden">
 			<div
-				className="absolute top-0 left-0 right-0 h-20 sm:h-24 lg:h-28 bg-[#C8D5C8]"
+				className="absolute top-0 left-0 right-0 h-20 sm:h-24 lg:h-28 bg-[#F69052]"
 				aria-hidden="true"
 			/>
 			{/* Main Title */}
@@ -46,45 +46,86 @@ const HeroSection = () => {
 			</h1>
 
 			{/* Subtitle */}
-			<p className="hidden sm:block text-xl sm:text-2xl md:text-3xl text-[#6F6663] font-semibold max-w-4xl mx-auto mb-6 sm:mb-12">
+			<p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-semibold max-w-4xl mx-auto mb-6 sm:mb-12 px-4">
 				Warmpawz helps pet parents find clarity, confidence, and care at every
 				stage of their journey.
 			</p>
 
 			{/* Main Content */}
-			<div className="max-w-6xl mx-auto mb-6 sm:mb-12 w-full">
-				{/* Mobile: Card Stack with auto-rotation */}
-				<div className="lg:hidden flex items-center justify-center px-4">
-					<CardStack items={cardStackItems} offset={10} scaleFactor={0.06} />
-				</div>
-
-				{/* Desktop: White Card Layout */}
-				<div
-					className="hidden lg:block rounded-2xl bg-white shadow-lg p-8 sm:p-10"
+		<div className="max-w-[950px] mx-auto mb-6 sm:mb-12 w-full px-5 sm:px-8">
+			{/* Mobile: Editorial Text Layout (White Text) */}
+			<div className="lg:hidden">
+				<div 
+					className="space-y-8 text-left animate-fadeIn"
 					style={{
-						boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
+						maxWidth: "75ch",
+						margin: "0 auto",
 					}}
 				>
-					<div className="space-y-6 text-left">
-						<TextGenerateEffect 
-							words={paragraph1} 
-							className="text-[18px] sm:text-[19px] lg:text-[20px] text-[#6F6663] leading-[1.7]"
-						/>
+					<p 
+						className="text-[18px] sm:text-[20px] text-white leading-[1.8] font-normal tracking-[0.3px]"
+						style={{
+							fontSmooth: "antialiased",
+							WebkitFontSmoothing: "antialiased",
+							MozOsxFontSmoothing: "grayscale",
+						}}
+					>
+						{paragraph1}
+					</p>
 
-						<TextGenerateEffect 
-							words={paragraph2} 
-							className="text-[18px] sm:text-[19px] lg:text-[20px] text-[#6F6663] leading-[1.7]"
-						/>
-					</div>
+					<p 
+						className="text-[18px] sm:text-[20px] text-white leading-[1.8] font-normal tracking-[0.3px]"
+						style={{
+							fontSmooth: "antialiased",
+							WebkitFontSmoothing: "antialiased",
+							MozOsxFontSmoothing: "grayscale",
+						}}
+					>
+						{paragraph2}
+					</p>
+				</div>
+			</div>
+
+			{/* Desktop: Premium Editorial Text Layout */}
+			<div className="hidden lg:block">
+				<div 
+					className="space-y-8 text-left animate-fadeIn"
+					style={{
+						maxWidth: "75ch",
+						margin: "0 auto",
+					}}
+				>
+					<p 
+						className="text-[20px] text-white leading-[1.8] font-normal tracking-[0.3px]"
+						style={{
+							fontSmooth: "antialiased",
+							WebkitFontSmoothing: "antialiased",
+							MozOsxFontSmoothing: "grayscale",
+						}}
+					>
+						{paragraph1}
+					</p>
+
+					<p 
+						className="text-[20px] text-white leading-[1.8] font-normal tracking-[0.3px]"
+						style={{
+							fontSmooth: "antialiased",
+							WebkitFontSmoothing: "antialiased",
+							MozOsxFontSmoothing: "grayscale",
+						}}
+					>
+						{paragraph2}
+					</p>
 				</div>
 			</div>
 
 			{/* Journey Indicator */}
 			<div className="mt-4 sm:mt-16">
-				<p className="text-xl sm:text-2xl text-[#3A2A26] md:text-3xl font-bold">
+				<p className="text-xl sm:text-2xl text-white md:text-3xl font-bold">
 					Explore the journey below ↓
 				</p>
 			</div>
+		</div>
 		</section>
 	);
 };

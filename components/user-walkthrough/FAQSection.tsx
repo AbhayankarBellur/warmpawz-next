@@ -1,6 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface FAQItem {
 	question: string;
@@ -47,24 +51,113 @@ const faqData: FAQItem[] = [
 
 const FAQSection = () => {
 	const [openIndex, setOpenIndex] = useState<number | null>(null);
+	const cardsRef = useRef<HTMLDivElement[]>([]);
+
+	useEffect(() => {
+		const mm = gsap.matchMedia();
+
+		// Desktop subtle animation for cards - no opacity change to ensure visibility
+		mm.add("(min-width: 1024px)", () => {
+			cardsRef.current.forEach((card, index) => {
+				if (card) {
+					gsap.fromTo(
+						card,
+						{ y: 20 },
+						{
+							y: 0,
+							duration: 0.6,
+							delay: index * 0.15,
+							ease: "power2.out",
+							scrollTrigger: {
+								trigger: card,
+								start: "top 95%",
+								toggleActions: "play none none reverse",
+							},
+						}
+					);
+				}
+			});
+		});
+
+		return () => mm.revert();
+	}, []);
+
+	const addCardRef = (el: HTMLDivElement | null, index: number) => {
+		if (el) {
+			cardsRef.current[index] = el;
+		}
+	};
+
+	const features = [
+		{
+			title: "Hyperlocal Discovery",
+			description: "Find nearby trusted pet services instantly with smart, location-based discovery and real availability."
+		},
+		{
+			title: "Trusted, Verified Network",
+			description: "Book confidently with screened, verified providers backed by real pet parent reviews."
+		},
+		{
+			title: "One Place for Every Pet Need",
+			description: "Manage bookings, health records, shopping, reminders, and care — all in one app."
+		}
+	];
 
 	const toggleFAQ = (index: number) => {
 		setOpenIndex(openIndex === index ? null : index);
 	};
 
-	return (
-		<section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#C8D5C8]">
-			<div className="max-w-4xl mx-auto">
-				{/* Section Header */}
-				<div className="text-center mb-12 sm:mb-16">
-					<h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-[#3A2A26] mb-4">
-						Frequently Asked Questions
-					</h2>
-					<p className="text-lg sm:text-xl text-[#6F6663] max-w-2xl mx-auto">
-						Everything you need to know about Warmpawz and how we support pet
-						parents
-					</p>
-				</div>
+		return (
+			<section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#F69052]">
+				<div className="max-w-4xl mx-auto">
+					{/* Key Features Section Header */}
+					<div className="text-center mb-12 sm:mb-16">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-[#3A2A26] mb-8 lg:mb-12">
+							Key Features 
+						</h2>
+					</div>
+
+					{/* Feature Cards */}
+					<div className="mb-16 lg:mb-20 space-y-4 lg:space-y-6">
+						{features.map((feature, index) => (
+							<div
+								key={index}
+								ref={(el) => addCardRef(el, index)}
+								className="bg-white rounded-xl p-5 lg:p-6 shadow-lg transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1"
+								style={{
+									boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
+								}}
+							>
+								<div className="flex items-start gap-4">
+									{/* Icon Circle */}
+									<div className="flex-shrink-0 w-10 h-10 lg:w-12 lg:h-12 bg-[#F69052] rounded-full flex items-center justify-center">
+										<div className="w-5 h-5 lg:w-6 lg:h-6 bg-white rounded-full"></div>
+									</div>
+
+									{/* Content */}
+									<div className="flex-1">
+										<h3 className="text-lg lg:text-xl font-semibold text-[#3A2A26] mb-2">
+											{feature.title}
+										</h3>
+										<p className="text-sm lg:text-base text-[#6F6663] leading-[1.6]">
+											{feature.description}
+										</p>
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
+
+					{/* FAQ Section Header */}
+					<div className="text-center mb-12 sm:mb-16">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-[#3A2A26] mb-4">
+							Frequently Asked Questions
+						</h2>
+						<p className="text-lg sm:text-xl text-[#3A2A26] max-w-2xl mx-auto">
+							Everything you need to know about Warmpawz and how we support pet
+							parents
+						</p>
+					</div>
 
 				{/* FAQ Items */}
 				<div className="space-y-4">

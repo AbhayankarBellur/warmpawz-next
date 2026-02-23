@@ -5,8 +5,6 @@ import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 const backgroundColors = [
-	"#EDE3D8", // Warm Beige
-	"#C8D5C8", // Soft Sage
 	"#F9F6F3", // Warm White
 ];
 
@@ -69,7 +67,7 @@ export const StickyScroll = ({
 								return content[activeCard].title;
 							})()}
 						</h2>
-						<p className="text-[18px] sm:text-[19px] lg:text-[20px] leading-[1.7] mt-6 max-w-lg text-[#6F6663]">
+						<p className="text-[20px] sm:text-[22px] lg:text-[24px] leading-[1.7] mt-6 max-w-lg text-[#6F6663]">
 							{content[activeCard].description}
 						</p>
 					</motion.div>

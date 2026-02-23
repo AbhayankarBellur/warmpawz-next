@@ -17,10 +17,9 @@ interface StageSectionProps {
 	showArrow: boolean;
 }
 
-// Background colors alternate: Beige, Sage, White
+// Background colors: Alternate between Warm Beige and Warm White
 const backgrounds = [
 	"#EDE3D8", // Warm Beige
-	"#C8D5C8", // Soft Sage
 	"#F9F6F3", // Warm White
 ];
 

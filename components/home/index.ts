@@ -7,4 +7,3 @@ export { default as HomePageClient } from "./HomePageClient";
 export { default as HeroSection } from "./HeroSection";
 export { default as Testimonials } from "./Testimonials";
 export { default as FeatureSection } from "./FeatureSection";
-export { default as MetricsSection } from "./MetricsSection";

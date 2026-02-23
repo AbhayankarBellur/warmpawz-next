@@ -120,7 +120,7 @@ const Testimonials = () => {
 	}, []);
 
 	return (
-		<section ref={sectionRef} className="w-full bg-[#C8D5C8] py-16 sm:py-20 lg:py-24 transition-all duration-500 ease-out lg:hover:scale-[1.02]">
+		<section ref={sectionRef} className="w-full bg-[#F9F6F3] py-16 sm:py-20 lg:py-24 transition-all duration-500 ease-out lg:hover:scale-[1.02]">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
 				<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-[#3A2A26] mb-3">
 					What Our Community Says

@@ -87,7 +87,6 @@ const stepsForSticky = steps.map((step) => ({
 
 const bgColors = [
   "#EDE3D8", // beige
-  "#C8D5C8", // sage
   "#FFFFFF", // white
 ];
 

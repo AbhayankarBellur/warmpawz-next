@@ -1,6 +1,6 @@
 const HeroSection = () => {
 	return (
-		<section className="py-20 px-4 sm:px-6 lg:px-8 mt-20">
+		<section className="pt-40 pb-20 px-4 sm:px-6 lg:px-8">
 			<div className="max-w-4xl mx-auto">
 				{/* Header - Outside the box */}
 				<div className="text-center mb-8">

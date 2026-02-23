@@ -9,7 +9,6 @@ import MobileSection from "./MobileSection";
 import HeroSection from "./HeroSection";
 import Testimonials from "./Testimonials";
 import FeatureSection from "./FeatureSection";
-import MetricsSection from "./MetricsSection";
 import { useDesktopHoverAnimations } from "@/hooks/useDesktopHoverAnimations";
 import { useMobileScrollAnimations } from "@/hooks/useMobileScrollAnimations";
 import { useRouter } from "next/navigation";
@@ -132,31 +131,10 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 					/>
 				</div>
 
-				{/* Additional Feature Sections */}
-				<FeatureSection
-					title="Connect with Pet Parents"
-					description="Join a community of caring pet parents. Share experiences, get advice, and discover the best care options for your furry family members."
-					imageSrc="/images/scruffy.jpeg"
-					buttonText="Pet Parent Journey"
-					onButtonClick={() => handleNavigation("/user-walkthrough")}
-					reverse={false}
-					animationType="slideLeft"
-				/>
-
-				<FeatureSection
-					title="Expert Pet Care Providers"
-					description="Verified professionals ready to care for your pets. Our network includes experienced veterinarians, groomers, trainers, and more."
-					imageSrc="/images/scruffy1.jpeg"
-					buttonText="Join as Provider"
-					onButtonClick={() => handleNavigation("/vendor-onboarding")}
-					reverse={true}
-					animationType="scale"
-				/>
-
 				<FeatureSection
 					title="Trusted by Thousands"
 					description="Thousands of pet parents trust Warmpawz for their pet care needs. Join our growing community and give your pet the care they deserve."
-					imageSrc="/images/gsd.jpeg"
+					imageSrc="/images/scruffy1.jpeg"
 					buttonText="About Us"
 					onButtonClick={() => handleNavigation("/about")}
 					reverse={false}
@@ -174,8 +152,6 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 					animationType="scale"
 				/>
 
-				{/* Metrics Section */}
-				<MetricsSection />
 
 				{/* Testimonials Section */}
 				<Testimonials />

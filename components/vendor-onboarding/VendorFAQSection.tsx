@@ -44,7 +44,7 @@ const VendorFAQSection = () => {
 	};
 
 	return (
-		<section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#C8D5C8]">
+		<section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#F69052]">
 			<div className="max-w-4xl mx-auto">
 				{/* Section Header */}
 				<div className="text-center mb-12 sm:mb-16">

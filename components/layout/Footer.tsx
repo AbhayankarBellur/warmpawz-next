@@ -13,9 +13,6 @@ const Footer = () => {
 
 	return (
 		<>
-			{/* Thin orange separator line between body and footer */}
-			<div className="w-full h-px bg-[#f69052] relative z-20" />
-
 			<footer className="bg-white pt-8 pb-4 px-4 sm:px-6 lg:px-8 relative z-20">
 				<div className="max-w-7xl mx-auto">
 					{/* Mobile Layout - Compact */}

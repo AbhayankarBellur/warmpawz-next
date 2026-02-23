@@ -26,7 +26,7 @@ const ServicesPhoneFrame = () => {
 	};
 
 	return (
-		<div className="flex items-center justify-center min-h-[calc(100vh-8rem)] py-12">
+		<div className="flex items-center justify-center py-12">
 			{/* Mobile Phone Frame */}
 			<div className="relative w-70 sm:w-[320px] md:w-90 aspect-[9/19.5] bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
 				{/* Phone inner bezel */}

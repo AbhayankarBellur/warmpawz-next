@@ -1,8 +1,28 @@
+"use client";
+
 import { BackButton } from "@/components/shared";
 import { BlogCard } from "@/components/blog";
 import { blogArticles } from "@/data/blogArticles";
+import { useEffect, useState } from "react";
 
 const BlogPage = () => {
+	const [currentColorIndex, setCurrentColorIndex] = useState(0);
+
+	// Three warm colors from the main page gradient
+	const colors = [
+		"#F69052", // Brand orange
+		"#FAD3B5", // Warm beige
+		"#FFF2E6", // Warm white
+	];
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCurrentColorIndex((prev) => (prev + 1) % colors.length);
+		}, 3000); // 3 second duration
+
+		return () => clearInterval(interval);
+	}, [colors.length]);
+
 	// Image positions matching individual blog pages
 	const imagePositions = [
 		"30%",
@@ -34,37 +54,32 @@ const BlogPage = () => {
 	}));
 
 	return (
-		<>
-			{/* Background Layer - Gradient Only */}
-			<div 
-				className="fixed inset-0 z-0"
-				style={{
-					background: "linear-gradient(180deg, #F69052 0%, #FAD3B5 60%, #FFF2E6 100%)",
-				}}
-			/>
-
-			<div className="px-4 sm:px-6 lg:px-8 mt-32 relative z-20">
+		<div 
+			className="min-h-screen transition-colors duration-[3000ms] ease-in-out"
+			style={{ backgroundColor: colors[currentColorIndex] }}
+		>
+			<div className="px-4 sm:px-6 lg:px-8 pt-32">
 				<BackButton className="bg-secondary border-border hover:bg-muted text-foreground" />
-			<div className="max-w-7xl mx-auto py-16 sm:py-24">
-				{/* Header */}
-				<div className="text-center mb-12 sm:mb-16">
-					<h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-foreground mb-4">
-						Blog
-					</h1>
-					<p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-						Discover insights, tips, and stories about pet care
-					</p>
-				</div>
+				<div className="max-w-7xl mx-auto py-16 sm:py-24">
+					{/* Header */}
+					<div className="text-center mb-12 sm:mb-16">
+						<h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-foreground mb-4">
+							Blog
+						</h1>
+						<p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+							Discover insights, tips, and stories about pet care
+						</p>
+					</div>
 
-				{/* Blog Grid */}
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-					{blogPosts.map((post) => (
-						<BlogCard key={post.id} {...post} />
-					))}
+					{/* Blog Grid */}
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+						{blogPosts.map((post) => (
+							<BlogCard key={post.id} {...post} />
+						))}
+					</div>
 				</div>
 			</div>
-			</div>
-		</>
+		</div>
 	);
 };
 
