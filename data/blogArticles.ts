@@ -450,6 +450,249 @@ export const blogArticles: BlogArticle[] = [
       
       "ICICI Lombard General Insurance – Provides pet insurance with flexible coverage options for dogs."
     ]
+  },
+  {
+    id: "when-the-queen-sings-cats-in-heat",
+    title: "When the Queen Sings: A Warm, Witty Guide to Cats in Heat",
+    excerpt: "There are few things in life as dramatic, misunderstood, and wildly operatic as a cat in heat. A guide to understanding your feline's most theatrical moments.",
+    author: "Warmpawz Team",
+    date: "January 25, 2026",
+    readTime: "4 min read",
+    category: "Cat Care",
+    image: "/images/blog-16.png",
+    content: [
+      "There are few things in life as dramatic, misunderstood, and wildly operatic as a cat in heat. If you've never witnessed it, imagine your usually dignified, self-contained feline suddenly auditioning for a role in a very emotional musical. There will be singing. There will be floor choreography. There will be intense eye contact. And you will question all your life choices.",
+      
+      "A heat cycle in a cat — technically called estrus — is simply her body saying, 'I am ready to reproduce.' Unlike humans, cats don't menstruate. They don't bleed. They don't sulk with chocolate. Instead, they announce it to the entire neighborhood. And with confidence.",
+      
+      "It usually begins around 5–9 months of age, though some ambitious overachievers start earlier. The signs are subtle at first — extra affection, more rolling, a peculiar softness. Then the opera begins. Loud, drawn-out vocalizations that sound like a philosophical crisis. She may raise her hindquarters, tread her back legs, and display what looks like exaggerated flirtation. It's instinct, not attitude.",
+      
+      "It can last about 5–7 days. And if she doesn't mate? The cycle pauses briefly… and then resumes. Again. And again. During breeding season, this can feel less like biology and more like a long-running series with no commercial breaks.",
+      
+      "Here's the tender truth beneath the theatrics: she isn't being difficult. She isn't 'acting out.' She's responding to hormones. Her body is doing exactly what evolution designed it to do. There's vulnerability in that. Discomfort too. Some cats become clingy. Some become restless. Some stare into the distance and yowl like poets who've seen too much.",
+      
+      "As caretakers, our role is simple — provide comfort, patience, and safety. Keep her indoors (love makes adventurers of us all). Offer extra affection if she seeks it. Distract with play. Maintain routine.",
+      
+      "And if you are not planning to breed her, spaying is not just population control — it protects her long-term health, reducing risks of uterine infections and certain cancers, and yes, it restores peace to your soundscape.",
+      
+      "A cat in heat is nature at full volume. Intense, unapologetic, ancient. And like most things in life that feel overwhelming — it passes. Until next month."
+    ]
+  },
+  {
+    id: "right-fuel-right-time-dog-nutrition",
+    title: "The Right Fuel at the Right Time: A Dog's Nutritional Journey",
+    excerpt: "A dog does not 'grow up.' A dog unfolds. Their nutritional needs change as dramatically as their personalities through each life stage.",
+    author: "Warmpawz Team",
+    date: "January 25, 2026",
+    readTime: "6 min read",
+    category: "Nutrition",
+    image: "/images/blog-17.png",
+    content: [
+      "A dog does not 'grow up.' A dog unfolds. And if you've lived with one long enough, you'll notice something beautiful — their body changes faster than their emotional age. One month they are chewing your footwear. The next, they are guarding your gate like a retired army officer.",
+      
+      "But here's the part we often miss in Indian homes: Their nutritional needs change as dramatically as their personalities. Let's walk through it — like a good evening stroll.",
+      
+      "**Puppyhood (2–12 months): The Infrastructure Phase** This is the 'under construction' period. Bones lengthen. Muscles sprout. Teeth fall out. Energy explodes. A puppy is not a small adult dog. It is a biological startup in hyper-growth mode.",
+      
+      "What they need: Higher protein (for muscle development), good fats (for brain development), calcium & phosphorus balance (for bones), smaller, frequent meals (3–4 times a day).",
+      
+      "In an Indian home, this can look like: Soft rice + boiled chicken (no masala, no salt), curd rice (plain, minimal curd if tolerated), mashed pumpkin or carrot, well-cooked egg (start small), commercial puppy kibble soaked in warm water.",
+      
+      "Avoid leftover sambar rice, oily gravies, or bones from mutton curry. Our food is built for spice tolerance. Their gut is not. This is also when overfeeding creates lifelong joint problems — especially in Labradors and Indies who will eat as if famine is imminent.",
+      
+      "**Adolescence (1–2 years): The Gym Bro Phase** The body is almost adult-sized. The brain? Not quite. Energy is high. Metabolism is strong. They can digest more variety — but this is where bad habits also set in.",
+      
+      "What they need: Balanced protein (not excess), controlled calories, joint support (especially large breeds), structured feeding times (2 meals a day).",
+      
+      "In an Indian kitchen: Rice + boiled chicken + a spoon of coconut oil (small quantity), ragi in small amounts for fiber (if tolerated), curd (probiotic support), steamed beans, pumpkin, bottle gourd, rotis broken into pieces and soaked in chicken broth (occasionally).",
+      
+      "Avoid parotta pieces, biryani rice, fried snacks, sweets. Yes, even if they stare at you like tragic poets. At this stage, many pet parents confuse enthusiasm with hunger. Not the same thing.",
+      
+      "**Adulthood (2–7 years): The Stability Phase** These are the steady years. Appetite stabilizes. Energy becomes predictable. The dog now matches your rhythm. This is also where silent weight gain creeps in — especially in apartment dogs in cities where walks are shorter than traffic signals.",
+      
+      "What they need: Moderate protein, controlled fat, fiber for gut health, portion discipline.",
+      
+      "Indian home meals can include: 50% rice or millets + 30% protein (chicken, egg, paneer occasionally) + 20% vegetables, fish (boneless, fully cooked) once a week, plain curd, homemade bone broth (strained, no spices).",
+      
+      "Salt, chilli powder, garam masala — still a no. Many urban dogs now live with borderline obesity. We think 'healthy' means 'chubby.' It does not. You should be able to feel ribs without pressing hard. That is the test.",
+      
+      "**Senior Years (7+ years): The Graceful Slowdown** This is when they start sleeping a little longer. Joints whisper. Digestion slows. Eyes soften. Food must become gentler.",
+      
+      "What they need: Easier-to-digest protein, lower calories, joint support (omega-3, glucosamine), softer textures.",
+      
+      "Indian home options: Soft rice + shredded chicken, light khichdi (no tadka), pumpkin mash, egg whites (less yolk if overweight), slightly warm meals (not cold from fridge).",
+      
+      "Hydration becomes critical. Senior dogs often drink less. Adding water or broth to food helps. This is also when emotional nourishment matters. Eating slows. Sitting beside them while they eat matters.",
+      
+      "**A Word About Indian Households** In many Indian homes, dogs eat: Leftover rice with rasam, milk daily, biscuit treats, chapati with ghee. Some survive. Some thrive. But survival is not the benchmark anymore. We now know better.",
+      
+      "Milk is not mandatory. Biscuits are not love. Spice is not harmless. And feeding from the dining table creates a psychological hierarchy confusion that trainers will later charge you to fix.",
+      
+      "**The Quiet Principle** A dog's bowl should change as its life stage changes. Not dramatically. Not expensively. But thoughtfully. You don't need imported salmon from Norway. You need balance, portion awareness, and less masala.",
+      
+      "In an Indian home context, simplicity wins: Boiled, lightly cooked, fresh, measured. Because ultimately, feeding a dog is not about generosity. It is about stewardship. And growth — like love — needs the right fuel at the right time."
+    ]
+  },
+  {
+    id: "cat-growth-story-nutrition",
+    title: "From Whiskered Whispers to Regal Stares: A Cat's Growth Story (and What to Feed Along the Way)",
+    excerpt: "Cats do not grow. They unfold. Quietly. Elegantly. Like a secret you are privileged to witness. A complete guide to feline nutrition through every life stage.",
+    author: "Warmpawz Team",
+    date: "January 25, 2026",
+    readTime: "6 min read",
+    category: "Cat Care",
+    image: "/images/blog-18.png",
+    content: [
+      "Cats do not grow. They unfold. Quietly. Elegantly. Like a secret you are privileged to witness. And at every stage of that unfolding, their bodies are asking for something different from the bowl you place before them. Let's walk through it — gently, whisker by whisker.",
+      
+      "**0–2 Months: The Milk-Drunk Beginning** This is the season of wobble and wonder. Kittens are all softness and closed eyes, guided by warmth and instinct.",
+      
+      "What's happening: Rapid growth. Brain development. Bones quietly mapping their future strength. Their immune systems borrowing protection from mother's milk.",
+      
+      "What they need: Mother's milk is gold. If that's not possible, a proper kitten milk replacer — never cow's milk (their tiny tummies will protest loudly). Protein and fat are not luxuries here; they are architecture. Everything is being built.",
+      
+      "**2–6 Months: Tiny Predator in Training** Suddenly the wobble becomes a sprint. Curtains tremble. Ankles are ambushed.",
+      
+      "What's happening: Explosive growth. Muscle development. Baby teeth giving way to adult ones. Energy levels that defy physics.",
+      
+      "What they need: High-protein, high-calorie kitten food. Real animal protein first. Taurine is non-negotiable — cats cannot manufacture enough of it on their own. It protects their heart, vision, and quiet feline dignity.",
+      
+      "In an Indian home, some pet parents are tempted to offer bits of roti or rice. A nibble won't harm, but remember — cats are obligate carnivores. Their bodies are designed for meat, not chapati diplomacy. Small, frequent meals work best. Their stomachs are small, but their ambitions are not.",
+      
+      "**6–12 Months: The Awkward Aristocrat** They look grown. They act dramatic. They are, biologically, still teenagers.",
+      
+      "What's happening: Growth begins to slow but hasn't finished. Hormones stir. Personalities sharpen. Some breeds (like larger ones) continue growing well past a year.",
+      
+      "What they need: Continue kitten-formulated food until at least 10–12 months. Protein remains essential, but calorie control starts to matter. This is when overfeeding can quietly set the stage for future weight struggles. If neutered/spayed, metabolism may dip slightly. Portions may need thoughtful adjustment — not drastic cuts, just mindful balance.",
+      
+      "**1–7 Years: The Prime Years** This is the era of confident strides and sunlit naps. They know the house. They know you. They know exactly when to wake you.",
+      
+      "What's happening: Maintenance mode. Muscle mass stabilizes. Activity levels differ wildly — some are Olympic gymnasts, others are philosophical observers.",
+      
+      "What they need: High-quality adult cat food with strong animal protein content. Controlled fat. Adequate hydration. Wet food becomes especially important here. Cats are historically desert animals; they are poor voluntary drinkers. Moisture in food supports kidney health long-term.",
+      
+      "If feeding home-cooked additions (boiled chicken, small bits of fish), ensure they are plain — no salt, no masala, no onion, no garlic. Our food is fragrant; their livers are not impressed. Portion control is kindness. Obesity in cats is heartbreak wrapped in fluff.",
+      
+      "**7+ Years: The Graceful Elder** The leaps are lower. The naps are longer. The eyes, somehow, are wiser.",
+      
+      "What's happening: Metabolism slows. Kidney function may gradually decline. Joints begin negotiating with gravity.",
+      
+      "What they need: Easily digestible protein — still crucial, never drastically reduced unless medically advised. Lower phosphorus levels for kidney support. Omega-3 fatty acids for joint comfort. Regular vet checks become part of love. Subtle weight loss or gain matters more now. Texture can matter too. Older cats may prefer softer food if dental changes creep in.",
+      
+      "**A Gentle Truth About Cats and Food** Cats are not small dogs. They are biologically precise creatures. They require: Animal protein as a primary fuel, taurine, preformed Vitamin A, arachidonic acid. These are not dietary preferences. They are survival requirements.",
+      
+      "And while love is abundant in Indian homes — bowls of milk, a saucer of rice, a sharing of curd — a cat's body thrives on species-appropriate nutrition.",
+      
+      "**The Real Nourishment** At every stage, nutrition is not just about growth. It is about preventing silent suffering years later. Kidney disease. Diabetes. Joint pain. Many of these stories begin quietly in the bowl.",
+      
+      "So we feed thoughtfully. We adjust gently. We watch their coat, their eyes, their litter box habits. Because growth in cats is not loud. It is subtle. And so is decline.",
+      
+      "To raise a cat well is to notice the quiet things — the way their body changes, the way their appetite shifts, the way their energy settles. And to respond, not react.",
+      
+      "From milk-drunk kitten to sun-warmed elder, their needs evolve. Our job is simple. Keep learning. Keep adjusting. Keep loving — in protein percentages and portion sizes as much as in chin scratches."
+    ]
+  },
+  {
+    id: "when-paws-panic-dog-first-responses",
+    title: "When Paws Panic: First Responses Every Thoughtful Pet Parent Should Know",
+    excerpt: "There is a particular kind of silence that falls over a home when a dog suddenly isn't quite right. A calm guide to first responses for common dog emergencies.",
+    author: "Warmpawz Team",
+    date: "January 26, 2026",
+    readTime: "8 min read",
+    category: "Emergency Care",
+    image: "/images/blog-19.png",
+    content: [
+      "There is a particular kind of silence that falls over a home when a dog suddenly isn't quite right. The tail that usually thumps is still. The eyes that sparkle look uncertain. And in that moment, we don't need drama. We need clarity.",
+      
+      "This is not a replacement for your veterinarian's wisdom. It is simply a calm first page in the manual of love. Because sometimes the first few minutes matter — and always, your instinct does too. Let's walk gently through common situations, life stage by life stage.",
+      
+      "**Puppies (0–12 months): Fragile, Fierce, and Still Figuring It Out** Puppies are optimism on four legs. They are also digestive experiments in motion.",
+      
+      "**1. Sudden Diarrhea or Vomiting** Common cause? Something 'interesting' from the floor. First response: Withhold food for 6–8 hours (not water). Offer small sips of clean water frequently. If vomiting stops, introduce bland food (boiled chicken and rice, lightly mashed).",
+      
+      "Call your vet immediately if: Vomiting persists more than 2–3 times in a few hours. There's blood in stool or vomit. Your puppy seems lethargic or refuses water. Puppies dehydrate quickly. In India especially, parvovirus is a real concern in unvaccinated pups. Do not wait and 'see tomorrow' if they are dull. Tomorrow may be too late.",
+      
+      "**2. Sudden Crying and Limping** Likely a minor injury from enthusiastic zoomies. First response: Gently check the paw for thorns or glass. Do not force movement. Apply a cold compress for 5–10 minutes if swelling appears. Vet visit required if: Limping continues beyond a few hours. There is visible swelling, deformity, or persistent pain. Growing bones are delicate. What looks like drama can sometimes be a fracture.",
+      
+      "**Adolescents & Adults (1–7 years): Strong, Stubborn, Occasionally Silly** These are the dogs who believe they are invincible.",
+      
+      "**3. Choking or Gagging** Perhaps a bone, toy, or overenthusiastic eating. First response: Stay calm. Panic spreads faster than airways close. Open the mouth carefully and check for visible obstruction. If you can clearly see and safely grasp the object, remove it gently. If breathing is severely compromised, seek emergency veterinary care immediately. Do not blindly sweep fingers into the throat — you may push it deeper.",
+      
+      "**4. Heatstroke (Especially in Indian Summers)** Panting heavily. Excess drooling. Weakness. Bright red gums. First response: Move the dog to shade immediately. Pour room-temperature water over body (not ice-cold). Offer small amounts of water to drink. Place cool (not icy) wet cloths on groin and neck. Emergency vet care is mandatory. Heatstroke is not a 'rest and recover' condition. Internal damage can continue even after cooling. Avoid ice baths. Rapid cooling can worsen shock.",
+      
+      "**5. Sudden Allergic Reaction** Facial swelling. Hives. Itching. Sometimes vomiting. First response: Remove possible trigger (new treat? new soap?). Contact your vet immediately for dosage guidance before giving any antihistamine. Never guess doses. Rush to emergency care if: Breathing difficulty. Collapse. Pale gums. Allergies can escalate quickly.",
+      
+      "**Seniors (7+ years): Gentle Souls, Slower Signals** Senior dogs don't always shout when something hurts. They whisper.",
+      
+      "**6. Sudden Collapse or Weakness** This is never 'just old age.' First response: Keep them lying comfortably. Check gum color (healthy is pink). Keep them warm and transport gently to a vet immediately. Possible causes range from heart issues to internal bleeding. Time matters here.",
+      
+      "**7. Bloat (More common in large breeds, any adult age)** Distended abdomen. Restlessness. Unproductive retching. First response: There is only one: Go to a vet immediately. Do not wait. Do not google longer. Bloat can become life-threatening within hours.",
+      
+      "**Across All Ages: Seizures — Frightening, But Often Brief** A seizure can feel like the world has tilted. You may see: Sudden collapse, stiffening or jerking limbs, jaw chomping, excess salivation, loss of bladder control. It looks dramatic. It is not always fatal. But it must be handled correctly.",
+      
+      "First response: Stay calm. Note the time. Most seizures last under 1–2 minutes. Move furniture away to prevent injury. Do not restrain your dog unless they are in immediate danger (like near stairs). Do not put your hand in their mouth. They are not swallowing their tongue — but they may bite unintentionally. Dim the lights and reduce noise if possible.",
+      
+      "After the seizure: Your dog may seem confused, blind, restless, or clingy. This 'post-ictal' phase can last minutes to hours. Speak softly. Offer comfort. Allow recovery in a quiet space.",
+      
+      "Seek veterinary care immediately if: The seizure lasts more than 3–5 minutes. Multiple seizures occur within 24 hours. Your dog does not regain awareness. This is their first seizure. Seizures can be triggered by epilepsy, toxins, metabolic disorders, or underlying illness. They always warrant veterinary evaluation — even if they stop quickly.",
+      
+      "**The Universal First-Aid Mindset** Stay calm. Your dog reads you like scripture. Observe before acting. Breathing? Gum color? Responsiveness? Do not medicate without veterinary guidance. Human medicines can be toxic. Have your vet's number saved and an emergency clinic identified in advance.",
+      
+      "If your dog is breathing normally, alert, and stable — you may monitor briefly. If your dog is struggling to breathe, collapsing, bleeding heavily, seizing repeatedly, or severely lethargic — this is not an article situation. This is a veterinary situation.",
+      
+      "You are not overreacting by seeking help. You are being responsible. Dogs give us a lifetime of uncomplicated love. Our job is not to be doctors. It is to be attentive guardians who respond with steadiness and humility. The best first response is not heroics. It is informed calm — followed, when needed, by professional care. Because reassurance is beautiful. But expertise saves lives."
+    ]
+  },
+  {
+    id: "nine-lives-feline-emergencies",
+    title: "Nine Lives, One Calm Human: First Responses to Feline Emergencies",
+    excerpt: "Cats are masters of disguise. They can hide pain like Oscar-worthy actors. A comprehensive guide to recognizing and responding to cat emergencies with calm clarity.",
+    author: "Warmpawz Team",
+    date: "January 26, 2026",
+    readTime: "7 min read",
+    category: "Emergency Care",
+    image: "/images/blog-20.png",
+    content: [
+      "Cats are masters of disguise. They can hide pain like Oscar-worthy actors and then choose 2 a.m. to unveil their plot twist. When something goes wrong, your job isn't to become a veterinarian overnight. Your job is simpler, steadier, and far more powerful: stay calm, act wisely, and know when to hand over the reins to your vet.",
+      
+      "This is first response, not final treatment. Always involve your veterinarian when in doubt. Cats rarely 'just bounce back' from serious symptoms. Let's walk through the common crises — gently, clearly, and without panic.",
+      
+      "**1. Breathing Trouble: Open-Mouth Breathing, Rapid Panting, Wheezing** Cats are not dogs. They do not pant for fun. If your cat is breathing with their mouth open, stretching their neck out, breathing very fast at rest, or their gums look pale or bluish — this is urgent.",
+      
+      "First response: Do not force them into a carrier aggressively. Keep the environment quiet and cool. Avoid handling more than necessary. Transport to the nearest vet immediately. Breathing issues can signal asthma, heart disease, fluid in lungs, heatstroke, or trauma. Time matters here. This is not a 'wait and watch' situation.",
+      
+      "**2. Seizures: The Frightening Few Minutes** A seizure can look like paddling legs, stiffening, drooling, twitching, or sudden collapse. It is terrifying. But here is your anchor: most seizures stop within 1–3 minutes.",
+      
+      "During the seizure: Do not put your hand in their mouth. Cats do not swallow their tongues. Move nearby objects away so they don't injure themselves. Dim the lights. Reduce noise. Time the episode if possible.",
+      
+      "After it stops: They may seem confused, blind, restless, or excessively hungry. Stay calm and keep them safe. Call your vet immediately for guidance. If a seizure lasts more than 5 minutes, or multiple seizures happen in a short span, go to emergency care immediately. Even a single seizure warrants a vet visit within 24 hours.",
+      
+      "**3. Vomiting: One Hairball vs Something More** Cats vomit. It's practically a hobby. But frequency and context matter. Watchful waiting is okay if: It's a single episode. Your cat is otherwise bright, eating, and drinking. No blood is present.",
+      
+      "Call your vet if: Vomiting repeats more than twice in a day. There's blood or coffee-ground material. Your cat seems lethargic, hides excessively, or refuses food. There's suspicion of toxin ingestion (plants, human meds, chocolate). With kittens and seniors, don't delay. They dehydrate quickly.",
+      
+      "**4. Urinary Distress: The Silent Emergency** If your cat is going in and out of the litter box, straining, crying, or producing little to no urine — this is especially urgent in male cats. A blocked bladder can become life-threatening within 24 hours.",
+      
+      "First response: Check if urine is actually being produced. Do not wait overnight. Go to a vet immediately if there is straining with little or no urine. This is one of the true 'drop everything and go' emergencies.",
+      
+      "**5. Trauma: Falls, Bites, Road Accidents** Cats are agile, not invincible. After any trauma: Keep movement minimal. Place your cat gently in a carrier with a towel. Avoid pressing on limbs or abdomen. Even if they 'seem fine,' internal injuries can hide. Always seek veterinary evaluation after major trauma.",
+      
+      "**6. Bleeding** Small cuts: Apply gentle pressure with clean gauze for several minutes. Heavy bleeding: Continuous firm pressure. Immediate veterinary visit. Never use human antiseptics like Dettol or strong alcohol on deep wounds without guidance.",
+      
+      "**7. Suspected Poisoning** Common culprits include lilies, certain houseplants, human painkillers, cleaning products, and essential oils. If ingestion is suspected: Do not induce vomiting unless a vet instructs you. Bring packaging or plant samples with you. Seek immediate veterinary help. Lilies in particular can cause kidney failure in cats — even small exposures are dangerous.",
+      
+      "**8. Heatstroke** Less common in cats than dogs, but possible in hot climates. Signs: Panting. Drooling. Lethargy. Collapse. First response: Move to a cool, shaded area. Offer small amounts of water. Apply cool (not ice-cold) damp cloths to paws and belly. Head to the vet. Rapid cooling is important, but overcooling can cause shock.",
+      
+      "**9. Choking** True choking in cats is rare but serious. Signs: Pawing at mouth. Gagging without producing anything. Distress. Do not blindly sweep inside the mouth. If visible and safe, remove the object carefully. Otherwise, emergency care immediately.",
+      
+      "**A Gentle Reality Check** Cats deteriorate quietly. By the time they show obvious distress, something meaningful may already be brewing. Your role is not heroics. It is observation.",
+      
+      "Notice: Changes in appetite. Hiding behavior. Grooming changes. Litter box habits. Subtle weight loss. These whispers often matter more than dramatic episodes.",
+      
+      "**The Golden Rule** When unsure, call your vet. No responsible veterinarian will ever mock a cautious cat parent. They would much rather reassure you than treat a preventable crisis.",
+      
+      "Cats may have nine lives. But they only have one you to notice when something feels off. Stay calm. Act kindly. Seek help early. And remember — asking for veterinary support is not panic. It is love, properly directed."
+    ]
   }
 ];
 

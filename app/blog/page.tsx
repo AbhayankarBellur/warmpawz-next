@@ -40,6 +40,11 @@ const BlogPage = () => {
 		"15%",
 		"50%",
 		"100%",
+		"30%",
+		"30%",
+		"30%",
+		"30%",
+		"30%",
 	];
 
 	// Map blogArticles data to the format expected by BlogCard
