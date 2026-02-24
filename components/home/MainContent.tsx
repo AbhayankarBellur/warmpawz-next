@@ -132,7 +132,7 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 				</div>
 
 				<FeatureSection
-					title="Trusted by Thousands"
+					title="Trusted by Loving Parents"
 					description="Thousands of pet parents trust Warmpawz for their pet care needs. Join our growing community and give your pet the care they deserve."
 					imageSrc="/images/scruffy1.jpeg"
 					buttonText="About Us"

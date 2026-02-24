@@ -68,7 +68,7 @@ const BlogPage = () => {
 					{/* Header */}
 					<div className="text-center mb-12 sm:mb-16">
 						<h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-foreground mb-4">
-							Blog
+							Blogs
 						</h1>
 						<p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
 							Discover insights, tips, and stories about pet care
