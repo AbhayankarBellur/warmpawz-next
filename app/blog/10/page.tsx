@@ -30,9 +30,6 @@ const BlogArticle10 = () => {
 					</AppLink>
 
 					<header className="mb-12 text-center">
-						<p className="text-sm text-muted-foreground mb-4">
-							January 2, 2026
-						</p>
 						<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 font-baloo">
 							10 Funny Cat Behaviours That Make Them Utterly Adorable
 						</h1>

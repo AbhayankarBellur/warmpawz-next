@@ -22,7 +22,7 @@ const AboutUsPage = () => {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setCurrentColorIndex((prev) => (prev + 1) % colors.length);
-		}, 3000); // 3 second duration
+		}, 5000); // 3 second duration
 
 		return () => clearInterval(interval);
 	}, [colors.length]);

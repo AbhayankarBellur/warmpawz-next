@@ -31,9 +31,6 @@ const BlogArticle2 = () => {
 
 					{/* Header */}
 					<header className="mb-12 text-center">
-						<p className="text-sm text-muted-foreground mb-4">
-							January 5, 2026
-						</p>
 						<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 font-baloo">
 							Golden Retriever – Common Behaviour Issues and Solutions
 						</h1>

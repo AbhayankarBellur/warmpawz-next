@@ -30,9 +30,6 @@ const BlogArticle8 = () => {
 					</AppLink>
 
 					<header className="mb-12 text-center">
-						<p className="text-sm text-muted-foreground mb-4">
-							January 6, 2026
-						</p>
 						<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 font-baloo">
 							The Cone Chronicles: How to Beat the Frustration
 						</h1>

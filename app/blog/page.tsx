@@ -48,7 +48,6 @@ const BlogPage = () => {
 		title: article.title,
 		excerpt: article.excerpt,
 		imageUrl: article.image,
-		date: article.date,
 		readTime: article.readTime,
 		imagePosition: imagePositions[index] || "30%",
 	}));
@@ -72,7 +71,7 @@ const BlogPage = () => {
 					</div>
 
 					{/* Blog Grid */}
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 auto-rows-fr">
 						{blogPosts.map((post) => (
 							<BlogCard key={post.id} {...post} />
 						))}

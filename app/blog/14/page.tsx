@@ -31,9 +31,6 @@ const BlogArticle14 = () => {
 
 					{/* Header */}
 					<header className="mb-12 text-center">
-						<p className="text-sm text-muted-foreground mb-4">
-							January 20, 2026
-						</p>
 						<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 font-baloo">
 							Understanding Pet Insurance in India: A Little Safety Net for Big
 							Love

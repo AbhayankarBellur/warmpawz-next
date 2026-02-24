@@ -30,9 +30,6 @@ const BlogArticle11 = () => {
 					</AppLink>
 
 					<header className="mb-12 text-center">
-						<p className="text-sm text-muted-foreground mb-4">
-							December 30, 2025
-						</p>
 						<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 font-baloo">
 							Transitioning from Winter: A Gentle Pet Care Guide
 						</h1>

@@ -60,10 +60,10 @@ const BlogCard = ({
 	}, []);
 
 	return (
-		<div ref={cardRef}>
+		<div ref={cardRef} className="h-full">
 			<AppLink
 				href={`/blog/${id}`}
-				className="group bg-white rounded-2xl border-2 border-[#F5A855] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.15] cursor-pointer block"
+				className="group bg-white rounded-2xl border-2 border-[#F5A855] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.15] cursor-pointer flex flex-col h-full"
 			>
 				{/* Image */}
 				<div className="relative shrink-0 w-full h-48 sm:h-56 bg-linear-to-br from-[#F69052]/20 to-[#FAD3B5]/40 flex items-center justify-center overflow-hidden">
@@ -86,21 +86,16 @@ const BlogCard = ({
 			</div>
 
 			{/* Content */}
-			<div className="p-6">
-				<div className="flex justify-between items-center mb-2">
-					{date && (
-						<p className="text-xs sm:text-sm text-muted-foreground">{date}</p>
-					)}
-					{readTime && (
-						<p className="text-xs sm:text-sm text-muted-foreground">
-							{readTime}
-						</p>
-					)}
-				</div>
+			<div className="p-6 flex flex-col flex-1">
+				{readTime && (
+					<p className="text-xs sm:text-sm text-muted-foreground mb-2">
+						{readTime}
+					</p>
+				)}
 				<h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 font-baloo">
 					{title}
 				</h3>
-				<p className="text-muted-foreground text-sm sm:text-base mb-4">
+				<p className="text-muted-foreground text-sm sm:text-base mb-4 flex-1">
 					{excerpt}
 				</p>
 				<div className="flex items-center justify-end">

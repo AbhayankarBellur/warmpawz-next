@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 interface ArticleHeaderProps {
 	category: string;
 	readTime: string;
-	date: string;
 	title: string;
 	excerpt: string;
 	author: string;
@@ -13,7 +12,6 @@ interface ArticleHeaderProps {
 const ArticleHeader = ({
 	category,
 	readTime,
-	date,
 	title,
 	excerpt,
 	author,
@@ -37,8 +35,6 @@ const ArticleHeader = ({
 						{category}
 					</span>
 					<span>{readTime}</span>
-					<span>•</span>
-					<span>{date}</span>
 				</div>
 				<h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
 					{title}
@@ -86,17 +82,15 @@ const ArticleContent = ({ image, title, content }: ArticleContentProps) => {
 
 interface ArticleFooterProps {
 	author: string;
-	date: string;
 	onBackToBlog: () => void;
 }
 
-const ArticleFooter = ({ author, date, onBackToBlog }: ArticleFooterProps) => {
+const ArticleFooter = ({ author, onBackToBlog }: ArticleFooterProps) => {
 	return (
 		<footer className="mt-12 pt-8 border-t border-gray-200">
 			<div className="flex items-center justify-between">
 				<div className="text-sm text-gray-600">
 					<p className="font-semibold text-gray-900 mb-1">Written by {author}</p>
-					<p>{date}</p>
 				</div>
 				<button
 					onClick={onBackToBlog}

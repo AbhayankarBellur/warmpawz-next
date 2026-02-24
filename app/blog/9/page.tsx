@@ -30,9 +30,6 @@ const BlogArticle9 = () => {
 					</AppLink>
 
 					<header className="mb-12 text-center">
-						<p className="text-sm text-muted-foreground mb-4">
-							January 4, 2026
-						</p>
 						<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 font-baloo">
 							Cats and the Litterbox: A Love Story (Mostly)
 						</h1>

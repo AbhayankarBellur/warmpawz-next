@@ -80,48 +80,6 @@ export const teamMembers = [
 		description:
 			"Niranjan Delavictoire is a seasoned marketing and business leader with over 30 years of deep experience in shaping strategic brand narratives and driving growth across technology and services sectors. He has led direct and indirect sales, major accounts, business development and integrated marketing initiatives throughout his career. A passionate communicator with a knack for building meaningful connections, Niranjan brings this same spirit to Warmpawz — where every pet story and every service deserves thoughtful expression and trust. Outside his professional life, he's also been a devoted pet parent to a golden retriever, bringing first-hand insight into the joys and responsibilities of pet care.",
 	},
-	{
-		name: "Sidharth Rozario",
-		role: "Guardian of the Pack • The Angel",
-		avatar: "SR",
-		description:
-			"A trusted guide behind Warmpawz, Sidharth brings strategic perspective, industry experience, and a pet parent's heart to the journey. As an angel investor, he supports the platform's vision of building a thoughtful, dependable ecosystem where pet parents and care providers connect with confidence and care.",
-	},
-	{
-		name: "Khushee Singhal",
-		role: "Shaper of the Journey • UI/UX Developer",
-		avatar: "KS",
-		description:
-			"The one obsessed with how everything feels. Khushee designs the Warmpawz experience so pet parents move through the platform with ease, clarity, and a little delight along the way. A pet parent herself, she brings empathy into every screen, flow, and interaction — making sure good design always puts paws first.",
-	},
-	{
-		name: "Shivang Tiwari",
-		role: "Crafter of the Code • Software Engineer",
-		avatar: "ST",
-		description:
-			"Turning ideas into reliable, working reality. Shivang writes the code that powers Warmpawz behind the scenes — building systems that are clean, dependable, and built to scale. If something just works the way it should, chances are Shivang had a hand in it.",
-	},
-	{
-		name: "Kartikay Singh",
-		role: "Builder at the Front • Platform Engineering Intern",
-		avatar: "KS",
-		description:
-			"Focused on what users see, click, and experience. Kartikay works on the front-end code that brings designs to life — making sure the platform looks good, feels smooth, and behaves exactly as intended across screens and devices.",
-	},
-	{
-		name: "Abhayankar",
-		role: "Logic Tamer • Platform Engineering Intern",
-		avatar: "AB",
-		description:
-			"The one making sure everything adds up. Abhayankar builds and tests the business logic that keeps the platform honest and reliable — quietly ensuring that what happens behind the scenes is just as thoughtful as what users experience up front.",
-	},
-	{
-		name: "Shreesha",
-		role: "Guardian of Quality • Software Engineer",
-		avatar: "SH",
-		description:
-			"The final line of defence (and the calm voice of reason). Shreesha tests the code, finds the cracks, and helps smooth the rough edges — making sure Warmpawz is stable, trustworthy, and ready for the real world before it ever reaches pet parents.",
-	},
 ];
 
 // Video URLs
