@@ -99,7 +99,7 @@ const BlogArticle1 = () => {
 					</p>
 
 					<p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 text-justify">
-						<strong className="text-[#F69052]">Indian Pariah:</strong> Probably
+						<strong className="text-[#F69052]">Indie:</strong> Probably
 						the most common and most underappreciated breed. The Indian Pariah
 						is native, strong, and perfectly suited to our climate. Sharp,
 						loyal, naturally healthy, and super adaptable, they fit beautifully
