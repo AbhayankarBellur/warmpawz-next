@@ -152,7 +152,7 @@ const Navbar = () => {
 										: "text-gray-700 hover:text-[#f69052]"
 								}`}
 							>
-								BLOGS
+								ARTICLES
 							</AppLink>
 							<AppLink
 								href="/news-events"
@@ -261,7 +261,7 @@ const Navbar = () => {
 									: "text-gray-700 hover:text-[#f69052] hover:bg-gray-50"
 							}`}
 						>
-							BLOG
+							ARTICLES
 						</AppLink>
 						<AppLink
 							href="/news-events"

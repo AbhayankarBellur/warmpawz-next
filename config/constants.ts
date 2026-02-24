@@ -121,7 +121,7 @@ export const STORAGE_KEYS = {
 export const NavLinks = [
 	{ name: "Home", link: "/", icon: "home" },
 	{ name: "Services", link: "/services" },
-	{ name: "Blog", link: "/blog" },
+	{ name: "Articles", link: "/blog" },
 	{ name: "News & Events", link: "/news-events" },
 ];
 
