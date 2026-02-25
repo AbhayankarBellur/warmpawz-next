@@ -154,16 +154,6 @@ const Navbar = () => {
 							>
 								ARTICLES
 							</AppLink>
-							<AppLink
-								href="/news-events"
-								className={`px-4 py-2 text-sm font-semibold transition-colors ${
-									isActive("/news-events")
-										? "text-[#f69052]"
-										: "text-gray-700 hover:text-[#f69052]"
-								}`}
-							>
-								NEWS & EVENTS
-							</AppLink>
 						</div>
 
 						{/* Mobile menu button */}
@@ -262,17 +252,6 @@ const Navbar = () => {
 							}`}
 						>
 							ARTICLES
-						</AppLink>
-						<AppLink
-							href="/news-events"
-							onClick={closeMobileMenu}
-							className={`block w-full text-left px-4 py-4 rounded-lg text-lg font-semibold transition-colors ${
-								isActive("/news-events")
-									? "text-[#f69052] bg-[#F5A855]/10"
-									: "text-gray-700 hover:text-[#f69052] hover:bg-gray-50"
-							}`}
-						>
-							NEWS & EVENTS
 						</AppLink>
 					</div>
 				</div>
