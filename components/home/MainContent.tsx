@@ -133,7 +133,7 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 
 				<FeatureSection
 					title="Trust-First Pet Care Platform"
-					description="Thousands of pet parents trust Warmpawz for their pet care needs. Join our growing community and give your pet the care they deserve."
+					description="Every care decision carries emotion, urgency, and responsibility. Warmpawz exists to make those decisions simpler by connecting trusted and referred providers, meaningful information, and the full care journey in one place. Continuous engagement rather than one time transactions."
 					imageSrc="/images/scruffy1.jpeg"
 					buttonText="About Us"
 					onButtonClick={() => handleNavigation("/about")}
