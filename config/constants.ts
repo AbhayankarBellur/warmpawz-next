@@ -122,7 +122,6 @@ export const NavLinks = [
 	{ name: "Home", link: "/", icon: "home" },
 	{ name: "Services", link: "/services" },
 	{ name: "Articles", link: "/blog" },
-	{ name: "News & Events", link: "/news-events" },
 ];
 
 export interface Service {
