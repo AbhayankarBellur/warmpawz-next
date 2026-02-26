@@ -116,7 +116,7 @@ const ServicesPhoneFrame = () => {
 								</h3>
 
 									{/* Two Content Boxes or Single Box based on data */}
-									<div className="flex-1 flex flex-col justify-center px-4 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden gap-2.5">
+									<div className="flex-1 flex flex-col justify-start px-4 pt-2 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden gap-2.5">
 										{selectedService.forParents && selectedService.forProviders ? (
 											<>
 												{/* For Pet Parents Box */}

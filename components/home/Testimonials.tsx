@@ -111,7 +111,7 @@ const Testimonials = () => {
 				{testimonials.map((testimonial) => (
 					<div
 						key={testimonial.id}
-						className="mx-4 bg-[#F9F6F3] rounded-2xl p-6 shadow-lg border-2 border-[#6F8A73] w-80 sm:w-96 shrink-0"
+						className="mx-4 bg-[#F9F6F3] rounded-2xl p-6 shadow-lg border-2 border-[#6F8A73] w-80 sm:w-96 h-72 shrink-0 flex flex-col"
 					>
 						{/* Rating Stars */}
 						<div className="flex gap-1 mb-4">
@@ -158,7 +158,7 @@ const Testimonials = () => {
 						</div>
 
 						{/* Content */}
-						<p className="text-[#6F6663] text-sm sm:text-base mb-6 leading-relaxed font-medium">
+						<p className="text-[#6F6663] text-sm sm:text-base mb-6 leading-relaxed font-medium flex-1">
 							&ldquo;{testimonial.content}&rdquo;
 						</p>
 

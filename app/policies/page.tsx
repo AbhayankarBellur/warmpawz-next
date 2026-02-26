@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { HeroSection } from "@/components/policies";
+import { ServiceProviderTermsBox, EndUserTermsBox, RefundPolicyBox } from "@/components/policies";
 
 const PoliciesPage = () => {
 	const [currentColorIndex, setCurrentColorIndex] = useState(0);
@@ -21,14 +22,19 @@ const PoliciesPage = () => {
 		return () => clearInterval(interval);
 	}, [colors.length]);
 
-	return (
-		<div 
-			className="min-h-screen transition-colors duration-[3000ms] ease-in-out"
-			style={{ backgroundColor: colors[currentColorIndex] }}
-		>
-			<HeroSection />
-		</div>
-	);
+	       return (
+		       <div 
+							   className="min-h-screen transition-colors duration-3000 ease-in-out"
+			       style={{ backgroundColor: colors[currentColorIndex] }}
+		       >
+			       <HeroSection />
+				       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 pb-20 pt-8">
+						   <ServiceProviderTermsBox />
+						   <EndUserTermsBox />
+						   <RefundPolicyBox />
+				       </div>
+		       </div>
+	       );
 };
 
 export default PoliciesPage;

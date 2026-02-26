@@ -1,7 +1,7 @@
 const HeroSection = () => {
 	return (
-		<section className="pt-40 pb-20 px-4 sm:px-6 lg:px-8">
-			<div className="max-w-4xl mx-auto">
+		<section className="pt-40">
+			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* Header - Outside the box */}
 				<div className="text-center mb-8">
 					<h1 className="text-4xl md:text-5xl font-bold text-white">
@@ -18,7 +18,7 @@ const HeroSection = () => {
 							scrollbarColor: "#F5A855 transparent",
 						}}
 					>
-						<div className="space-y-8 text-gray-700">
+						<div className="space-y-6 text-gray-700">
 							{/* Introduction */}
 							<div className="space-y-4">
 								<p className="leading-relaxed">

@@ -10,19 +10,19 @@ const LegalBar = () => {
 					</p>
 					<div className="flex space-x-6">
 						<AppLink
-							href="/about"
+							href="/policies"
 							className="text-sm text-white hover:text-gray-200 transition-colors"
 						>
 							Terms of Service
 						</AppLink>
 						<AppLink
-							href="/about"
+							href="/policies"
 							className="text-sm text-white hover:text-gray-200 transition-colors"
 						>
 							Privacy Policy
 						</AppLink>
 						<AppLink
-							href="/about"
+							href="/policies"
 							className="text-sm text-white hover:text-gray-200 transition-colors"
 						>
 							Cookies
