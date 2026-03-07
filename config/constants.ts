@@ -144,10 +144,10 @@ export const services: Service[] = [
 		description:
 			"Bringing pet parents and ethical adoption partners together to ensure every pet is welcomed into a prepared, loving home. From Discovery to Consultant on Call, the platform ensures parents are prepared for the beautiful experiences ahead!",
 		forParents:
-			"Find adoptable pets and ethical breeders near you, with verified guidance to start pet parenthood responsibly and confidently.",
+			"Find adoptable pets and shelter homes near you, with verified guidance to start pet parenthood responsibly and confidently.",
 		forProviders:
 			"Connect with informed pet parents through a trusted adoption platform that supports ethical practices and the right matches.",
-		providerLabel: "For Adoption Centres & Ethical Breeders",
+		providerLabel: "For Adoption Centres & Shelter Homes",
 	},
 	{
 		id: 2,
