@@ -1,3 +1,5 @@
+import image from "next/image";
+
 export interface BlogArticle {
   id: string;
   title: string;
@@ -692,6 +694,53 @@ export const blogArticles: BlogArticle[] = [
       "**The Golden Rule** When unsure, call your vet. No responsible veterinarian will ever mock a cautious cat parent. They would much rather reassure you than treat a preventable crisis.",
       
       "Cats may have nine lives. But they only have one you to notice when something feels off. Stay calm. Act kindly. Seek help early. And remember — asking for veterinary support is not panic. It is love, properly directed."
+    ]
+  },
+  {
+    id: "when-sun-gets-fierce-heat-strokes-dogs",
+    title: "When the Sun Gets Fierce: A Gentle Word on Heat Strokes in Our Dogs",
+    excerpt: "Indian summers do not arrive politely. They blaze in. A comprehensive guide to recognizing, preventing, and responding to heat stroke in dogs during India's fierce summers.",
+    author: "Warmpawz Team",
+    date: "January 27, 2026",
+    readTime: "6 min read",
+    category: "Emergency Care",
+    image: "/images/blog-21.png",
+    content: [
+      "Indian summers do not arrive politely. They blaze in. By April, the pavements are hot enough to toast papad and the air itself feels tired. And in the middle of this? Our dogs. Loyal, fur-coated, enthusiastic about life — and unfortunately, not built for 42°C afternoons.",
+      
+      "Let's talk about heat stroke. Calmly. Clearly. Without panic. But with respect for how serious it can be.",
+      
+      "**How Normal Dogs Respond to Summer** Dogs do not sweat like we do. They cool themselves mainly by panting and a little through their paw pads. On warm days, you'll notice: Mild to moderate panting, seeking shade or cool tiles, sleeping more during peak heat, drinking more water, reduced appetite in the afternoons.",
+      
+      "This is normal summer behaviour. Sensible dogs slow themselves down. But when the heat overwhelms their ability to cool down, that's when trouble begins.",
+      
+      "**What Is Heat Stroke?** Heat stroke happens when a dog's body temperature rises above 104°F (40°C) and they can no longer regulate it. At 106°F and above, organs begin to suffer. This is not dramatic language. It is physiology.",
+      
+      "In India, this can happen quickly — especially in: Flat-faced breeds (Pugs, Bulldogs, Shih Tzus), thick-coated breeds, overweight dogs, senior dogs, puppies, dogs exercised during peak heat, dogs left in parked cars (even for 'just 5 minutes').",
+      
+      "**Symptoms to Watch For** Early signs: Heavy, rapid panting, excessive drooling (thick, sticky saliva), bright red gums, restlessness.",
+      
+      "Progressing signs: Vomiting or diarrhoea, weakness or wobbling, confusion, rapid heart rate, glassy eyes.",
+      
+      "Emergency signs: Collapse, seizures, pale or bluish gums, unconsciousness. If you see these later signs, this is not a 'wait and watch' situation.",
+      
+      "**Prevention: What Wise Dog Parents Do in Indian Summers** Prevention is gentle, consistent common sense. No walks after 9:30 AM or before 6 PM (even later in peak May heat). Do the pavement test — place your palm on the road for 7 seconds. If it's too hot for you, it burns their paws.",
+      
+      "Ensure constant access to fresh water (multiple bowls help). Provide shade and ventilation. Fans are good. Cross-ventilation is better. Avoid muzzles in summer — they restrict panting. Never leave a dog in a parked car. Not even with windows cracked.",
+      
+      "Keep exercise light and short. Cooling mats, damp towels (not ice-cold), and shaded rest areas are helpful. Groom, but don't shave double-coated breeds completely — their coat also insulates against heat. Think of summer as a season of slower living.",
+      
+      "**First Response If You Suspect Heat Stroke** Stay calm. Your steadiness helps them. Move your dog immediately to shade or indoors. Begin gradual cooling: Pour room-temperature water (not ice water) over body. Focus on belly, groin, paws. Use a fan to aid evaporation. Offer small sips of water — do not force. Check gum colour and breathing.",
+      
+      "Do NOT: Use ice baths. Cover them with wet towels and leave them (this traps heat). Delay veterinary care hoping they'll 'bounce back.' Even if your dog appears to improve, internal damage can continue silently.",
+      
+      "**When to See the Doctor** Immediately, if: Body feels excessively hot, there is vomiting, diarrhoea, wobbling, they collapse, panting does not settle within minutes of cooling. Even mild suspected heat stroke should be evaluated. Complications can include kidney injury, clotting disorders, and organ stress — and early intervention changes outcomes dramatically.",
+      
+      "When in doubt, call your vet. It is never overreacting.",
+      
+      "**A Quiet Reminder** Our dogs trust us with their safety. They will chase a ball at 2 PM in May if we ask them to. They will sit in a sunny balcony because we stepped inside. They will not complain.",
+      
+      "Summer parenting is about saying, 'Not now, baby. It's too hot.' And meaning it. Let this season be one of shade, water bowls, slower walks, and cooler tiles. Because prevention is love in its most practical form."
     ]
   }
 ];
