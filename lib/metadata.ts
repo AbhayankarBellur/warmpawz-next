@@ -2,12 +2,13 @@ import { Metadata } from 'next';
 
 export const siteConfig = {
   name: 'WarmPawz',
-  description: 'Your trusted pet care partner, offering reliable and loving services to keep your furry friends happy and healthy.',
+  description: 'Warmpawz is a trusted platform connecting pet parents with verified pet care services including grooming, veterinary care, training, boarding, and pet wellness across India.',
   url: 'https://warmpawz.com',
   ogImage: 'https://warmpawz.com/og-image.png',
   links: {
     twitter: 'https://twitter.com/warmpawz',
     facebook: 'https://facebook.com/warmpawz',
+    linkedin: 'https://www.linkedin.com/company/warmpawz',
   },
 };
 

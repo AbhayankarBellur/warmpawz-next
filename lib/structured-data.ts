@@ -11,6 +11,7 @@ export function generateOrganizationSchema() {
     sameAs: [
       siteConfig.links.twitter,
       siteConfig.links.facebook,
+      siteConfig.links.linkedin,
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -92,5 +93,50 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
       name: item.name,
       item: `${siteConfig.url}${item.url}`,
     })),
+  };
+}
+
+export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function generateServiceSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    provider: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    serviceType: 'Pet Care Services',
+    areaServed: {
+      '@type': 'Country',
+      name: 'India',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Pet Care Services',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pet Adoption' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Veterinary Care' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pet Grooming' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pet Training' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pet Boarding' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pet Nutrition' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pet Behaviour Consultation' } },
+      ],
+    },
   };
 }

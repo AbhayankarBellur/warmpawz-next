@@ -1,9 +1,11 @@
 import { Metadata } from 'next';
 import { generateMetadata } from '@/lib/metadata';
+import { StructuredData } from '@/components/shared/StructuredData';
+import { generateBreadcrumbSchema } from '@/lib/structured-data';
 
 export const metadata: Metadata = generateMetadata({
-  title: 'Policies & Terms',
-  description: 'Read WarmPawz policies, terms of service, privacy policy, and guidelines for pet parents and service providers.',
+  title: 'Policies & Terms of Service',
+  description: 'Read Warmpawz terms of service, privacy policy, refund policy, and guidelines for pet parents and service providers on the platform.',
   url: '/policies',
 });
 
@@ -12,5 +14,15 @@ export default function PoliciesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Policies', url: '/policies' },
+  ]);
+
+  return (
+    <>
+      <StructuredData data={breadcrumbSchema} />
+      {children}
+    </>
+  );
 }

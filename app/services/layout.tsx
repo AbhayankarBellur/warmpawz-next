@@ -1,9 +1,11 @@
 import { Metadata } from 'next';
 import { generateMetadata } from '@/lib/metadata';
+import { StructuredData } from '@/components/shared/StructuredData';
+import { generateBreadcrumbSchema, generateServiceSchema } from '@/lib/structured-data';
 
 export const metadata: Metadata = generateMetadata({
-  title: 'Pet Care Services',
-  description: 'Discover comprehensive pet care services including adoption, veterinary care, grooming, training, boarding, and more. Trusted providers across India.',
+  title: 'Pet Care Services – Grooming, Vet, Training, Boarding & More',
+  description: 'Explore Warmpawz pet care services: adoption, veterinary consultations, grooming, training, boarding, nutrition, and wellness. Verified providers across India.',
   url: '/services',
 });
 
@@ -12,5 +14,17 @@ export default function ServicesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services' },
+  ]);
+  const serviceSchema = generateServiceSchema();
+
+  return (
+    <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={serviceSchema} />
+      {children}
+    </>
+  );
 }

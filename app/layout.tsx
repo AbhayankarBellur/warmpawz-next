@@ -4,6 +4,8 @@ import ClientLayout from "@/components/layout/ClientLayout";
 import { GRADIENTS } from "@/config/constants";
 import { Baloo_2 } from "next/font/google";
 import { siteConfig } from "@/lib/metadata";
+import { StructuredData } from "@/components/shared/StructuredData";
+import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/structured-data";
 
 const baloo2 = Baloo_2({
 	subsets: ["latin"],
@@ -21,7 +23,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
 	metadataBase: new URL(siteConfig.url),
 	title: {
-		default: siteConfig.name + " - Your Trusted Pet Care Partner",
+		default: 'Warmpawz – Trusted Pet Care Services Platform in India',
 		template: `%s | ${siteConfig.name}`,
 	},
 	description: siteConfig.description,
@@ -90,8 +92,15 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const organizationSchema = generateOrganizationSchema();
+	const webSiteSchema = generateWebSiteSchema();
+
 	return (
 		<html lang="en">
+			<head>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+			</head>
 			<body
 				className={baloo2.className}
 				style={{
@@ -100,6 +109,8 @@ export default function RootLayout({
 					minHeight: "100vh",
 				}}
 			>
+				<StructuredData data={organizationSchema} />
+				<StructuredData data={webSiteSchema} />
 				<ClientLayout>{children}</ClientLayout>
 			</body>
 		</html>
