@@ -1,0 +1,16 @@
+{
+  "name": "WarmPawz - Your Trusted Pet Care Partner",
+  "short_name": "WarmPawz",
+  "description": "Reliable and loving pet care services to keep your furry friends happy and healthy",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#F69052",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
