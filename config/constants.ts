@@ -52,6 +52,7 @@ export const ROUTES = {
 	newsEvents: "/news-events",
 	careers: "/careers",
 	policies: "/policies",
+	deactivate: "/deactivate",
 	userWalkthrough: "/user-walkthrough",
 	vendorOnboarding: "/vendor-onboarding",
 	notFound: "*",
