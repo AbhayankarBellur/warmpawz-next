@@ -53,6 +53,7 @@ export const ROUTES = {
 	careers: "/careers",
 	policies: "/policies",
 	deactivate: "/deactivate",
+	support: "/support",
 	userWalkthrough: "/user-walkthrough",
 	vendorOnboarding: "/vendor-onboarding",
 	notFound: "*",
