@@ -55,6 +55,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 		scale: 1.15,
 	});
 	const videoRef = useRef<HTMLVideoElement>(null);
+	const audioRef = useRef<HTMLAudioElement | null>(null);
 
 	useEffect(() => {
 		// Lock scroll when loading screen is active
@@ -63,6 +64,43 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 		document.body.style.width = "100%";
 		document.body.style.height = "100%";
 		document.documentElement.style.overflow = "hidden";
+
+		// Start loading audio when loading animation is triggered.
+		const loadingAudio = new Audio(
+			"/audio/loading%20animation%20sound%20effect.wav",
+		);
+		loadingAudio.preload = "auto";
+		loadingAudio.volume = 1;
+		audioRef.current = loadingAudio;
+
+		const interactionEvents = ["pointerdown", "touchstart", "keydown"];
+		let interactionFallbackAttached = false;
+
+		const cleanupInteractionFallback = () => {
+			if (!interactionFallbackAttached) {
+				return;
+			}
+			interactionEvents.forEach((eventName) => {
+				window.removeEventListener(eventName, handleFirstInteraction);
+			});
+			interactionFallbackAttached = false;
+		};
+
+		const handleFirstInteraction = () => {
+			void loadingAudio.play().finally(() => {
+				cleanupInteractionFallback();
+			});
+		};
+
+		void loadingAudio.play().catch(() => {
+			// Browsers may block autoplay audio until a user interaction.
+			interactionEvents.forEach((eventName) => {
+				window.addEventListener(eventName, handleFirstInteraction, {
+					once: true,
+				});
+			});
+			interactionFallbackAttached = true;
+		});
 
 		// Preload landing page images
 		const preloadImages = () => {
@@ -118,6 +156,12 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 		return () => {
 			window.removeEventListener("resize", handleResize);
 			window.removeEventListener("orientationchange", handleResize);
+			cleanupInteractionFallback();
+			if (audioRef.current) {
+				audioRef.current.pause();
+				audioRef.current.currentTime = 0;
+				audioRef.current = null;
+			}
 			// Unlock scroll when component unmounts
 			document.body.style.overflow = "";
 			document.body.style.position = "";
