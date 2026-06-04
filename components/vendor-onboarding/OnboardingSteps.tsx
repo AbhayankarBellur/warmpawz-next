@@ -86,8 +86,8 @@ const stepsForSticky = steps.map((step) => ({
 }));
 
 const bgColors = [
-  "#EDE3D8", // beige
   "#FFFFFF", // white
+  "#EDE3D8", // beige
 ];
 
 const OnboardingSteps = () => {

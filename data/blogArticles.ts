@@ -742,6 +742,26 @@ export const blogArticles: BlogArticle[] = [
       
       "Summer parenting is about saying, 'Not now, baby. It's too hot.' And meaning it. Let this season be one of shade, water bowls, slower walks, and cooler tiles. Because prevention is love in its most practical form."
     ]
+  },
+  {
+    id: "warmpawz-pawints-program",
+    title: "Warmpawz Pawints Program — Loyalty, Reimagined for Pet Care",
+    excerpt: "A loyalty and rewards program designed for pet parents who believe that consistent care deserves consistent recognition.",
+    author: "Warmpawz Team",
+    date: "June 4, 2026",
+    readTime: "10 min read",
+    category: "Warmpawz",
+    image: "/images/blog-22.png",
+    content: [
+      "Pawints is the loyalty currency of the Warmpawz ecosystem — a rewards program designed not to incentivise spending, but to recognise the ongoing effort of being a thoughtful, engaged pet parent.",
+      "From the moment you join Warmpawz, every meaningful action you take contributes to your Pawints balance. Whether you complete your pet's profile, book a wellness consultation, write a review, or refer a friend, the programme acknowledges your engagement and returns real value.",
+      "Pawints are simple to earn, easy to redeem, and designed to grow naturally alongside your pet care journey. There are no complicated tiers, no arbitrary expiry cliffs, and no hidden conditions.",
+      "Most loyalty programmes reward spending. Pawints rewards consistency. We built Pawints because we believe that a pet parent who books a monthly grooming session deserves more than a receipt.",
+      "Pawints are Warmpawz's internal reward currency. 1 Pawint = ₹1, redeemable across all services and products on the Warmpawz platform with no conversion rates or points-to-voucher mechanics.",
+      "Earning is structured around moments that matter in a pet parent's journey — onboarding, bookings, purchases, reviews, referrals, and long-term milestones.",
+      "Redemption is intentionally straightforward. At checkout, view your balance, choose how many Pawints to redeem, and the equivalent rupee value is deducted from the bill. Minimum redemption threshold: 399 Pawints.",
+      "Pawints are not a promotional mechanic. They are a philosophical statement about how pet care relationships should be valued — designed to reward consistency, not just transactions."
+    ]
   }
 ];
 

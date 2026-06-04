@@ -161,4 +161,3 @@ const MainContent = ({ isVisible }: MainContentProps) => {
 };
 
 export default MainContent;
-
