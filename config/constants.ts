@@ -29,6 +29,7 @@ export const ANIMATIONS = {
 	fast: 150,
 	normal: 300,
 	slow: 500,
+	loadingTotalDuration: 3000,
 	loadingDissolution: 300,
 	fadeIn: 700,
 	scrollDebounce: 16, // ~60fps
