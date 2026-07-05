@@ -29,10 +29,24 @@ export const ANIMATIONS = {
 	fast: 150,
 	normal: 300,
 	slow: 500,
-	loadingTotalDuration: 3000,
 	loadingDissolution: 300,
 	fadeIn: 700,
 	scrollDebounce: 16, // ~60fps
+} as const;
+
+// App Store / Play Store links
+export const APP_LINKS = {
+	customer: {
+		appStore: "https://apps.apple.com/in/app/warmpawz/id6761255735",
+		playStore:
+			"https://play.google.com/store/apps/details?id=com.warmpawz.customer&pcampaignid=web_share",
+	},
+	vendor: {
+		appStore:
+			"https://apps.apple.com/in/app/warmpawz-service-provider/id6761255795",
+		playStore:
+			"https://play.google.com/store/apps/details?id=com.warmpawz.vendor&pcampaignid=web_share",
+	},
 } as const;
 
 // Layout Constants

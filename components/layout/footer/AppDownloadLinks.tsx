@@ -1,24 +1,46 @@
-interface AppDownloadLinksProps {
-	onNavigate: (path: string) => void;
+interface AppBadgeProps {
+	href: string;
+	align?: "left" | "right";
+	className?: string;
 }
 
-const AppDownloadLinks = ({ onNavigate }: AppDownloadLinksProps) => {
-	return (
-		<div className="flex flex-col space-y-2 items-center">
-			<img
-				src="/images/apple.png"
-				alt="Download on the App Store"
-				className="w-[190px] h-auto"
-				loading="eager"
-			/>
-			<img
-				src="/images/google.png"
-				alt="Get it on Google Play"
-				className="w-[130px] h-auto"
-				loading="eager"
-			/>
-		</div>
-	);
-};
+const alignClass = (align: "left" | "right") =>
+	align === "right" ? "self-end" : "self-start";
 
-export default AppDownloadLinks;
+export const AppStoreBadge = ({
+	href,
+	align = "left",
+	className = "",
+}: AppBadgeProps) => (
+	<a
+		href={href}
+		target="_blank"
+		rel="noopener noreferrer"
+		className={`block mt-3 ${alignClass(align)} ${className}`}
+	>
+		<img
+			src="/images/apple%20app%20icon.png"
+			alt="Download on the App Store"
+			className="h-10 md:h-11 w-auto"
+		/>
+	</a>
+);
+
+export const PlayStoreBadge = ({
+	href,
+	align = "left",
+	className = "",
+}: AppBadgeProps) => (
+	<a
+		href={href}
+		target="_blank"
+		rel="noopener noreferrer"
+		className={`block mt-3 ${alignClass(align)} ${className}`}
+	>
+		<img
+			src="/images/google%20playstore%20icon.png"
+			alt="Get it on Google Play"
+			className="h-10 md:h-11 w-auto"
+		/>
+	</a>
+);

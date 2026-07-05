@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef } from "react";
 import petTrainingImage from "@/public/images/kling2.png";
@@ -14,35 +14,36 @@ interface VideoSize {
 	scale: number;
 }
 
+// Dynamic function to calculate video dimensions that fill viewport without black bars
 const calculateVideoSize = (isMobile: boolean): VideoSize => {
 	const viewportWidth = window.innerWidth;
 	const viewportHeight = window.innerHeight;
 	const viewportRatio = viewportWidth / viewportHeight;
+
+	// Video aspect ratios (approximate)
 	const videoRatio = isMobile ? 9 / 16 : 16 / 9;
 
 	let scale = 1;
 	let width = "100vw";
 	let height = "100vh";
 
+	// Calculate scale to ensure video fills entire viewport
 	if (viewportRatio > videoRatio) {
+		// Viewport is wider than video - scale to width and add extra height
 		scale = 1.15;
 		height = "120vh";
 	} else {
+		// Viewport is taller than video - scale to height and add extra width
 		scale = 1.15;
 		width = "120vw";
 	}
 
+	// Add extra scale for mobile devices to account for browser chrome
 	if (isMobile) {
 		scale += 0.1;
 	}
 
 	return { width, height, scale };
-};
-
-const getLoadingPlaybackRate = (mediaDuration: number, targetMs: number) => {
-	const targetSeconds = targetMs / 1000;
-	if (!Number.isFinite(mediaDuration) || mediaDuration <= 0) return 1;
-	return Math.max(1, mediaDuration / targetSeconds);
 };
 
 const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
@@ -55,42 +56,16 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 	});
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const audioRef = useRef<HTMLAudioElement | null>(null);
-	const hasFinishedRef = useRef(false);
-	const finishTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-	const onCompleteRef = useRef(onComplete);
-
-	const loadingPlayDurationMs =
-		ANIMATIONS.loadingTotalDuration - ANIMATIONS.loadingDissolution;
-
-	onCompleteRef.current = onComplete;
-
-	const finishLoading = () => {
-		if (hasFinishedRef.current) return;
-		hasFinishedRef.current = true;
-
-		if (finishTimerRef.current) {
-			clearTimeout(finishTimerRef.current);
-			finishTimerRef.current = null;
-		}
-
-		videoRef.current?.pause();
-		if (audioRef.current) {
-			audioRef.current.pause();
-		}
-
-		setVideoOpacity(0);
-		setTimeout(() => {
-			onCompleteRef.current();
-		}, ANIMATIONS.loadingDissolution);
-	};
 
 	useEffect(() => {
+		// Lock scroll when loading screen is active
 		document.body.style.overflow = "hidden";
 		document.body.style.position = "fixed";
 		document.body.style.width = "100%";
 		document.body.style.height = "100%";
 		document.documentElement.style.overflow = "hidden";
 
+		// Start loading audio when loading animation is triggered.
 		const loadingAudio = new Audio(
 			"/audio/loading%20animation%20sound%20effect.wav",
 		);
@@ -117,16 +92,8 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 			});
 		};
 
-		const handleAudioReady = () => {
-			loadingAudio.playbackRate = getLoadingPlaybackRate(
-				loadingAudio.duration,
-				loadingPlayDurationMs,
-			);
-		};
-
-		loadingAudio.addEventListener("loadedmetadata", handleAudioReady);
-
 		void loadingAudio.play().catch(() => {
+			// Browsers may block autoplay audio until a user interaction.
 			interactionEvents.forEach((eventName) => {
 				window.addEventListener(eventName, handleFirstInteraction, {
 					once: true,
@@ -135,16 +102,22 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 			interactionFallbackAttached = true;
 		});
 
-		const imagesToPreload = [
-			petTrainingImage,
-			"/images/kling_20251208_Text_to_Image_I_need_to__2933_0.png",
-		];
+		// Preload landing page images
+		const preloadImages = () => {
+			const imagesToPreload = [
+				petTrainingImage, // Pet Parent image
+				"/images/kling_20251208_Text_to_Image_I_need_to__2933_0.png", // Service Provider image
+			];
 
-		imagesToPreload.forEach((src) => {
-			const img = new Image();
-			img.src = typeof src === "string" ? src : src.src;
-		});
+			imagesToPreload.forEach((src) => {
+				const img = new Image();
+				img.src = typeof src === "string" ? src : src.src;
+			});
+		};
 
+		preloadImages();
+
+		// Detect if device is mobile
 		const checkMobile = () => {
 			const userAgent = navigator.userAgent.toLowerCase();
 			const mobileKeywords = [
@@ -172,6 +145,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 
 		updateVideoSize();
 
+		// Listen for resize events to handle orientation changes
 		const handleResize = () => {
 			updateVideoSize();
 		};
@@ -179,44 +153,35 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 		window.addEventListener("resize", handleResize);
 		window.addEventListener("orientationchange", handleResize);
 
-		// Safety fallback only — normal completion is via onEnded after full sped-up playback
-		finishTimerRef.current = setTimeout(
-			finishLoading,
-			ANIMATIONS.loadingTotalDuration + 500,
-		);
-
 		return () => {
-			if (finishTimerRef.current) {
-				clearTimeout(finishTimerRef.current);
-				finishTimerRef.current = null;
-			}
 			window.removeEventListener("resize", handleResize);
 			window.removeEventListener("orientationchange", handleResize);
-			loadingAudio.removeEventListener("loadedmetadata", handleAudioReady);
 			cleanupInteractionFallback();
 			if (audioRef.current) {
 				audioRef.current.pause();
 				audioRef.current.currentTime = 0;
 				audioRef.current = null;
 			}
+			// Unlock scroll when component unmounts
 			document.body.style.overflow = "";
 			document.body.style.position = "";
 			document.body.style.width = "";
 			document.body.style.height = "";
 			document.documentElement.style.overflow = "";
 		};
-	}, [loadingPlayDurationMs]);
+	}, []);
 
-	const handleVideoLoaded = () => {
-		const video = videoRef.current;
-		if (!video) return;
+	const handleVideoEnd = () => {
+		// Start dissolving the video immediately
+		setVideoOpacity(0);
 
-		video.playbackRate = getLoadingPlaybackRate(
-			video.duration,
-			loadingPlayDurationMs,
-		);
+		// After video dissolve completes, call onComplete
+		setTimeout(() => {
+			onComplete();
+		}, ANIMATIONS.loadingDissolution);
 	};
 
+	// Choose video source based on device type
 	const videoSource = isMobile ? VIDEOS.loading.mobile : VIDEOS.loading.desktop;
 
 	return (
@@ -241,8 +206,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 				muted
 				playsInline
 				webkit-playsinline="true"
-				onLoadedMetadata={handleVideoLoaded}
-				onEnded={finishLoading}
+				onEnded={handleVideoEnd}
 				className="transition-opacity duration-300 ease-out"
 				style={{
 					opacity: videoOpacity,

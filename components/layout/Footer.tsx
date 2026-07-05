@@ -1,15 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import ContactModal from "./footer/ContactModal";
 import SocialMediaLinks from "./footer/SocialMediaLinks";
-// import AppDownloadLinks from "./footer/AppDownloadLinks";
+import { AppStoreBadge, PlayStoreBadge } from "./footer/AppDownloadLinks";
 import BrandSection from "./footer/BrandSection";
 import LegalBar from "./footer/LegalBar";
 import { AppLink } from "../shared/AppLink";
+import { APP_LINKS } from "@/config/constants";
 
 const Footer = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const pathname = usePathname();
+	const appLinks =
+		pathname === "/vendor-onboarding" ? APP_LINKS.vendor : APP_LINKS.customer;
 
 	return (
 		<>
@@ -17,10 +22,9 @@ const Footer = () => {
 				<div className="max-w-7xl mx-auto">
 					{/* Mobile Layout - Compact */}
 					<div className="lg:hidden">
-						{/* Top row: About Us (left) and Policies/Careers (right) flanking Contact button */}
 						<div className="flex items-start justify-between mb-6">
-							{/* Left: About Us + Social */}
-							<div className="flex-1">
+							{/* Left: About Us + Social + App Store */}
+							<div className="flex-1 flex flex-col">
 								<AppLink
 									href="/about"
 									className="text-base font-semibold text-gray-900 hover:text-[#f69052] transition-colors text-left block mb-3"
@@ -28,6 +32,7 @@ const Footer = () => {
 									About Us
 								</AppLink>
 								<SocialMediaLinks />
+								<AppStoreBadge href={appLinks.appStore} align="left" />
 							</div>
 
 							{/* Center: Contact Us Button + Brand Section below it */}
@@ -41,7 +46,7 @@ const Footer = () => {
 								<BrandSection />
 							</div>
 
-							{/* Right: Policies + Careers */}
+							{/* Right: Policies + Careers + Play Store */}
 							<div className="flex-1 flex flex-col items-end">
 								<AppLink
 									href="/policies"
@@ -55,16 +60,15 @@ const Footer = () => {
 								>
 									Careers
 								</AppLink>
+								<PlayStoreBadge href={appLinks.playStore} align="right" />
 							</div>
 						</div>
 					</div>
 
-					{/* Desktop Layout - Original */}
+					{/* Desktop Layout */}
 					<div className="hidden lg:grid lg:grid-cols-4 gap-6 lg:gap-12 pb-4">
-						{/* Brand Section */}
 						<BrandSection />
 
-						{/* Policies Section */}
 						<div className="col-span-1 flex flex-col items-start">
 							<AppLink
 								href="/policies"
@@ -79,10 +83,10 @@ const Footer = () => {
 							>
 								Careers
 							</AppLink>
+							<PlayStoreBadge href={appLinks.playStore} align="left" />
 						</div>
 
-						{/* About Us Section */}
-						<div className="col-span-1">
+						<div className="col-span-1 flex flex-col items-start">
 							<AppLink
 								href="/about"
 								className="text-base font-semibold text-gray-900 hover:text-[#f69052] transition-colors text-left block mb-4"
@@ -90,9 +94,9 @@ const Footer = () => {
 								About Us
 							</AppLink>
 							<SocialMediaLinks />
+							<AppStoreBadge href={appLinks.appStore} align="left" />
 						</div>
 
-						{/* Contact Us Section */}
 						<div className="col-span-1 flex flex-col items-end">
 							<div className="w-full lg:w-auto flex flex-col items-end">
 								<button
@@ -111,13 +115,11 @@ const Footer = () => {
 				</div>
 			</footer>
 
-			{/* Contact Us Modal */}
 			<ContactModal
 				isOpen={isModalOpen}
 				onClose={() => setIsModalOpen(false)}
 			/>
 
-			{/* Legal Bar */}
 			<LegalBar />
 		</>
 	);
