@@ -78,21 +78,21 @@ export const ROUTES = {
 export const teamMembers = [
 	{
 		name: "Vikram Bellur",
-		role: "Leader of the Pack • Chief Executive Officer",
+		role: "Founder",
 		avatar: "VB",
 		description:
 			"Part strategist, part storyteller, and full-time believer in building things with heart. Vikram founded Warmpawz to reimagine pet care as something warmer, more human, and deeply responsible — bringing together pet parents and care providers into one trusted ecosystem. When he's not shaping the vision, he's usually thinking about how technology, empathy, and good design can make life better for pets and the people who love them. Vikram Bellur is an experienced business leader with a strong track record over 28 years driving growth and strategic impact across global technology and digital services.",
 	},
 	{
 		name: "Ketan Hirani",
-		role: "Architect of the Pack • Chief Product Officer",
+		role: "Co-Founder",
 		avatar: "KH",
 		description:
 			"Ketan Hirani is the architect behind the Warmpawz platform — shaping the technology that thoughtfully connects pet parents with trusted care providers. With a strong product and engineering mindset developed over 20 years, he leads the design and development of systems that prioritise reliability, ease of use, and real-world empathy. At Warmpawz, Ketan translates complex needs into simple, human-centred experiences — ensuring that every interaction between a pet parent and a provider feels seamless, secure, and intuitive. A leader who relies on his Animal Instincts (AI) to build robust scalable systems.",
 	},
 	{
 		name: "Niranjan Delavictoire",
-		role: "Voice of the Pack • Chief Marketing Officer",
+		role: "Co-Founder",
 		avatar: "ND",
 		description:
 			"Niranjan Delavictoire is a seasoned marketing and business leader with over 30 years of deep experience in shaping strategic brand narratives and driving growth across technology and services sectors. He has led direct and indirect sales, major accounts, business development and integrated marketing initiatives throughout his career. A passionate communicator with a knack for building meaningful connections, Niranjan brings this same spirit to Warmpawz — where every pet story and every service deserves thoughtful expression and trust. Outside his professional life, he's also been a devoted pet parent to a golden retriever, bringing first-hand insight into the joys and responsibilities of pet care.",
