@@ -8,6 +8,3 @@ export { default as CompetitionCard } from './CompetitionCard';
 export { default as TeamCard } from './TeamCard';
 export { default as FundingCard } from './FundingCard';
 export { default as FinancialsCard } from './FinancialsCard';
-export { default as AppsCard } from './AppsCard';
-export { default as CommerceCard } from './CommerceCard';
-export { default as InfraCard } from './InfraCard';

@@ -9,9 +9,6 @@ import {
 	ProblemCard,
 	TractionCard,
 	CompetitionCard,
-	AppsCard,
-	CommerceCard,
-	InfraCard,
 	TeamCard,
 	FundingCard,
 	FinancialsCard,
@@ -37,28 +34,23 @@ const InvestorsPage = () => {
 				<HeroSection />
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-					{/* Row 1 — problem, market, mission */}
+					{/* Row 1 */}
 					<MissionCard />
 					<MarketSizeCard />
 					<ProblemCard />
 
-					{/* Row 2 — bets, milestones, competition */}
+					{/* Row 2 */}
 					<BetsCard />
 					<TractionCard />
 					<CompetitionCard />
 
-					{/* Row 3 — tech capabilities */}
-					<AppsCard />
-					<CommerceCard />
-					<InfraCard />
-
-					{/* Row 4 — financials + funding */}
+					{/* Row 3 */}
 					<div className="lg:col-span-2">
 						<FinancialsCard />
 					</div>
 					<FundingCard />
 
-					{/* Row 5 — team full width */}
+					{/* Row 4 — team full width */}
 					<div className="lg:col-span-3">
 						<TeamCard />
 					</div>
