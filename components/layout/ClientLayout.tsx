@@ -48,9 +48,9 @@ const ClientLayout = ({ children }: ClientLayoutProps) => {
 
 	return (
 		<>
-			{shouldShowNav && <NavBar />}
+			{shouldShowNav && pathname !== "/deck" && <NavBar />}
 			{children}
-			<Footer />
+			{pathname !== "/deck" && <Footer />}
 		</>
 	);
 };
