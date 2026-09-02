@@ -3,4 +3,3 @@ export { default as Mission } from './Mission';
 export { default as Vision } from './Vision';
 export { default as Values } from './Values';
 export { default as MeetTheTeam } from './MeetTheTeam';
-export { default as TeamPhotoCarousel } from './TeamPhotoCarousel';

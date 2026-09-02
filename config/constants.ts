@@ -80,6 +80,7 @@ export const teamMembers = [
 		name: "Vikram Bellur",
 		role: "Founder",
 		avatar: "VB",
+		image: null,
 		description:
 			"Part strategist, part storyteller, and full-time believer in building things with heart. Vikram founded Warmpawz to reimagine pet care as something warmer, more human, and deeply responsible — bringing together pet parents and care providers into one trusted ecosystem. When he's not shaping the vision, he's usually thinking about how technology, empathy, and good design can make life better for pets and the people who love them. Vikram Bellur is an experienced business leader with a strong track record over 28 years driving growth and strategic impact across global technology and digital services.",
 	},
@@ -87,6 +88,7 @@ export const teamMembers = [
 		name: "Ketan Hirani",
 		role: "Co-Founder",
 		avatar: "KH",
+		image: null,
 		description:
 			"Ketan Hirani is the architect behind the Warmpawz platform — shaping the technology that thoughtfully connects pet parents with trusted care providers. With a strong product and engineering mindset developed over 20 years, he leads the design and development of systems that prioritise reliability, ease of use, and real-world empathy. At Warmpawz, Ketan translates complex needs into simple, human-centred experiences — ensuring that every interaction between a pet parent and a provider feels seamless, secure, and intuitive. A leader who relies on his Animal Instincts (AI) to build robust scalable systems.",
 	},
@@ -94,8 +96,33 @@ export const teamMembers = [
 		name: "Niranjan Delavictoire",
 		role: "Co-Founder",
 		avatar: "ND",
+		image: null,
 		description:
 			"Niranjan Delavictoire is a seasoned marketing and business leader with over 30 years of deep experience in shaping strategic brand narratives and driving growth across technology and services sectors. He has led direct and indirect sales, major accounts, business development and integrated marketing initiatives throughout his career. A passionate communicator with a knack for building meaningful connections, Niranjan brings this same spirit to Warmpawz — where every pet story and every service deserves thoughtful expression and trust. Outside his professional life, he's also been a devoted pet parent to a golden retriever, bringing first-hand insight into the joys and responsibilities of pet care.",
+	},
+	{
+		name: "Ramani Iyer",
+		role: "Advisory Board • Co-Founder, Justdial | Founder, ElephantGod Accelerator",
+		avatar: "RI",
+		image: "/advisoryandteam/Ramani Iyer.png",
+		description:
+			"Co-Founder of Justdial and a serial entrepreneur, Ramani brings decades of experience in building and scaling local discovery platforms, business networks and consumer marketplaces. He will advise Warmpawz on building a playbook for marketplace strategy, provider acquisition, consumer discovery, partnerships and geographic expansion.",
+	},
+	{
+		name: "Binod H R",
+		role: "Advisory Board • Former EVP, Infosys | Chairman, Rangadore Memorial Hospital",
+		avatar: "BH",
+		image: "/advisoryandteam/Binod H R.png",
+		description:
+			"Former Executive Vice President at Infosys and Founder Donor associated with Rangadore Memorial Hospital. His active contributions as a member of CII, BCIC and IFMA have been significant. Binod brings deep experience in building sustainable healthcare institutions with a strong focus on accessibility, governance and impact. He will advise Warmpawz on institutional development, governance, healthcare partnerships and building a trusted, scalable ecosystem.",
+	},
+	{
+		name: "Dr. Tahir Ahamed",
+		role: "Advisory Board • Veterinarian | Founder, Friendly Tails Pet Clinic & Healing Tails Pet Hospital",
+		avatar: "TA",
+		image: "/advisoryandteam/Dr Tahir.png",
+		description:
+			"Veterinarian and associated with Friendly Tails Pet Clinic, Healing Tails Pet Clinic and Friendly Tails Pet Hospital. Dr. Tahir brings hands-on experience from the frontlines of veterinary medicine and pet healthcare. He will advise Warmpawz on clinical quality, veterinary workflows, preventive care, pet-parent education and building a veterinary network that is both scalable and clinically responsible.",
 	},
 ];
 

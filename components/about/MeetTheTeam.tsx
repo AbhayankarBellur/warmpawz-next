@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { AnimatePresence, motion } from "framer-motion";
 import { teamMembers } from "@/config/constants";
+import Image from "next/image";
 
 const MeetTheTeam = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -196,23 +197,44 @@ const MeetTheTeam = () => {
 													transformStyle: "preserve-3d",
 												}}
 											>
-												{/* Default View: Avatar, Name, Role, Read More */}
+												{/* Default View: Avatar/Photo, Name, Role, Read More */}
 												{expandedIndex !== index && (
 													<div className="flex flex-col items-center justify-center h-full">
-														{/* Avatar */}
-														<div className="w-20 sm:w-24 md:w-28 h-20 sm:h-24 md:h-28 rounded-full bg-[#F5A855] flex items-center justify-center text-white font-bold text-2xl sm:text-3xl md:text-4xl mb-4 sm:mb-6 shadow-lg">
-															{member.avatar}
-														</div>
+														{/* Photo or Avatar */}
+														{member.image ? (
+															<div className="w-20 sm:w-24 md:w-28 h-20 sm:h-24 md:h-28 rounded-full overflow-hidden mb-4 sm:mb-6 shadow-lg border-2 border-[#F5A855]">
+																<Image
+																	src={member.image}
+																	alt={member.name}
+																	width={112}
+																	height={112}
+																	className="w-full h-full object-cover"
+																/>
+															</div>
+														) : (
+															<div className="w-20 sm:w-24 md:w-28 h-20 sm:h-24 md:h-28 rounded-full bg-[#F5A855] flex items-center justify-center text-white font-bold text-2xl sm:text-3xl md:text-4xl mb-4 sm:mb-6 shadow-lg">
+																{member.avatar}
+															</div>
+														)}
 
-														{/* Name and Role - Centered */}
+														{/* Advisory badge */}
+														{member.role.startsWith("Advisory Board") && (
+															<span className="text-[10px] font-bold bg-[#F5A855]/20 text-[#F69052] border border-[#F5A855]/40 px-2 py-0.5 rounded-full mb-2">
+																Advisory Board
+															</span>
+														)}
+
+														{/* Name and Role */}
 														<h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-1 sm:mb-2 text-center px-2">
 															{member.name}
 														</h3>
 														<p className="text-[#F5A855] font-semibold text-sm sm:text-base md:text-lg mb-6 text-center px-2">
-															{member.role}
+															{member.role.startsWith("Advisory Board • ")
+																? member.role.replace("Advisory Board • ", "")
+																: member.role}
 														</p>
 
-														{/* Read More Button - Left aligned below designation */}
+														{/* Read More Button */}
 														<button
 															onClick={() => setExpandedIndex(index)}
 															className="text-[#F5A855] text-sm font-semibold hover:text-[#E09642] transition-colors flex items-center gap-1"
@@ -278,9 +300,21 @@ const MeetTheTeam = () => {
 													className="flex-1 overflow-y-auto scrollbar-hide pt-8"
 												>
 													{/* Avatar */}
-													<div className="w-16 sm:w-20 h-16 sm:h-20 rounded-full bg-[#F5A855] flex items-center justify-center text-white font-bold text-xl sm:text-2xl mb-3 shadow-lg mx-auto">
-														{teamMembers[expandedIndex].avatar}
-													</div>
+													{teamMembers[expandedIndex].image ? (
+														<div className="w-16 sm:w-20 h-16 sm:h-20 rounded-full overflow-hidden mb-3 shadow-lg mx-auto border-2 border-[#F5A855]">
+															<Image
+																src={teamMembers[expandedIndex].image!}
+																alt={teamMembers[expandedIndex].name}
+																width={80}
+																height={80}
+																className="w-full h-full object-cover"
+															/>
+														</div>
+													) : (
+														<div className="w-16 sm:w-20 h-16 sm:h-20 rounded-full bg-[#F5A855] flex items-center justify-center text-white font-bold text-xl sm:text-2xl mb-3 shadow-lg mx-auto">
+															{teamMembers[expandedIndex].avatar}
+														</div>
+													)}
 
 													{/* Name */}
 													<h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 text-center">
