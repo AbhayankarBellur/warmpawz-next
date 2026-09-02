@@ -7,6 +7,7 @@ import {
 	Vision,
 	Values,
 	MeetTheTeam,
+	TeamPhotoCarousel,
 } from "@/components/about";
 
 const AboutUsPage = () => {
@@ -38,6 +39,7 @@ const AboutUsPage = () => {
 				<Vision />
 				<Values />
 				<MeetTheTeam />
+				<TeamPhotoCarousel />
 			</div>
 		</div>
 	);
